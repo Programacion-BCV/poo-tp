@@ -8,7 +8,7 @@ public class Lista {
     private int numero;
     private List<Candidato> candidato;
     public PartidoPolitico partido;
-    private Voto voto;
+    //private Voto voto;
     private CamaraElectoral camara;
 
     public Lista(String provincia, String nombreLista, int numero, List<Candidato> candidato, PartidoPolitico partido, Voto voto, CamaraElectoral camara) {
@@ -17,7 +17,7 @@ public class Lista {
         this.numero = numero;
         this.candidato = candidato;
         this.partido = partido;
-        this.voto = voto;
+        //this.voto = voto;
         this.camara = camara;
     }
 

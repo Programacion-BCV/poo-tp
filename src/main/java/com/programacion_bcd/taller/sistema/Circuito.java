@@ -5,12 +5,12 @@ import java.util.Objects;
 
 public class Circuito {
     private int numero;
-    private List<Seccion> listaSecciones;
+    private Seccion seccion;
     private List<MesaElectoral> listaMesas;
 
-    public Circuito(int numero, List<Seccion> listaSecciones, List<MesaElectoral> listaMesas) {
+    public Circuito(int numero, Seccion seccion, List<MesaElectoral> listaMesas) {
         this.numero = numero;
-        this.listaSecciones = listaSecciones;
+        this.seccion = seccion;
         this.listaMesas = listaMesas;
     }
 
@@ -22,12 +22,12 @@ public class Circuito {
         this.numero = numero;
     }
 
-    public List<Seccion> getListaSecciones() {
-        return listaSecciones;
+    public Seccion getSeccion() {
+        return seccion;
     }
 
-    public void setListaSecciones(List<Seccion> listaSecciones) {
-        this.listaSecciones = listaSecciones;
+    public void setSeccion(Seccion seccion) {
+        this.seccion = seccion;
     }
 
     public List<MesaElectoral> getListaMesas() {
@@ -43,11 +43,11 @@ public class Circuito {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Circuito circuito = (Circuito) o;
-        return numero == circuito.numero && Objects.equals(listaSecciones, circuito.listaSecciones) && Objects.equals(listaMesas, circuito.listaMesas);
+        return numero == circuito.numero && Objects.equals(seccion, circuito.seccion) && Objects.equals(listaMesas, circuito.listaMesas);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(numero, listaSecciones, listaMesas);
+        return Objects.hash(numero, seccion, listaMesas);
     }
 }

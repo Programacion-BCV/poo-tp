@@ -26,6 +26,8 @@ public class Elector {
         this.voto = voto;
     }
 
+
+
     public String getNombre() {
         return nombre;
     }

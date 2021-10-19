@@ -6,10 +6,12 @@ import java.util.Objects;
 public class Voto {
     private Elector elector;
     private MesaElectoral mesa;
-    private Voto[] votos = new Voto[2];
+    private Lista[] votos = new Lista[2];
 
-    public Voto(Elector elector) {
+    public Voto(Elector elector, MesaElectoral mesa, Lista[] votos) {
         this.elector = elector;
+        this.mesa = mesa;
+        this.votos = votos;
     }
 
     public Elector getElector() {
@@ -28,11 +30,11 @@ public class Voto {
         this.mesa = mesa;
     }
 
-    public Voto[] getVotos() {
+    public Lista[] getVotos() {
         return votos;
     }
 
-    public void setVotos(Voto[] votos) {
+    public void setVotos(Lista[] votos) {
         this.votos = votos;
     }
 
