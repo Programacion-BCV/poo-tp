@@ -4,18 +4,33 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class MesaElectoral {
+    private Integer numero;
     private Elector presidente;
     private Elector auxiliar;
     private Circuito circuito;
-    private Elector[] electores=new Elector[350];
-    private Voto voto;
+    private Elector[] electores = new Elector[350];
+    private Voto[] voto = new Voto[350];
 
-    public MesaElectoral(Elector presidente, Elector auxiliar, Circuito circuito, Elector[] electores, Voto voto) {
+    public MesaElectoral(Integer numero,
+                         Elector presidente,
+                         Elector auxiliar,
+                         Circuito circuito,
+                         Elector[] electores,
+                         Voto[] voto) {
+        this.numero = numero;
         this.presidente = presidente;
         this.auxiliar = auxiliar;
         this.circuito = circuito;
         this.electores = electores;
         this.voto = voto;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
     }
 
     public Elector getPresidente() {
@@ -50,11 +65,11 @@ public class MesaElectoral {
         this.electores = electores;
     }
 
-    public Voto getVoto() {
+    public Voto[] getVoto() {
         return voto;
     }
 
-    public void setVoto(Voto voto) {
+    public void setVoto(Voto[] voto) {
         this.voto = voto;
     }
 
@@ -63,13 +78,23 @@ public class MesaElectoral {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         MesaElectoral that = (MesaElectoral) o;
-        return Objects.equals(presidente, that.presidente) && Objects.equals(auxiliar, that.auxiliar) && Objects.equals(circuito, that.circuito) && Arrays.equals(electores, that.electores) && Objects.equals(voto, that.voto);
+        return numero.equals(that.numero);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(presidente, auxiliar, circuito, voto);
-        result = 31 * result + Arrays.hashCode(electores);
-        return result;
+        return Objects.hash(numero);
+    }
+
+    @Override
+    public String toString() {
+        return "MesaElectoral{" +
+               "numero=" + numero +
+               ", presidente=" + presidente +
+               ", auxiliar=" + auxiliar +
+               ", circuito=" + circuito +
+               ", electores=" + Arrays.toString(electores) +
+               ", voto=" + Arrays.toString(voto) +
+               '}';
     }
 }

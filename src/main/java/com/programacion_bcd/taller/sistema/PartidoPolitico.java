@@ -8,19 +8,16 @@ public class PartidoPolitico {
     private List<Lista> lista;
     private List<PartidoPolitico> partido;
 
-    public PartidoPolitico(String nombre, List<Lista> lista, List<PartidoPolitico> partido) {
+    public PartidoPolitico(String nombre, List<Lista> lista,
+                           List<PartidoPolitico> partido) {
         this.nombre = nombre;
         this.lista = lista;
         this.partido = partido;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public String getNombre() {return nombre;}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+    public void setNombre(String nombre) {this.nombre = nombre;}
 
     public List<Lista> getLista() {
         return lista;
@@ -40,10 +37,14 @@ public class PartidoPolitico {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         PartidoPolitico that = (PartidoPolitico) o;
-        return Objects.equals(nombre, that.nombre) && Objects.equals(lista, that.lista) && Objects.equals(partido, that.partido);
+        return Objects.equals(nombre, that.nombre) &&
+               Objects.equals(lista, that.lista) &&
+               Objects.equals(partido, that.partido);
     }
 
     @Override
@@ -54,9 +55,9 @@ public class PartidoPolitico {
     @Override
     public String toString() {
         return "PartidoPolitico{" +
-                "nombre='" + nombre + '\'' +
-                ", lista=" + lista +
-                ", partido=" + partido +
-                '}';
+               "nombre='" + nombre + '\'' +
+               ", lista=" + lista +
+               ", partido=" + partido +
+               '}';
     }
 }

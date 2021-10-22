@@ -6,27 +6,27 @@ import java.util.Objects;
 public class Elector {
     private String nombre;
     private String apellido;
-    private int dni;
+    private Integer dni;
     private Domicilio domicilio;
-    private String lugarDeVotacion;
+    private String lugarVotacion;
     private LocalDate fechaNac;
     private MesaElectoral mesa;
-    private CamaraElectoral camara;
     private Voto voto;
 
-    public Elector(String nombre, String apellido, int dni, Domicilio domicilio, String lugarDeVotacion, LocalDate fechaNac, MesaElectoral mesa, CamaraElectoral camara, Voto voto) {
+    public Elector(String nombre, String apellido, Integer dni,
+                   Domicilio domicilio, String lugarVotacion,
+                   LocalDate fechaNac,
+                   MesaElectoral mesa,
+                   Voto voto) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.domicilio = domicilio;
-        this.lugarDeVotacion = lugarDeVotacion;
+        this.lugarVotacion = lugarVotacion;
         this.fechaNac = fechaNac;
         this.mesa = mesa;
-        this.camara = camara;
         this.voto = voto;
     }
-
-
 
     public String getNombre() {
         return nombre;
@@ -44,11 +44,11 @@ public class Elector {
         this.apellido = apellido;
     }
 
-    public int getDni() {
+    public Integer getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(Integer dni) {
         this.dni = dni;
     }
 
@@ -60,12 +60,12 @@ public class Elector {
         this.domicilio = domicilio;
     }
 
-    public String getLugarDeVotacion() {
-        return lugarDeVotacion;
+    public String getLugarVotacion() {
+        return lugarVotacion;
     }
 
-    public void setLugarDeVotacion(String lugarDeVotacion) {
-        this.lugarDeVotacion = lugarDeVotacion;
+    public void setLugarVotacion(String lugarVotacion) {
+        this.lugarVotacion = lugarVotacion;
     }
 
     public LocalDate getFechaNac() {
@@ -84,14 +84,6 @@ public class Elector {
         this.mesa = mesa;
     }
 
-    public CamaraElectoral getCamara() {
-        return camara;
-    }
-
-    public void setCamara(CamaraElectoral camara) {
-        this.camara = camara;
-    }
-
     public Voto getVoto() {
         return voto;
     }
@@ -105,26 +97,25 @@ public class Elector {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Elector elector = (Elector) o;
-        return dni == elector.dni && Objects.equals(nombre, elector.nombre) && Objects.equals(apellido, elector.apellido) && Objects.equals(domicilio, elector.domicilio) && Objects.equals(lugarDeVotacion, elector.lugarDeVotacion) && Objects.equals(fechaNac, elector.fechaNac) && Objects.equals(mesa, elector.mesa) && Objects.equals(camara, elector.camara) && Objects.equals(voto, elector.voto);
+        return dni.equals(elector.dni);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, apellido, dni, domicilio, lugarDeVotacion, fechaNac, mesa, camara, voto);
+        return Objects.hash(dni);
     }
 
     @Override
     public String toString() {
         return "Elector{" +
-                "nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", dni=" + dni +
-                ", domicilio=" + domicilio +
-                ", lugarDeVotacion='" + lugarDeVotacion + '\'' +
-                ", fechaNac=" + fechaNac +
-                ", mesa=" + mesa +
-                ", camara=" + camara +
-                ", voto=" + voto +
-                '}';
+               "nombre='" + nombre + '\'' +
+               ", apellido='" + apellido + '\'' +
+               ", dni=" + dni +
+               ", domicilio=" + domicilio +
+               ", lugarVotacion='" + lugarVotacion + '\'' +
+               ", fechaNac=" + fechaNac +
+               ", mesa=" + mesa +
+               ", voto=" + voto +
+               '}';
     }
 }

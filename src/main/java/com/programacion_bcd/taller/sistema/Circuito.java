@@ -8,7 +8,8 @@ public class Circuito {
     private Seccion seccion;
     private List<MesaElectoral> listaMesas;
 
-    public Circuito(int numero, Seccion seccion, List<MesaElectoral> listaMesas) {
+    public Circuito(int numero, Seccion seccion,
+                    List<MesaElectoral> listaMesas) {
         this.numero = numero;
         this.seccion = seccion;
         this.listaMesas = listaMesas;
@@ -34,7 +35,8 @@ public class Circuito {
         return listaMesas;
     }
 
-    public void setListaMesas(List<MesaElectoral> listaMesas) {
+    public void setListaMesas(
+            List<MesaElectoral> listaMesas) {
         this.listaMesas = listaMesas;
     }
 
@@ -43,11 +45,20 @@ public class Circuito {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Circuito circuito = (Circuito) o;
-        return numero == circuito.numero && Objects.equals(seccion, circuito.seccion) && Objects.equals(listaMesas, circuito.listaMesas);
+        return numero == circuito.numero;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(numero, seccion, listaMesas);
+        return Objects.hash(numero);
+    }
+
+    @Override
+    public String toString() {
+        return "Circuito{" +
+               "numero=" + numero +
+               ", seccion=" + seccion +
+               ", listaMesas=" + listaMesas +
+               '}';
     }
 }

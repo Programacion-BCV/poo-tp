@@ -6,20 +6,26 @@ import java.util.Objects;
 public class Candidato extends Elector {
     private TipoCandidato tipoCandidato;
     private Lista lista;
-    private CamaraElectoral camara;
 
-    public Candidato(String nombre, String apellido, int dni, Domicilio domicilio, String lugarDeVotacion, LocalDate fechaNac, MesaElectoral mesa, CamaraElectoral camara, Voto voto, TipoCandidato tipoCandidato, Lista lista, CamaraElectoral camara1) {
-        super(nombre, apellido, dni, domicilio, lugarDeVotacion, fechaNac, mesa, camara, voto);
+    public Candidato(String nombre, String apellido, Integer dni,
+                     Domicilio domicilio, String lugarVotacion,
+                     LocalDate fechaNac,
+                     MesaElectoral mesa,
+                     Voto voto,
+                     TipoCandidato tipoCandidato,
+                     Lista lista) {
+        super(nombre, apellido, dni, domicilio, lugarVotacion, fechaNac, mesa,
+              voto);
         this.tipoCandidato = tipoCandidato;
         this.lista = lista;
-        this.camara = camara1;
     }
 
     public TipoCandidato getTipoCandidato() {
         return tipoCandidato;
     }
 
-    public void setTipoCandidato(TipoCandidato tipoCandidato) {
+    public void setTipoCandidato(
+            TipoCandidato tipoCandidato) {
         this.tipoCandidato = tipoCandidato;
     }
 
@@ -32,35 +38,25 @@ public class Candidato extends Elector {
     }
 
     @Override
-    public CamaraElectoral getCamara() {
-        return camara;
-    }
-
-    @Override
-    public void setCamara(CamaraElectoral camara) {
-        this.camara = camara;
-    }
-
-    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         if (!super.equals(o)) return false;
         Candidato candidato = (Candidato) o;
-        return tipoCandidato == candidato.tipoCandidato && Objects.equals(lista, candidato.lista) && Objects.equals(camara, candidato.camara);
+        return tipoCandidato == candidato.tipoCandidato &&
+               lista.equals(candidato.lista);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), tipoCandidato, lista, camara);
+        return Objects.hash(super.hashCode(), tipoCandidato, lista);
     }
 
     @Override
     public String toString() {
-        return super.toString()+"Candidato{" +
-                "tipoCandidato=" + tipoCandidato +
-                ", lista=" + lista +
-                ", camara=" + camara +
-                '}';
+        return super.toString() + "\n" + "Candidato{" +
+               "tipoCandidato=" + tipoCandidato +
+               ", lista=" + lista +
+               '}';
     }
 }

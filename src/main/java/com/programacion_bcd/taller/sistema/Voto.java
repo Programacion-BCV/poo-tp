@@ -6,7 +6,7 @@ import java.util.Objects;
 public class Voto {
     private Elector elector;
     private MesaElectoral mesa;
-    private Lista[] votos = new Lista[2];
+    private Lista[] votos;
 
     public Voto(Elector elector, MesaElectoral mesa, Lista[] votos) {
         this.elector = elector;
@@ -43,7 +43,8 @@ public class Voto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Voto voto = (Voto) o;
-        return Objects.equals(elector, voto.elector) && Objects.equals(mesa, voto.mesa) && Arrays.equals(votos, voto.votos);
+        return elector.equals(voto.elector) && mesa.equals(voto.mesa) &&
+               Arrays.equals(votos, voto.votos);
     }
 
     @Override
@@ -56,9 +57,9 @@ public class Voto {
     @Override
     public String toString() {
         return "Voto{" +
-                "elector=" + elector +
-                ", mesa=" + mesa +
-                ", votos=" + Arrays.toString(votos) +
-                '}';
+               "elector=" + elector +
+               ", mesa=" + mesa +
+               ", votos=" + Arrays.toString(votos) +
+               '}';
     }
 }

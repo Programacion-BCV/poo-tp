@@ -5,11 +5,13 @@ import java.util.Objects;
 
 public class CamaraElectoral {
     private List<Elector> elector;
+    private List<Lista> lista;
     private List<Candidato> listaCandidatos;
     private List<Distrito> listaDistritos;
-    private List<Lista> lista;
 
-    public CamaraElectoral(List<Elector> elector, List<Candidato> listaCandidatos, List<Distrito> listaDistritos, List<Lista> lista) {
+    public CamaraElectoral(List<Elector> elector,
+                           List<Candidato> listaCandidatos,
+                           List<Distrito> listaDistritos, List<Lista> lista) {
         this.elector = elector;
         this.listaCandidatos = listaCandidatos;
         this.listaDistritos = listaDistritos;
@@ -53,7 +55,10 @@ public class CamaraElectoral {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CamaraElectoral that = (CamaraElectoral) o;
-        return Objects.equals(elector, that.elector) && Objects.equals(listaCandidatos, that.listaCandidatos) && Objects.equals(listaDistritos, that.listaDistritos) && Objects.equals(lista, that.lista);
+        return Objects.equals(elector, that.elector) &&
+               Objects.equals(listaCandidatos, that.listaCandidatos) &&
+               Objects.equals(listaDistritos, that.listaDistritos) &&
+               Objects.equals(lista, that.lista);
     }
 
     @Override
@@ -64,10 +69,10 @@ public class CamaraElectoral {
     @Override
     public String toString() {
         return "CamaraElectoral{" +
-                "elector=" + elector +
-                ", listaCandidatos=" + listaCandidatos +
-                ", listaDistritos=" + listaDistritos +
-                ", lista=" + lista +
-                '}';
+               "elector=" + elector +
+               ", listaCandidatos=" + listaCandidatos +
+               ", listaDistritos=" + listaDistritos +
+               ", lista=" + lista +
+               '}';
     }
 }

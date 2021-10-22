@@ -8,14 +8,13 @@ public class Domicilio {
     private String localidad;
     private String departamento;
     private String provincia;
-    private List<Elector> electoresDomicilio; //revisar
 
-    public Domicilio(String direccion, String localidad, String departamento, String provincia, List<Elector> electoresDomicilio) {
+    public Domicilio(String direccion, String localidad,
+                     String departamento, String provincia) {
         this.direccion = direccion;
         this.localidad = localidad;
         this.departamento = departamento;
         this.provincia = provincia;
-        this.electoresDomicilio = electoresDomicilio;
     }
 
     public String getDireccion() {
@@ -50,35 +49,29 @@ public class Domicilio {
         this.provincia = provincia;
     }
 
-    public List<Elector> getElectoresDomicilio() {
-        return electoresDomicilio;
-    }
-
-    public void setElectoresDomicilio(List<Elector> electoresDomicilio) {
-        this.electoresDomicilio = electoresDomicilio;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Domicilio domicilio = (Domicilio) o;
-        return Objects.equals(direccion, domicilio.direccion) && Objects.equals(localidad, domicilio.localidad) && Objects.equals(departamento, domicilio.departamento) && Objects.equals(provincia, domicilio.provincia) && Objects.equals(electoresDomicilio, domicilio.electoresDomicilio);
+        return direccion.equals(domicilio.direccion) &&
+               localidad.equals(domicilio.localidad) &&
+               departamento.equals(domicilio.departamento) &&
+               provincia.equals(domicilio.provincia);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(direccion, localidad, departamento, provincia, electoresDomicilio);
+        return Objects.hash(direccion, localidad, departamento, provincia);
     }
 
     @Override
     public String toString() {
         return "Domicilio{" +
-                "direccion='" + direccion + '\'' +
-                ", localidad='" + localidad + '\'' +
-                ", departamento='" + departamento + '\'' +
-                ", provincia='" + provincia + '\'' +
-                ", electoresDomicilio=" + electoresDomicilio +
-                '}';
+               "direccion='" + direccion + '\'' +
+               ", localidad='" + localidad + '\'' +
+               ", departamento='" + departamento + '\'' +
+               ", provincia='" + provincia + '\'' +
+               '}';
     }
 }

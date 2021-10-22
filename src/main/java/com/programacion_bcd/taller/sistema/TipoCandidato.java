@@ -16,7 +16,7 @@ public enum TipoCandidato {
     @Override
     public String toString() {
         return "TipoCandidato{" +
-                "tipoCandidato='" + tipoCandidato + '\'' +
-                '}';
+               "tipoCandidato='" + tipoCandidato + '\'' +
+               '}';
     }
 }
