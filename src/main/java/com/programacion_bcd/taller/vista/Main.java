@@ -5,6 +5,8 @@
  */
 package com.programacion_bcd.taller.vista;
 
+import com.programacion_bcd.taller.carga_datos.CargaDatos;
+import com.programacion_bcd.taller.sistema.CamaraElectoral;
 import com.programacion_bcd.taller.vista.*;
 import javax.swing.JFrame;
 
@@ -255,6 +257,8 @@ public class Main extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        CamaraElectoral camaraElectoralArgentina =new CamaraElectoral();
+        camaraElectoralArgentina.setElector(CargaDatos.cargaElectores());
         /* Set the Nimbus look and feel */
         // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
         // (optional) ">

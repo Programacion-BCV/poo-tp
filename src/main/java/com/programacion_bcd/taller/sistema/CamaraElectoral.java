@@ -9,6 +9,9 @@ public class CamaraElectoral {
     private List<Candidato> listaCandidatos;
     private List<Distrito> listaDistritos;
 
+    public CamaraElectoral() {
+    }
+
     public CamaraElectoral(List<Elector> elector,
                            List<Candidato> listaCandidatos,
                            List<Distrito> listaDistritos, List<Lista> lista) {
