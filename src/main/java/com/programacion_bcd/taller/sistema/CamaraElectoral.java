@@ -1,39 +1,56 @@
 package com.programacion_bcd.taller.sistema;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
 public class CamaraElectoral {
-    private List<Elector> elector;
-    private List<Lista> lista;
+    private List<Elector> electores;
+    private List<Lista> listas;
     private List<Candidato> listaCandidatos;
     private List<Distrito> listaDistritos;
+    private RequerimientosProvincia[] listaRequerimientos;
 
     public CamaraElectoral() {
     }
 
-    public CamaraElectoral(List<Elector> elector,
-                           List<Candidato> listaCandidatos,
-                           List<Distrito> listaDistritos, List<Lista> lista) {
-        this.elector = elector;
+    public CamaraElectoral(
+            List<Elector> electores,
+            List<Lista> listas,
+            List<Candidato> listaCandidatos,
+            List<Distrito> listaDistritos,
+            RequerimientosProvincia[] listaRequerimientos) {
+        this.electores = electores;
+        this.listas = listas;
         this.listaCandidatos = listaCandidatos;
         this.listaDistritos = listaDistritos;
-        this.lista = lista;
+        this.listaRequerimientos = listaRequerimientos;
     }
 
-    public List<Elector> getElector() {
-        return elector;
+    public List<Elector> getElectores() {
+        return electores;
     }
 
-    public void setElector(List<Elector> elector) {
-        this.elector = elector;
+    public void setElectores(
+            List<Elector> electores) {
+        this.electores = electores;
+    }
+
+    public List<Lista> getListas() {
+        return listas;
+    }
+
+    public void setListas(
+            List<Lista> listas) {
+        this.listas = listas;
     }
 
     public List<Candidato> getListaCandidatos() {
         return listaCandidatos;
     }
 
-    public void setListaCandidatos(List<Candidato> listaCandidatos) {
+    public void setListaCandidatos(
+            List<Candidato> listaCandidatos) {
         this.listaCandidatos = listaCandidatos;
     }
 
@@ -41,16 +58,18 @@ public class CamaraElectoral {
         return listaDistritos;
     }
 
-    public void setListaDistritos(List<Distrito> listaDistritos) {
+    public void setListaDistritos(
+            List<Distrito> listaDistritos) {
         this.listaDistritos = listaDistritos;
     }
 
-    public List<Lista> getLista() {
-        return lista;
+    public RequerimientosProvincia[] getListaRequerimientos() {
+        return listaRequerimientos;
     }
 
-    public void setLista(List<Lista> lista) {
-        this.lista = lista;
+    public void setListaRequerimientos(
+            RequerimientosProvincia[] listaRequerimientos) {
+        this.listaRequerimientos = listaRequerimientos;
     }
 
     @Override
@@ -58,24 +77,30 @@ public class CamaraElectoral {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CamaraElectoral that = (CamaraElectoral) o;
-        return Objects.equals(elector, that.elector) &&
-               Objects.equals(listaCandidatos, that.listaCandidatos) &&
-               Objects.equals(listaDistritos, that.listaDistritos) &&
-               Objects.equals(lista, that.lista);
+        return electores.equals(that.electores) && listas.equals(that.listas) &&
+               listaCandidatos.equals(that.listaCandidatos) &&
+               listaDistritos.equals(that.listaDistritos) &&
+               Arrays.equals(listaRequerimientos,
+                             that.listaRequerimientos);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(elector, listaCandidatos, listaDistritos, lista);
+        int result = Objects.hash(electores, listas, listaCandidatos,
+                                  listaDistritos);
+        result = 31 * result + Arrays.hashCode(listaRequerimientos);
+        return result;
     }
 
     @Override
     public String toString() {
         return "CamaraElectoral{" +
-               "elector=" + elector +
+               "electores=" + electores +
+               ", listas=" + listas +
                ", listaCandidatos=" + listaCandidatos +
                ", listaDistritos=" + listaDistritos +
-               ", lista=" + lista +
+               ", listaRequerimientos=" +
+               Arrays.toString(listaRequerimientos) +
                '}';
     }
 }

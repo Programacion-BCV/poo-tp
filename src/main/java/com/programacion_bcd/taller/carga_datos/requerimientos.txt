@@ -1,0 +1,24 @@
+-Capital Federal-3-25
+-Buenos Aires-3-70
+-Catamarca-3-5
+-Chaco-3-7
+-Chubut-3-5
+-Córdoba-3-18
+-Corrientes-3-7
+-Entre Ríos-3-9
+-Formosa-3-5
+-Jujuy-3-6
+-La Pampa-3-5
+-La Rioja-3-5
+-Mendoza-3-10
+-Misiones-3-7
+-Neuquén-3-5
+-Río Negro-3-5
+-Salta-3-7
+-San Juan-3-6
+-San Luis-3-5
+-Santa Cruz-3-5
+-Santa Fe-3-19
+-Santiago del Estero-3-7
+-Tierra del Fuego-3-5
+-Tucumán-3-9

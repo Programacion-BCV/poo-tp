@@ -1,7 +1,6 @@
 package com.programacion_bcd.taller.carga_datos;
 
-import com.programacion_bcd.taller.sistema.Domicilio;
-import com.programacion_bcd.taller.sistema.Elector;
+import com.programacion_bcd.taller.sistema.*;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -96,8 +95,10 @@ public class CargaDatos {
                                              null,
                                              null);
                 }
-                if(matcherNombres.matches()&&matcherDomicilio.matches()) {
+                if (matcherNombres.matches() && matcherDomicilio.matches()) {
                     electores.add(electorAux);
+                } else {
+                    System.out.println(domicilio);
                 }
                 nombres = bufferedReaderNombres.readLine();
                 direcciones = bufferedReaderDirecciones.readLine();
@@ -107,12 +108,151 @@ public class CargaDatos {
         } catch (IOException exc) {
             exc.printStackTrace();
         } finally {
+            System.out.println(electores.size());
             System.out.println(electores.size() ==
-                               10000
+                               30000
                                ? "Carga de Electores completada correctamente"
                                : "Ha pasado algo");
         }
         return electores;
     }
 
+    public static List<Lista> cargaListas(List<Elector> electores,
+                                          RequerimientosProvincia[] requerimientosProvincias) {
+        int total = electores.size();
+
+        int numeroAsignarLista = 100;
+
+        List<Lista> listas = new ArrayList<>();
+
+        PartidoPolitico derecha = new PartidoPolitico("Derecha",
+                                                      new ArrayList<>(),
+                                                      new ArrayList<>());
+        PartidoPolitico izquierda = new PartidoPolitico("Izquierda",
+                                                        new ArrayList<>(),
+                                                        new ArrayList<>());
+
+        //-----------------------Aux------
+        String provincia;
+        String nombreLista;
+        String numeroLista;
+        PartidoPolitico partidoPolitico;
+        List<Candidato> senadores;
+        List<Candidato> diputados;
+        Lista listaAux;
+        Candidato candidato;
+        int indice = 0;
+        //-----------------------------
+
+        for (int i = 0; i < total; i++) {
+
+            provincia = electores.get(i).getDomicilio().getProvincia();
+
+            nombreLista = (i % 2 == 0) ? "Derecha"
+                                       : "Izquierda";
+
+            nombreLista += " " + listas.size();
+            numeroLista = numeroAsignarLista++ +
+                          ((electores.get(i).getDni() % 2 == 0) ? "A"
+                                                                : "B");
+
+            partidoPolitico =
+                    (electores.get(i).getFechaNac().getDayOfMonth() % 2 ==
+                     0) ? derecha
+                        : izquierda;
+
+            candidato = new Candidato(electores.get(i).getNombre(),
+                                      electores.get(i).getApellido(),
+                                      electores.get(i).getDni(),
+                                      electores.get(i).getDomicilio(),
+                                      electores.get(i).getLugarVotacion(),
+                                      electores.get(i).getFechaNac(),
+                                      electores.get(i).getMesa(),
+                                      electores.get(i).getVoto(),
+                                      null, null);
+
+            boolean esta = false;
+
+            for (int j = 0; j < listas.size(); j++) {
+                if (listas.get(j).getProvincia().equals(provincia) &&
+                    listas.get(j).getPartido().getNombre().equals(
+                            partidoPolitico.getNombre())) {
+                    esta = true;
+                    indice = j;
+                    break;
+                }
+            }
+
+            if (listas.isEmpty() || !esta) {
+                candidato.setTipoCandidato(TipoCandidato.SENADOR);
+
+                senadores = new ArrayList<>();
+                senadores.add(candidato);
+                listaAux = new Lista(provincia, nombreLista,
+                                     numeroLista,
+                                     partidoPolitico,
+                                     new ArrayList<>(), senadores,
+                                     (null));
+
+                listas.add(listaAux);
+            } else {
+                RequerimientosProvincia req = null;
+                for (int z = 0; z < requerimientosProvincias.length; z++) {
+                    if (requerimientosProvincias[z].getNombre().equals(
+                            provincia)) {
+                        req = requerimientosProvincias[z];
+                        break;
+                    }
+                }
+
+                if (req != null) {
+                    if (listas.get(indice).getSenadores().size() <
+                        req.getCantidadSenadores()) {
+                        candidato.setTipoCandidato(TipoCandidato.SENADOR);
+                        listas.get(indice).getSenadores().add(candidato);
+                    } else if (listas.get(indice).getDiputados().size() <
+                               req.getCantidadDiputados()) {
+                        candidato.setTipoCandidato(TipoCandidato.DIPUTADO);
+                        listas.get(indice).getDiputados().add(candidato);
+                    }
+                }
+            }
+
+        }
+
+        return listas;
+    }
+
+    public static List<Distrito> cargaDistrito;
+
+    public static RequerimientosProvincia[] requerimientosProvincias() {
+        RequerimientosProvincia[] requerimientosProvincias = new RequerimientosProvincia[24];
+
+        try {
+            File req = new File(
+                    "src/main/java/com/programacion_bcd/taller/carga_datos/requerimientos.txt");
+            FileReader readerReq = new FileReader(req);
+            BufferedReader bufferedReaderReq = new BufferedReader(readerReq);
+            String linea = "";
+            int i = 0;
+            Pattern r = Pattern.compile("^(-(.+)-(.+)-(.+))$");
+            Matcher m;
+            while ((linea = bufferedReaderReq.readLine()) != null) {
+                m = r.matcher(linea);
+                if (m.matches()) {
+                    requerimientosProvincias[i++] = new RequerimientosProvincia(
+                            m.group(2),
+                            Integer.parseInt(
+                                    m.group(4)),
+                            Integer.parseInt(
+                                    m.group(3)));
+
+                }
+            }
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+
+        return requerimientosProvincias;
+    }
 }
