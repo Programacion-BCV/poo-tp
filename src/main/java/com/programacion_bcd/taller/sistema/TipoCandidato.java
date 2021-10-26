@@ -1,7 +1,7 @@
 package com.programacion_bcd.taller.sistema;
 
 public enum TipoCandidato {
-    SENADOR("Senador"), DIPUTADO("Diputado");
+    SENADOR("Senador"), DIPUTADO("Diputado"),NO_CANDIDATO("No es candidato");
 
     private final String tipoCandidato;
 

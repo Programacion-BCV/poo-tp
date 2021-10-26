@@ -96,7 +96,7 @@ public class CargaDatos {
                                                                      6)),
                                                      Integer.parseInt(
                                                              matcherNombres.group(
-                                                                     7))), null,
+                                                                     7))),null,null, null,
                                              null);
                 }
                 if (matcherNombres.matches() && matcherDomicilio.matches()) {
@@ -141,10 +141,10 @@ public class CargaDatos {
         String nombreLista;
         String numeroLista;
         PartidoPolitico partidoPolitico;
-        List<Candidato> senadores;
-        List<Candidato> diputados;
+        List<Elector> senadores;
+        List<Elector> diputados;
         Lista listaAux;
-        Candidato candidato;
+        Elector candidato;
         int indice = 0;
         //-----------------------------
 
@@ -159,7 +159,7 @@ public class CargaDatos {
 
             nombreLista += " " + listas.size();
             numeroLista = numeroAsignarLista++ +
-                          ((electores.get(i).getDni() % 2 == 0) ? "A"
+                          (electores.get(i).getFechaNac().getDayOfMonth() % 2==0 ? "A"
                                                                 : "B");
 
             partidoPolitico =
@@ -167,15 +167,7 @@ public class CargaDatos {
                      0) ? derecha
                         : izquierda;
 
-            candidato = new Candidato(electores.get(i).getNombre(),
-                                      electores.get(i).getApellido(),
-                                      electores.get(i).getDni(),
-                                      electores.get(i).getDomicilio(),
-                                      electores.get(i).getLugarVotacion(),
-                                      electores.get(i).getFechaNac(),
-                                      electores.get(i).getMesa(),
-                                      electores.get(i).getVoto(),
-                                      null, null);
+           candidato=electores.get(i);
 
             boolean esta = false;
 
@@ -190,7 +182,7 @@ public class CargaDatos {
             }
 
             if (listas.isEmpty() || !esta) {
-                candidato.setTipoCandidato(TipoCandidato.SENADOR);
+                candidato.setCandidato(TipoCandidato.SENADOR);
                 senadores = new ArrayList<>();
                 senadores.add(candidato);
 
@@ -215,13 +207,13 @@ public class CargaDatos {
                 if (req != null) {
                     if (listas.get(indice).getSenadores().size() <
                         req.getCantidadSenadores()) {
-                        candidato.setTipoCandidato(TipoCandidato.SENADOR);
+                        candidato.setCandidato(TipoCandidato.SENADOR);
                         listas.get(indice).getSenadores().add(candidato);
                         candidato.setLista(listas.get(indice));
 
                     } else if (listas.get(indice).getDiputados().size() <
                                req.getCantidadDiputados()) {
-                        candidato.setTipoCandidato(TipoCandidato.DIPUTADO);
+                        candidato.setCandidato(TipoCandidato.DIPUTADO);
                         listas.get(indice).getDiputados().add(candidato);
                         candidato.setLista(listas.get(indice));
 

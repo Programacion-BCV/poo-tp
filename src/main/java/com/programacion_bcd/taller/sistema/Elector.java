@@ -15,6 +15,8 @@ public class Elector {
     private Domicilio domicilio;
     private String lugarVotacion;
     private LocalDate fechaNac;
+    private TipoCandidato candidato;
+    private Lista lista;
     private MesaElectoral mesa;
     private Voto voto;
 
@@ -27,12 +29,17 @@ public class Elector {
      * @param domicilio     Domicilio del Elector
      * @param lugarVotacion Lugar donde vota el Elector
      * @param fechaNac      Fecha de nacimiento del Elector
+     * @param candidato     Tipo de candidato del Elector o si no lo es
+     * @param lista         Lista a la que pertenece el elector si es candidato
      * @param mesa          Mesa en la que vota un Elector
      * @param voto          Voto del Elector
+     * @pa
      */
     public Elector(String nombre, String apellido, Integer dni,
                    Domicilio domicilio, String lugarVotacion,
                    LocalDate fechaNac,
+                   TipoCandidato candidato,
+                   Lista lista,
                    MesaElectoral mesa,
                    Voto voto) {
         this.nombre = nombre;
@@ -41,6 +48,8 @@ public class Elector {
         this.domicilio = domicilio;
         this.lugarVotacion = lugarVotacion;
         this.fechaNac = fechaNac;
+        this.candidato = candidato;
+        this.lista = lista;
         this.mesa = mesa;
         this.voto = voto;
     }
@@ -154,6 +163,40 @@ public class Elector {
     }
 
     /**
+     * Devuelve que tipo de candidato es en caso de pertenecer a una lista
+     *
+     * @return candidato Tipo de candidato que es
+     */
+    public TipoCandidato getCandidato() {
+        return candidato;
+    }
+
+    /**
+     * Setea el tipo de candidato o si no lo es
+     *
+     * @param candidato
+     */
+    public void setCandidato(TipoCandidato candidato) {
+        this.candidato = candidato;
+    }
+
+    /**
+     * Devuelve Lista a la que pertenece si es candidato
+     * @return Devuelve Lista a la que pertenece
+     */
+    public Lista getLista() {
+        return lista;
+    }
+
+    /**
+     * Setea lista en caso de ser candidato
+     * @param lista
+     */
+    public void setLista(Lista lista) {
+        this.lista = lista;
+    }
+
+    /**
      * Devuelve la mesa donde vota el Elector
      *
      * @return Mesa de votación
@@ -216,6 +259,8 @@ public class Elector {
                ", domicilio=" + domicilio +
                ", lugarVotacion='" + lugarVotacion + '\'' +
                ", fechaNac=" + fechaNac +
+               ", candidato=" + candidato +
+               ", lista=" + lista +
                ", mesa=" + mesa +
                ", voto=" + voto +
                '}';

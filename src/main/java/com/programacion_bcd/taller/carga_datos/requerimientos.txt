@@ -5,7 +5,7 @@
 -Chubut-3-5
 -Córdoba-3-18
 -Corrientes-3-7
--Entre Ríos-3-9
+-Entre Ríos-0-0
 -Formosa-3-5
 -Jujuy-3-6
 -La Pampa-3-5

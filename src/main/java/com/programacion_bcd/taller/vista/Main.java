@@ -1718,10 +1718,10 @@ public class Main extends javax.swing.JFrame {
         camaraElectoralArgentina.setListas(
                 CargaDatos.cargaListas(camaraElectoralArgentina.getElectores(),
                                        camaraElectoralArgentina.getListaRequerimientos()));
-        camaraElectoralArgentina.setListaDistritos(CargaDatos.cargaDistrito(
-                camaraElectoralArgentina.getElectores()));
+        //camaraElectoralArgentina.setListaDistritos(CargaDatos.cargaDistrito(
+        //         camaraElectoralArgentina.getElectores()));
 
-        System.out.println(camaraElectoralArgentina.getListas().get(0));
+        System.out.println(camaraElectoralArgentina.getElectores().get(25));
 
 
 
@@ -1763,11 +1763,11 @@ public class Main extends javax.swing.JFrame {
         // </editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Main().setVisible(true);
-            }
-        });
+        //java.awt.EventQueue.invokeLater(new Runnable() {
+        //     public void run() {
+        // new Main().setVisible(true);
+        //}
+        // });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

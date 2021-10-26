@@ -13,8 +13,8 @@ public class Lista {
     private String nombreLista;
     private String numero;
     private PartidoPolitico partido;
-    private List<Candidato> diputados;
-    private List<Candidato> senadores;
+    private List<Elector> diputados;
+    private List<Elector> senadores;
     private List<Voto> voto;
 
     /**
@@ -29,8 +29,8 @@ public class Lista {
      */
     public Lista(String provincia, String nombreLista, String numero,
                  PartidoPolitico partido,
-                 List<Candidato> diputados,
-                 List<Candidato> senadores,
+                 List<Elector> diputados,
+                 List<Elector> senadores,
                  List<Voto> voto) {
         this.provincia = provincia;
         this.nombreLista = nombreLista;
@@ -109,7 +109,7 @@ public class Lista {
      * Devuelve una lista de candidatos a diputados de la Lista
      * @return Lista de candidatos a diputados
      */
-    public List<Candidato> getDiputados() {
+    public List<Elector> getDiputados() {
         return diputados;
     }
 
@@ -118,7 +118,7 @@ public class Lista {
      * @param diputados Lista de candidatos a diputados
      */
     public void setDiputados(
-            List<Candidato> diputados) {
+            List<Elector> diputados) {
         this.diputados = diputados;
     }
 
@@ -126,7 +126,7 @@ public class Lista {
      * Devuelve una lista de candidatos a senadores de la Lista
      * @return Lista de candidatos a senadores
      */
-    public List<Candidato> getSenadores() {
+    public List<Elector> getSenadores() {
         return senadores;
     }
 
@@ -135,7 +135,7 @@ public class Lista {
      * @param senadores Lista de candidatos a senadores
      */
     public void setSenadores(
-            List<Candidato> senadores) {
+            List<Elector> senadores) {
         this.senadores = senadores;
     }
 
@@ -171,8 +171,7 @@ public class Lista {
                ", nombreLista='" + nombreLista + '\'' +
                ", numero='" + numero + '\'' +
                ", partido=" + partido +
-               ", diputados=" + diputados +
-               ", senadores=" + senadores +
+
                ", voto=" + voto +
                '}';
     }

@@ -1,6 +1,6 @@
 /**
  * Clase Camara Electoral
- *
+ * <p>
  * La clase lleva un registro de todas las listas,padron de personas,
  * interrelaciones y realiza verificaicones.
  */
@@ -10,41 +10,37 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-
 public class CamaraElectoral {
     private List<Elector> electores;
     private List<Lista> listas;
-    private List<Candidato> listaCandidatos;
     private List<Distrito> listaDistritos;
     private RequerimientosProvincia[] listaRequerimientos;
-
 
     public CamaraElectoral() {
     }
 
     /**
-     *  crea una camara electoral pasandole por parametro los atributos.
-     * @param electores atributos de Elector
-     * @param listas atributos de Lista
-     * @param listaCandidatos atributos de Candidatos
-     * @param listaDistritos atributos de Distrito
+     * crea una camara electoral pasandole por parametro los atributos.
+     *
+     * @param electores           atributos de Elector
+     * @param listas              atributos de Lista
+     * @param listaDistritos      atributos de Distrito
      * @param listaRequerimientos atributos de Requerimientos Provincia
      */
     public CamaraElectoral(
             List<Elector> electores,
             List<Lista> listas,
-            List<Candidato> listaCandidatos,
             List<Distrito> listaDistritos,
             RequerimientosProvincia[] listaRequerimientos) {
         this.electores = electores;
         this.listas = listas;
-        this.listaCandidatos = listaCandidatos;
         this.listaDistritos = listaDistritos;
         this.listaRequerimientos = listaRequerimientos;
     }
 
     /**
      * retorna lista de Elector
+     *
      * @return elector
      */
     public List<Elector> getElectores() {
@@ -53,6 +49,7 @@ public class CamaraElectoral {
 
     /**
      * Asigna lista de Elector
+     *
      * @param electores
      */
     public void setElectores(
@@ -62,6 +59,7 @@ public class CamaraElectoral {
 
     /**
      * retorna lista de Lista
+     *
      * @return Lista
      */
     public List<Lista> getListas() {
@@ -70,6 +68,7 @@ public class CamaraElectoral {
 
     /**
      * Asigna lista de Lista
+     *
      * @param listas
      */
     public void setListas(
@@ -78,24 +77,8 @@ public class CamaraElectoral {
     }
 
     /**
-     * retorna lista de Candidatos
-     * @return  ListaCandidatos
-     */
-    public List<Candidato> getListaCandidatos() {
-        return listaCandidatos;
-    }
-
-    /**
-     * Asigna lista de Candidato
-     * @param listaCandidatos
-     */
-    public void setListaCandidatos(
-            List<Candidato> listaCandidatos) {
-        this.listaCandidatos = listaCandidatos;
-    }
-
-    /**
      * retorna lista de Distritos
+     *
      * @return ListaDistritos
      */
     public List<Distrito> getListaDistritos() {
@@ -104,6 +87,7 @@ public class CamaraElectoral {
 
     /**
      * Asigna lista de Distrito
+     *
      * @param listaDistritos
      */
     public void setListaDistritos(
@@ -113,6 +97,7 @@ public class CamaraElectoral {
 
     /**
      * retorna lista de RequerimientosProvincia
+     *
      * @return listaRequerimientos
      */
     public RequerimientosProvincia[] getListaRequerimientos() {
@@ -121,6 +106,7 @@ public class CamaraElectoral {
 
     /**
      * Asigna lista de RequerimientosProvincia
+     *
      * @param listaRequerimientos
      */
     public void setListaRequerimientos(
@@ -134,16 +120,14 @@ public class CamaraElectoral {
         if (o == null || getClass() != o.getClass()) return false;
         CamaraElectoral that = (CamaraElectoral) o;
         return electores.equals(that.electores) && listas.equals(that.listas) &&
-               listaCandidatos.equals(that.listaCandidatos) &&
                listaDistritos.equals(that.listaDistritos) &&
                Arrays.equals(listaRequerimientos,
                              that.listaRequerimientos);
     }
 
-
     @Override
     public int hashCode() {
-        int result = Objects.hash(electores, listas, listaCandidatos,
+        int result = Objects.hash(electores, listas,
                                   listaDistritos);
         result = 31 * result + Arrays.hashCode(listaRequerimientos);
         return result;
@@ -151,6 +135,7 @@ public class CamaraElectoral {
 
     /**
      * Concatena en una cadena de caracteres los atributos de Cámara Electoral
+     *
      * @return
      */
     @Override
@@ -158,7 +143,6 @@ public class CamaraElectoral {
         return "CamaraElectoral{" +
                "electores=" + electores +
                ", listas=" + listas +
-               ", listaCandidatos=" + listaCandidatos +
                ", listaDistritos=" + listaDistritos +
                ", listaRequerimientos=" +
                Arrays.toString(listaRequerimientos) +
