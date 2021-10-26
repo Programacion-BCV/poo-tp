@@ -160,6 +160,10 @@ public class Lista {
         return Objects.hash(numero);
     }
 
+    /**
+     * Concatena en una cadena de caracteres los atributos de Lista
+     * @return
+     */
     @Override
     public String toString() {
         return "Lista{" +

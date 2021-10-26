@@ -86,7 +86,7 @@ public class Candidato extends Elector {
         return Objects.hash(super.hashCode(), tipoCandidato, lista);
     }
     /**
-     * Concatena en un unico String los valores que configuran el estado actual del objeto
+     *Concatena en una cadena de caracteres los atributos de Candidato
      * @return String Distrito
      */
     @Override

@@ -7,14 +7,14 @@ package com.programacion_bcd.taller.vista;
 
 import com.programacion_bcd.taller.carga_datos.CargaDatos;
 import com.programacion_bcd.taller.sistema.CamaraElectoral;
-import com.programacion_bcd.taller.vista.*;
 
-import javax.swing.JFrame;
+import javax.swing.*;
 
 /**
  * @author confaa
  */
 public class Main extends javax.swing.JFrame {
+    private static CamaraElectoral camaraElectoralArgentina;
 
     /**
      * Creates new form Main
@@ -275,24 +275,24 @@ public class Main extends javax.swing.JFrame {
                                 javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(
                                 jPanelAutenticacionLayout.createSequentialGroup()
-                                        .addGap(26, 26, 26)
+                                        .addGap(23, 23, 23)
                                         .addComponent(jLayeredPaneFormulario,
                                                       javax.swing.GroupLayout.PREFERRED_SIZE,
                                                       javax.swing.GroupLayout.DEFAULT_SIZE,
                                                       javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(143, Short.MAX_VALUE))
+                                        .addContainerGap(146, Short.MAX_VALUE))
         );
         jPanelAutenticacionLayout.setVerticalGroup(
                 jPanelAutenticacionLayout.createParallelGroup(
                                 javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(
                                 jPanelAutenticacionLayout.createSequentialGroup()
-                                        .addGap(77, 77, 77)
+                                        .addGap(68, 68, 68)
                                         .addComponent(jLayeredPaneFormulario,
                                                       javax.swing.GroupLayout.PREFERRED_SIZE,
                                                       javax.swing.GroupLayout.DEFAULT_SIZE,
                                                       javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(202, Short.MAX_VALUE))
+                                        .addContainerGap(211, Short.MAX_VALUE))
         );
 
         jTabbedPaneMenuVotacion.addTab("Autenticación", jPanelAutenticacion);
@@ -1700,8 +1700,9 @@ public class Main extends javax.swing.JFrame {
 
     private void jButtonEnviarActionPerformed(
             java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonEnviarActionPerformed
-        jTabbedPaneMenuVotacion.setEnabledAt(1, false);
-
+        // jTabbedPaneMenuVotacion.setEnabledAt(1, false);
+        jTextFieldDNI.setText(
+                camaraElectoralArgentina.getElectores().get(0).getApellido());
         jTabbedPaneMenuVotacion.setSelectedIndex(2);
 
     }// GEN-LAST:event_jButtonEnviarActionPerformed
@@ -1710,7 +1711,7 @@ public class Main extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        CamaraElectoral camaraElectoralArgentina = new CamaraElectoral();
+        camaraElectoralArgentina = new CamaraElectoral();
         camaraElectoralArgentina.setElectores(CargaDatos.cargaElectores());
         camaraElectoralArgentina.setListaRequerimientos(
                 CargaDatos.requerimientosProvincias());
@@ -1720,21 +1721,8 @@ public class Main extends javax.swing.JFrame {
         camaraElectoralArgentina.setListaDistritos(CargaDatos.cargaDistrito(
                 camaraElectoralArgentina.getElectores()));
 
-        for (int i = 0; i < camaraElectoralArgentina.getListas().size(); i++) {
+        System.out.println(camaraElectoralArgentina.getListas().get(0));
 
-            if (camaraElectoralArgentina.getListas().get(
-                    i).getProvincia().equals("Capital Federal")) {
-
-                System.out.println(camaraElectoralArgentina.getListas().get(
-                        i).getSenadores().size());
-                System.out.println(camaraElectoralArgentina.getListas().get(
-                        i).getPartido());
-            }
-        }
-
-        System.out.println(camaraElectoralArgentina.getListaDistritos().get(
-                0).getListaSecciones().get(1).getCircuitos().get(
-                0).getListaMesas().get(0).getElectores()[0]);
 
 
         /* Set the Nimbus look and feel */
@@ -1775,11 +1763,11 @@ public class Main extends javax.swing.JFrame {
         // </editor-fold>
 
         /* Create and display the form */
-      //  java.awt.EventQueue.invokeLater(new Runnable() {
-    //        public void run() {
-               // new Main().setVisible(true);
-          //  }
-     //   });
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Main().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

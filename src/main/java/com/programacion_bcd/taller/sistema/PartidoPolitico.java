@@ -75,6 +75,10 @@ public class PartidoPolitico {
         return Objects.hash(nombre, lista, partido);
     }
 
+    /**
+     * Concatena en una cadena de caracteres los atributos de Partido Politico
+     * @return
+     */
     @Override
     public String toString() {
         return "PartidoPolitico{" +

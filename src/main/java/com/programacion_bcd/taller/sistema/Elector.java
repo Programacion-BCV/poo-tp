@@ -20,14 +20,15 @@ public class Elector {
 
     /**
      * Construtor donde se crea cada uno de los electores
-     * @param nombre Nombre de Elector
-     * @param apellido Apellido del ELector
-     * @param dni DNI del Elector
-     * @param domicilio Domicilio del Elector
+     *
+     * @param nombre        Nombre de Elector
+     * @param apellido      Apellido del ELector
+     * @param dni           DNI del Elector
+     * @param domicilio     Domicilio del Elector
      * @param lugarVotacion Lugar donde vota el Elector
-     * @param fechaNac Fecha de nacimiento del Elector
-     * @param mesa Mesa en la que vota un Elector
-     * @param voto Voto del Elector
+     * @param fechaNac      Fecha de nacimiento del Elector
+     * @param mesa          Mesa en la que vota un Elector
+     * @param voto          Voto del Elector
      */
     public Elector(String nombre, String apellido, Integer dni,
                    Domicilio domicilio, String lugarVotacion,
@@ -46,6 +47,7 @@ public class Elector {
 
     /**
      * Devuelve el nombre del Elector
+     *
      * @return Nombre del elector
      */
     public String getNombre() {
@@ -54,6 +56,7 @@ public class Elector {
 
     /**
      * Setea el nombre del Elector
+     *
      * @param nombre
      */
     public void setNombre(String nombre) {
@@ -62,6 +65,7 @@ public class Elector {
 
     /**
      * Devuelve el apellido del Elector
+     *
      * @return Apellido del Elector
      */
     public String getApellido() {
@@ -70,6 +74,7 @@ public class Elector {
 
     /**
      * Setea el apellido del Elector
+     *
      * @param apellido Apellido del Elector
      */
     public void setApellido(String apellido) {
@@ -78,6 +83,7 @@ public class Elector {
 
     /**
      * Devuelve el DNI del Elector
+     *
      * @return DNI del Elector
      */
     public Integer getDni() {
@@ -86,6 +92,7 @@ public class Elector {
 
     /**
      * Setea el DNI del Elector
+     *
      * @param dni DNI del Elector
      */
     public void setDni(Integer dni) {
@@ -94,6 +101,7 @@ public class Elector {
 
     /**
      * Devuelve el domicilio del Elector
+     *
      * @return Domicilio del Elector
      */
     public Domicilio getDomicilio() {
@@ -102,6 +110,7 @@ public class Elector {
 
     /**
      * Setea el Domicilio del Elector
+     *
      * @param domicilio Domicilio del Elector
      */
     public void setDomicilio(Domicilio domicilio) {
@@ -110,6 +119,7 @@ public class Elector {
 
     /**
      * Devuelve el lugar donde vota el Elector
+     *
      * @return Lugar de votación
      */
     public String getLugarVotacion() {
@@ -118,6 +128,7 @@ public class Elector {
 
     /**
      * Setea el lugar donde vota un Elector
+     *
      * @param lugarVotacion Lugar de votación
      */
     public void setLugarVotacion(String lugarVotacion) {
@@ -126,6 +137,7 @@ public class Elector {
 
     /**
      * Devuelve la fecha de nacimiento del Elector
+     *
      * @return Fecha de nacimiento
      */
     public LocalDate getFechaNac() {
@@ -134,6 +146,7 @@ public class Elector {
 
     /**
      * Setea la fecha de nacimiento del Elector
+     *
      * @param fechaNac Fecha de nacimiento
      */
     public void setFechaNac(LocalDate fechaNac) {
@@ -142,6 +155,7 @@ public class Elector {
 
     /**
      * Devuelve la mesa donde vota el Elector
+     *
      * @return Mesa de votación
      */
     public MesaElectoral getMesa() {
@@ -150,6 +164,7 @@ public class Elector {
 
     /**
      * Setea la mesa donde vota el Elector
+     *
      * @param mesa Mesa de votación
      */
     public void setMesa(MesaElectoral mesa) {
@@ -158,6 +173,7 @@ public class Elector {
 
     /**
      * Devuelve el voto del Elector
+     *
      * @return Voto del Elector
      */
     public Voto getVoto() {
@@ -166,6 +182,7 @@ public class Elector {
 
     /**
      * Setea el voto del Elector
+     *
      * @param voto Voto del Elector
      */
     public void setVoto(Voto voto) {
@@ -184,8 +201,10 @@ public class Elector {
     public int hashCode() {
         return Objects.hash(dni);
     }
+
     /**
-     * Concatena en un unico String los valores que configuran el estado actual del objeto
+     * Concatena en una cadena de caracteres los atributos de Elector
+     *
      * @return String Distrito
      */
     @Override

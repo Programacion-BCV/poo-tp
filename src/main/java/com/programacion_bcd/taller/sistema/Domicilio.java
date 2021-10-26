@@ -107,6 +107,10 @@ public class Domicilio {
         return Objects.hash(direccion, localidad, departamento, provincia);
     }
 
+    /**
+     * Concatena en una cadena de caracteres los atributos de Domicilio
+     * @return
+     */
     @Override
     public String toString() {
         return "Domicilio{" +

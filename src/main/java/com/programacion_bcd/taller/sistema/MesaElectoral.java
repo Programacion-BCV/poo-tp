@@ -4,7 +4,6 @@
  */
 package com.programacion_bcd.taller.sistema;
 
-import java.util.Arrays;
 import java.util.Objects;
 
 public class MesaElectoral {
@@ -17,12 +16,13 @@ public class MesaElectoral {
 
     /**
      * Constructor de la mesa donde emitirán el voto los Electores
-     * @param numero Número de la mesa
+     *
+     * @param numero     Número de la mesa
      * @param presidente Presidente de mesa
-     * @param auxiliar Auxiliar de mesa
-     * @param circuito Circuito a la que pertenece la mesa
-     * @param electores Electores de la mesa
-     * @param voto Voto de cada uno de los electores
+     * @param auxiliar   Auxiliar de mesa
+     * @param circuito   Circuito a la que pertenece la mesa
+     * @param electores  Electores de la mesa
+     * @param voto       Voto de cada uno de los electores
      */
     public MesaElectoral(Integer numero,
                          Elector presidente,
@@ -40,6 +40,7 @@ public class MesaElectoral {
 
     /**
      * Devuelve el número de la mesa
+     *
      * @return Número de mesa
      */
     public Integer getNumero() {
@@ -48,6 +49,7 @@ public class MesaElectoral {
 
     /**
      * Setea el número de la mesa
+     *
      * @param numero Número de mesa
      */
     public void setNumero(Integer numero) {
@@ -56,6 +58,7 @@ public class MesaElectoral {
 
     /**
      * Devuelve el Presidente de mesa
+     *
      * @return Presidente de mesa
      */
     public Elector getPresidente() {
@@ -64,6 +67,7 @@ public class MesaElectoral {
 
     /**
      * Setea el Presidente de mesa
+     *
      * @param presidente Presidente de mesa
      */
     public void setPresidente(Elector presidente) {
@@ -72,6 +76,7 @@ public class MesaElectoral {
 
     /**
      * Devuelve el Auxiliar de mesa
+     *
      * @return Auxiliar de mesa
      */
     public Elector getAuxiliar() {
@@ -80,6 +85,7 @@ public class MesaElectoral {
 
     /**
      * Setea el Auxiliar de mesa
+     *
      * @param auxiliar Auxiliar de mesa
      */
     public void setAuxiliar(Elector auxiliar) {
@@ -88,6 +94,7 @@ public class MesaElectoral {
 
     /**
      * Devuelve el Circuito a la que pertenece la mesa
+     *
      * @return Circuito de mesa
      */
     public Circuito getCircuito() {
@@ -96,6 +103,7 @@ public class MesaElectoral {
 
     /**
      * Setea el Circuito a la que pertenece la mesa
+     *
      * @param circuito Circuito de Mesa
      */
     public void setCircuito(Circuito circuito) {
@@ -104,6 +112,7 @@ public class MesaElectoral {
 
     /**
      * Devuelve los electores que votan es esa mesa
+     *
      * @return Electores que votan en la mesa
      */
     public Elector[] getElectores() {
@@ -112,6 +121,7 @@ public class MesaElectoral {
 
     /**
      * Setea los Electores que votan en esa mesa
+     *
      * @param electores Electores que votan en la mesa
      */
     public void setElectores(Elector[] electores) {
@@ -120,6 +130,7 @@ public class MesaElectoral {
 
     /**
      * Devuelve el voto de los electores
+     *
      * @return Voto de los electores
      */
     public Voto[] getVoto() {
@@ -128,6 +139,7 @@ public class MesaElectoral {
 
     /**
      * Setea el voto de los electores
+     *
      * @param voto Voto de los electores
      */
     public void setVoto(Voto[] voto) {
@@ -151,11 +163,7 @@ public class MesaElectoral {
     public String toString() {
         return "MesaElectoral{" +
                "numero=" + numero +
-               ", presidente=" + presidente +
-               ", auxiliar=" + auxiliar +
-               ", circuito=" + circuito +
-               ", electores=" + Arrays.toString(electores) +
-               ", voto=" + Arrays.toString(voto) +
+
                '}';
     }
 }

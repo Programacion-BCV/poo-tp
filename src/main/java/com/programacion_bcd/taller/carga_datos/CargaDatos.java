@@ -247,7 +247,6 @@ public class CargaDatos {
             provincia = electors.get(i).getDomicilio().getProvincia();
             distrito = new Distrito(provincia, new ArrayList<>());
 
-
             indiceDistrito = distritosRetorno.indexOf(distrito);
             if (indiceDistrito == -1) {
 
@@ -327,10 +326,16 @@ public class CargaDatos {
                     circuito.getListaMesas().get(
                             z - 1).getElectores()[y] = electors.get(i);
 
-
-                    //electors.get(i).setMesa(circuito.getListaMesas().get(z-1));
-
-                    //electors.get(i).setMesa(circuito.getListaMesas().get(z-1));
+                    electors.get(i).setMesa(
+                            circuito.getListaMesas().get(z - 1));
+                    electors.get(i).setLugarVotacion(
+                            electors.get(i).getDomicilio().getProvincia() +
+                            " - " +
+                            electors.get(i).getDomicilio().getDepartamento() +
+                            " - " +
+                            electors.get(i).getDomicilio().getLocalidad() +
+                            " - Mesa: " +
+                            circuito.getListaMesas().get(z - 1).getNumero());
                     break;
                 }
 

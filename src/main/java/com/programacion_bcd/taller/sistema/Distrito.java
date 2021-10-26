@@ -72,7 +72,7 @@ public class Distrito implements Estadistica {
     }
 
     /**
-     * Concatena en un unico String los valores que configuran el estado actual del objeto
+     * Concatena en una cadena de caracteres los atributos de Distrito
      *
      * @return String Distrito
      */
@@ -81,6 +81,6 @@ public class Distrito implements Estadistica {
         return "Distrito{" +
                "nombre='" + nombre + '\'' +
                ", listaSecciones=" + listaSecciones +
-               '}';
+               '}'+"\n";
     }
 }

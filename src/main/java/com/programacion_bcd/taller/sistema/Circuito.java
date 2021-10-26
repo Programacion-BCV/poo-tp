@@ -67,14 +67,14 @@ public class Circuito {
     }
 
     /**
-     * Concatena en un unico String los valores que configuran el estado actual del objeto
+     * Concatena en una cadena de caracteres los atributos de Circuito
      * @return String Distrito
      */
     @Override
     public String toString() {
         return "Circuito{" +
                "numero=" + numero +
-               ", seccion=" + seccion +
+               "nombre=" + nombre +
                ", listaMesas=" + listaMesas +
                '}';
     }

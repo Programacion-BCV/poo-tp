@@ -150,8 +150,8 @@ public class CamaraElectoral {
     }
 
     /**
-     * Concatena en un unico String los valores que configuran el estado actual del objeto
-     * @return String Distrito
+     * Concatena en una cadena de caracteres los atributos de Cámara Electoral
+     * @return
      */
     @Override
     public String toString() {

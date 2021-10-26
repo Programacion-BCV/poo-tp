@@ -54,11 +54,15 @@ public class Seccion {
         return Objects.hash(nombre);
     }
 
+    /**
+     * Concatena en una cadena de caracteres los atributos de Seccion
+     * @return
+     */
     @Override
     public String toString() {
         return "Seccion{" +
                "nombre='" + nombre + '\'' +
-               ", distrito=" + distrito +
+
                ", circuitos=" + circuitos +
                '}';
     }
