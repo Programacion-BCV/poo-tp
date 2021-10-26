@@ -195,6 +195,7 @@ public class CargaDatos {
                                      (null));
 
                 listas.add(listaAux);
+                partidoPolitico.getLista().add(listaAux);
             } else {
                 RequerimientosProvincia req = null;
                 for (int z = 0; z < requerimientosProvincias.length; z++) {

@@ -79,7 +79,7 @@ public class PartidoPolitico {
     public String toString() {
         return "PartidoPolitico{" +
                "nombre='" + nombre + '\'' +
-               ", lista=" + lista +
+
                ", partido=" + partido +
                '}';
     }
