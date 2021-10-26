@@ -1,3 +1,6 @@
+/**
+ *
+ */
 package com.programacion_bcd.taller.sistema;
 
 import java.util.List;
@@ -52,7 +55,10 @@ public class Circuito {
     public int hashCode() {
         return Objects.hash(numero);
     }
-
+    /**
+     * Concatena en un unico String los valores que configuran el estado actual del objeto
+     * @return String Distrito
+     */
     @Override
     public String toString() {
         return "Circuito{" +

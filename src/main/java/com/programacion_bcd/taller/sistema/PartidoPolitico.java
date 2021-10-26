@@ -1,3 +1,8 @@
+/**
+ * Clase Partido Político
+ *
+ * Permite la creación de los Partidos Políticos
+ */
 package com.programacion_bcd.taller.sistema;
 
 import java.util.List;
@@ -8,6 +13,12 @@ public class PartidoPolitico {
     private List<Lista> lista;
     private List<PartidoPolitico> partido;
 
+    /**
+     * Constructor de objetos de tipo Lista
+     * @param nombre Nombre de la Lista
+     * @param lista
+     * @param partido Partido a la que pertecene la Lista
+     */
     public PartidoPolitico(String nombre, List<Lista> lista,
                            List<PartidoPolitico> partido) {
         this.nombre = nombre;
@@ -15,8 +26,16 @@ public class PartidoPolitico {
         this.partido = partido;
     }
 
+    /**
+     * Devuelve el nombre de la Lista
+     * @return Nombre de la lista
+     */
     public String getNombre() {return nombre;}
 
+    /**
+     * Setea el nombre de la Lista
+     * @param nombre Nombre de la Lista
+     */
     public void setNombre(String nombre) {this.nombre = nombre;}
 
     public List<Lista> getLista() {
@@ -27,6 +46,10 @@ public class PartidoPolitico {
         this.lista = lista;
     }
 
+    /**
+     *
+     * @return
+     */
     public List<PartidoPolitico> getPartido() {
         return partido;
     }

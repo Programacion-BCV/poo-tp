@@ -1,3 +1,7 @@
+/**
+ * Clase Mesa Electoral
+ * Permite la creación de las mesas donde votarán los Electores
+ */
 package com.programacion_bcd.taller.sistema;
 
 import java.util.Arrays;
@@ -11,6 +15,15 @@ public class MesaElectoral {
     private Elector[] electores = new Elector[350];
     private Voto[] voto = new Voto[350];
 
+    /**
+     * Constructor de la mesa donde emitirán el voto los Electores
+     * @param numero Número de la mesa
+     * @param presidente Presidente de mesa
+     * @param auxiliar Auxiliar de mesa
+     * @param circuito Circuito a la que pertenece la mesa
+     * @param electores Electores de la mesa
+     * @param voto Voto de cada uno de los electores
+     */
     public MesaElectoral(Integer numero,
                          Elector presidente,
                          Elector auxiliar,
@@ -25,50 +38,98 @@ public class MesaElectoral {
         this.voto = voto;
     }
 
+    /**
+     * Devuelve el número de la mesa
+     * @return Número de mesa
+     */
     public Integer getNumero() {
         return numero;
     }
 
+    /**
+     * Setea el número de la mesa
+     * @param numero Número de mesa
+     */
     public void setNumero(Integer numero) {
         this.numero = numero;
     }
 
+    /**
+     * Devuelve el Presidente de mesa
+     * @return Presidente de mesa
+     */
     public Elector getPresidente() {
         return presidente;
     }
 
+    /**
+     * Setea el Presidente de mesa
+     * @param presidente Presidente de mesa
+     */
     public void setPresidente(Elector presidente) {
         this.presidente = presidente;
     }
 
+    /**
+     * Devuelve el Auxiliar de mesa
+     * @return Auxiliar de mesa
+     */
     public Elector getAuxiliar() {
         return auxiliar;
     }
 
+    /**
+     * Setea el Auxiliar de mesa
+     * @param auxiliar Auxiliar de mesa
+     */
     public void setAuxiliar(Elector auxiliar) {
         this.auxiliar = auxiliar;
     }
 
+    /**
+     * Devuelve el Circuito a la que pertenece la mesa
+     * @return Circuito de mesa
+     */
     public Circuito getCircuito() {
         return circuito;
     }
 
+    /**
+     * Setea el Circuito a la que pertenece la mesa
+     * @param circuito Circuito de Mesa
+     */
     public void setCircuito(Circuito circuito) {
         this.circuito = circuito;
     }
 
+    /**
+     * Devuelve los electores que votan es esa mesa
+     * @return Electores que votan en la mesa
+     */
     public Elector[] getElectores() {
         return electores;
     }
 
+    /**
+     * Setea los Electores que votan en esa mesa
+     * @param electores Electores que votan en la mesa
+     */
     public void setElectores(Elector[] electores) {
         this.electores = electores;
     }
 
+    /**
+     * Devuelve el voto de los electores
+     * @return Voto de los electores
+     */
     public Voto[] getVoto() {
         return voto;
     }
 
+    /**
+     * Setea el voto de los electores
+     * @param voto Voto de los electores
+     */
     public void setVoto(Voto[] voto) {
         this.voto = voto;
     }

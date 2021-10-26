@@ -1,3 +1,7 @@
+/**
+ * Clase Distrito
+ * Esta clase define el distrito de cada elector donde debe votar
+ */
 package com.programacion_bcd.taller.sistema;
 
 import java.util.List;
@@ -7,24 +11,45 @@ public class Distrito implements Estadistica {
     private String nombre;
     private List<Seccion> listaSecciones;
 
+    /**
+     *
+     * @param nombre nombre del distrito
+     * @param listaSecciones secciones del distrito
+     */
     public Distrito(String nombre,
                     List<Seccion> listaSecciones) {
         this.nombre = nombre;
         this.listaSecciones = listaSecciones;
     }
 
+    /**
+     * retorna nombre del Distrito
+     * @return String Nombre
+     */
     public String getNombre() {
         return nombre;
     }
 
+    /**
+     * Asigna nombre de Distrito
+     * @param nombre String
+     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
+    /**
+     * retorna lista de Seccion
+     * @return List listaSecciones
+     */
     public List<Seccion> getListaSecciones() {
         return listaSecciones;
     }
 
+    /**
+     * Asigna Lista de Seccion
+     * @param listaSecciones
+     */
     public void setListaSecciones(
             List<Seccion> listaSecciones) {
         this.listaSecciones = listaSecciones;
@@ -44,6 +69,10 @@ public class Distrito implements Estadistica {
         return Objects.hash(nombre, listaSecciones);
     }
 
+    /**
+     * Concatena en un unico String los valores que configuran el estado actual del objeto
+     * @return String Distrito
+     */
     @Override
     public String toString() {
         return "Distrito{" +
