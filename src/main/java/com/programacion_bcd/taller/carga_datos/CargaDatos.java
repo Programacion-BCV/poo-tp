@@ -224,7 +224,120 @@ public class CargaDatos {
         return listas;
     }
 
-    public static List<Distrito> cargaDistrito;
+    public static List<Distrito> cargaDistrito(List<Elector> electors) {
+        List<Distrito> distritosRetorno = new ArrayList<>();
+
+        int total = electors.size();
+
+        //---------------------------------
+        Distrito distrito;
+        Seccion seccion;
+        Circuito circuito;
+        String provincia;
+        String departamento;
+        String ciudad;
+        MesaElectoral mesaElectoral;
+        int indiceDistrito;
+        int indiceSeccion;
+        int indiceCircuito;
+
+        //---------------------------------
+        for (int i = 0; i < total; i++) {
+
+            provincia = electors.get(i).getDomicilio().getProvincia();
+            distrito = new Distrito(provincia, new ArrayList<>());
+
+
+            indiceDistrito = distritosRetorno.indexOf(distrito);
+            if (indiceDistrito == -1) {
+
+                distritosRetorno.add(distrito);
+                indiceDistrito = distritosRetorno.indexOf(distrito);
+            }
+            departamento = electors.get(i).getDomicilio().getDepartamento();
+            seccion = new Seccion(departamento,
+                                  distritosRetorno.get(indiceDistrito),
+                                  new ArrayList<>());
+
+            indiceSeccion = distritosRetorno.get(
+                    indiceDistrito).getListaSecciones().indexOf(seccion);
+            if (indiceSeccion == -1) {
+                distritosRetorno.get(indiceDistrito).getListaSecciones().add(
+                        seccion);
+                indiceSeccion = distritosRetorno.get(
+                        indiceDistrito).getListaSecciones().indexOf(seccion);
+            }
+            ciudad = electors.get(i).getDomicilio().getLocalidad();
+            circuito = new Circuito(0, ciudad, distritosRetorno.get(
+                    indiceDistrito).getListaSecciones().get(indiceSeccion),
+                                    new ArrayList<>());
+
+            indiceCircuito = distritosRetorno.get(
+                    indiceDistrito).getListaSecciones().get(
+                    indiceSeccion).getCircuitos().indexOf(circuito);
+
+            if (indiceCircuito == -1) {
+                distritosRetorno.get(indiceDistrito).getListaSecciones().get(
+                        indiceSeccion).getCircuitos().add(circuito);
+
+                indiceCircuito = distritosRetorno.get(
+                        indiceDistrito).getListaSecciones().get(
+                        indiceSeccion).getCircuitos().indexOf(circuito);
+
+                circuito = distritosRetorno.get(
+                        indiceDistrito).getListaSecciones().get(
+                        indiceSeccion).getCircuitos().get(indiceCircuito);
+                circuito.setNumero(indiceCircuito);
+
+            } else {
+                circuito = distritosRetorno.get(
+                        indiceDistrito).getListaSecciones().get(
+                        indiceSeccion).getCircuitos().get(indiceCircuito);
+
+            }
+
+            int z = circuito.getListaMesas().size();
+
+            if (circuito.getListaMesas().isEmpty() ||
+                circuito.getListaMesas().get(z - 1).getElectores()[349] !=
+                null) {
+                mesaElectoral = new MesaElectoral(z, null, null, circuito,
+                                                  new Elector[350],
+                                                  new Voto[350]);
+
+                circuito.getListaMesas().add(mesaElectoral);
+                z = circuito.getListaMesas().size();
+            }
+
+            for (int y = 0; y < 350; y++) {
+
+                if (circuito.getListaMesas().get(z - 1).getElectores()[y] ==
+                    null) {
+
+                    if (y == 0) {
+                        circuito.getListaMesas().get(
+                                z - 1).setPresidente(electors.get(i));
+                    }
+
+                    if (y == 1) {
+                        circuito.getListaMesas().get(
+                                z - 1).setAuxiliar(electors.get(i));
+                    }
+
+                    circuito.getListaMesas().get(
+                            z - 1).getElectores()[y] = electors.get(i);
+
+
+                    //electors.get(i).setMesa(circuito.getListaMesas().get(z-1));
+
+                    //electors.get(i).setMesa(circuito.getListaMesas().get(z-1));
+                    break;
+                }
+
+            }
+        }
+        return distritosRetorno;
+    }
 
     public static RequerimientosProvincia[] requerimientosProvincias() {
         RequerimientosProvincia[] requerimientosProvincias = new RequerimientosProvincia[24];

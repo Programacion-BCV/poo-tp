@@ -12,8 +12,7 @@ public class Distrito implements Estadistica {
     private List<Seccion> listaSecciones;
 
     /**
-     *
-     * @param nombre nombre del distrito
+     * @param nombre         nombre del distrito
      * @param listaSecciones secciones del distrito
      */
     public Distrito(String nombre,
@@ -24,6 +23,7 @@ public class Distrito implements Estadistica {
 
     /**
      * retorna nombre del Distrito
+     *
      * @return String Nombre
      */
     public String getNombre() {
@@ -32,6 +32,7 @@ public class Distrito implements Estadistica {
 
     /**
      * Asigna nombre de Distrito
+     *
      * @param nombre String
      */
     public void setNombre(String nombre) {
@@ -40,6 +41,7 @@ public class Distrito implements Estadistica {
 
     /**
      * retorna lista de Seccion
+     *
      * @return List listaSecciones
      */
     public List<Seccion> getListaSecciones() {
@@ -48,6 +50,7 @@ public class Distrito implements Estadistica {
 
     /**
      * Asigna Lista de Seccion
+     *
      * @param listaSecciones
      */
     public void setListaSecciones(
@@ -60,17 +63,17 @@ public class Distrito implements Estadistica {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Distrito distrito = (Distrito) o;
-        return nombre.equals(distrito.nombre) &&
-               listaSecciones.equals(distrito.listaSecciones);
+        return nombre.equals(distrito.nombre);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nombre, listaSecciones);
+        return Objects.hash(nombre);
     }
 
     /**
      * Concatena en un unico String los valores que configuran el estado actual del objeto
+     *
      * @return String Distrito
      */
     @Override

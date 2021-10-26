@@ -8,12 +8,14 @@ import java.util.Objects;
 
 public class Circuito {
     private int numero;
+    private String nombre;
     private Seccion seccion;
     private List<MesaElectoral> listaMesas;
 
-    public Circuito(int numero, Seccion seccion,
+    public Circuito(int numero, String nombre, Seccion seccion,
                     List<MesaElectoral> listaMesas) {
         this.numero = numero;
+        this.nombre = nombre;
         this.seccion = seccion;
         this.listaMesas = listaMesas;
     }
@@ -24,6 +26,14 @@ public class Circuito {
 
     public void setNumero(int numero) {
         this.numero = numero;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public Seccion getSeccion() {
@@ -48,13 +58,14 @@ public class Circuito {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Circuito circuito = (Circuito) o;
-        return numero == circuito.numero;
+        return nombre.equals(circuito.nombre);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(numero);
+        return Objects.hash(nombre);
     }
+
     /**
      * Concatena en un unico String los valores que configuran el estado actual del objeto
      * @return String Distrito
