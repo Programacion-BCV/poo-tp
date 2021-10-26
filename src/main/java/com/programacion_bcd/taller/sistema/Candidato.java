@@ -14,16 +14,17 @@ public class Candidato extends Elector {
 
     /**
      * Crea un candidato pasandole por parámetro los atributos de la clase Elector ya que un candidato es un elector también.
-     * @param nombre Nombre del candidato
-     * @param apellido Apellido del candidato
-     * @param dni DNI del candidato
-     * @param domicilio Domicilio del Candidato
+     *
+     * @param nombre        Nombre del candidato
+     * @param apellido      Apellido del candidato
+     * @param dni           DNI del candidato
+     * @param domicilio     Domicilio del Candidato
      * @param lugarVotacion Lugar donde vota el candidato
-     * @param fechaNac Fecha de nacimiento del candidato
-     * @param mesa Mesa en la que vota el candidato
-     * @param voto Voto del candidato
+     * @param fechaNac      Fecha de nacimiento del candidato
+     * @param mesa          Mesa en la que vota el candidato
+     * @param voto          Voto del candidato
      * @param tipoCandidato Define si el candidato es senador o diputado
-     * @param lista Lista a la que pertenece el candidato
+     * @param lista         Lista a la que pertenece el candidato
      */
     public Candidato(String nombre, String apellido, Integer dni,
                      Domicilio domicilio, String lugarVotacion,
@@ -40,6 +41,7 @@ public class Candidato extends Elector {
 
     /**
      * Devuelve el tipo de candidato
+     *
      * @return Tipo de candidato
      */
     public TipoCandidato getTipoCandidato() {
@@ -48,6 +50,7 @@ public class Candidato extends Elector {
 
     /**
      * Setea el tipo de candidato (Senador o Diputado)
+     *
      * @param tipoCandidato Senador o Diputado
      */
     public void setTipoCandidato(
@@ -57,6 +60,7 @@ public class Candidato extends Elector {
 
     /**
      * Devuelve la lista a la que pertenece ese candidato
+     *
      * @return Lista del candidato
      */
     public Lista getLista() {
@@ -65,6 +69,7 @@ public class Candidato extends Elector {
 
     /**
      * Setea la lista a la que pertenece el candiato
+     *
      * @param lista Lista pasada por parámetro
      */
     public void setLista(Lista lista) {
@@ -85,15 +90,17 @@ public class Candidato extends Elector {
     public int hashCode() {
         return Objects.hash(super.hashCode(), tipoCandidato, lista);
     }
+
     /**
-     *Concatena en una cadena de caracteres los atributos de Candidato
+     * Concatena en una cadena de caracteres los atributos de Candidato
+     *
      * @return String Distrito
      */
     @Override
     public String toString() {
         return super.toString() + "\n" + "Candidato{" +
                "tipoCandidato=" + tipoCandidato +
-               ", lista=" + lista +
+               ", lista=" + (lista != null ? "algo" : null) +
                '}';
     }
 }

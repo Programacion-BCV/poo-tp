@@ -81,7 +81,12 @@ public class CargaDatos {
                                              Integer.parseInt(
                                                      matcherNombres.group(
                                                              4)),
-                                             domicilioAux, "",
+                                             domicilioAux,
+                                             domicilioAux.getProvincia() +
+                                             " - " +
+                                             domicilioAux.getDepartamento() +
+                                             " - " +
+                                             domicilioAux.getLocalidad(),
                                              LocalDate.of(
                                                      Integer.parseInt(
                                                              matcherNombres.group(
@@ -91,8 +96,7 @@ public class CargaDatos {
                                                                      6)),
                                                      Integer.parseInt(
                                                              matcherNombres.group(
-                                                                     7))),
-                                             null,
+                                                                     7))), null,
                                              null);
                 }
                 if (matcherNombres.matches() && matcherDomicilio.matches()) {
@@ -148,8 +152,10 @@ public class CargaDatos {
 
             provincia = electores.get(i).getDomicilio().getProvincia();
 
-            nombreLista = (i % 2 == 0) ? "Derecha"
-                                       : "Izquierda";
+            nombreLista =
+                    (electores.get(i).getFechaNac().getDayOfMonth() % 2 == 0)
+                    ? "Derecha"
+                    : "Izquierda";
 
             nombreLista += " " + listas.size();
             numeroLista = numeroAsignarLista++ +
@@ -185,15 +191,15 @@ public class CargaDatos {
 
             if (listas.isEmpty() || !esta) {
                 candidato.setTipoCandidato(TipoCandidato.SENADOR);
-
                 senadores = new ArrayList<>();
                 senadores.add(candidato);
+
                 listaAux = new Lista(provincia, nombreLista,
                                      numeroLista,
                                      partidoPolitico,
                                      new ArrayList<>(), senadores,
                                      (null));
-
+                candidato.setLista(listaAux);
                 listas.add(listaAux);
                 partidoPolitico.getLista().add(listaAux);
             } else {
@@ -211,10 +217,14 @@ public class CargaDatos {
                         req.getCantidadSenadores()) {
                         candidato.setTipoCandidato(TipoCandidato.SENADOR);
                         listas.get(indice).getSenadores().add(candidato);
+                        candidato.setLista(listas.get(indice));
+
                     } else if (listas.get(indice).getDiputados().size() <
                                req.getCantidadDiputados()) {
                         candidato.setTipoCandidato(TipoCandidato.DIPUTADO);
                         listas.get(indice).getDiputados().add(candidato);
+                        candidato.setLista(listas.get(indice));
+
                     }
                 }
             }
@@ -329,12 +339,7 @@ public class CargaDatos {
                     electors.get(i).setMesa(
                             circuito.getListaMesas().get(z - 1));
                     electors.get(i).setLugarVotacion(
-                            electors.get(i).getDomicilio().getProvincia() +
-                            " - " +
-                            electors.get(i).getDomicilio().getDepartamento() +
-                            " - " +
-                            electors.get(i).getDomicilio().getLocalidad() +
-                            " - Mesa: " +
+                            electors.get(i).getLugarVotacion() + " - Mesa: " +
                             circuito.getListaMesas().get(z - 1).getNumero());
                     break;
                 }

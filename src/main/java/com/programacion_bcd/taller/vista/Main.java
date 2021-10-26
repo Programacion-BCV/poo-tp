@@ -1700,7 +1700,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jButtonEnviarActionPerformed(
             java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonEnviarActionPerformed
-        // jTabbedPaneMenuVotacion.setEnabledAt(1, false);
+        jTabbedPaneMenuVotacion.setEnabledAt(1, false);
         jTextFieldDNI.setText(
                 camaraElectoralArgentina.getElectores().get(0).getApellido());
         jTabbedPaneMenuVotacion.setSelectedIndex(2);
