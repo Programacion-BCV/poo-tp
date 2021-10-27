@@ -223,7 +223,7 @@ public class CargaDatos {
                                      numeroLista,
                                      partidoPolitico,
                                      new ArrayList<>(), senadores,
-                                     (null));
+                                     null, null);
                 candidato.setLista(listaAux);
                 listas.add(listaAux);
                 partidoPolitico.getLista().add(listaAux);
@@ -368,6 +368,8 @@ public class CargaDatos {
                     electors.get(i).setLugarVotacion(
                             electors.get(i).getLugarVotacion() + " - Mesa: " +
                             circuito.getListaMesas().get(z - 1).getNumero());
+                    ordenarElectores(circuito.getListaMesas().get(
+                            z - 1).getElectores());
                     break;
                 }
 
@@ -375,13 +377,20 @@ public class CargaDatos {
         }
         return distritosRetorno;
     }
-    public static List<Elector> ordenarElectores(Elector[] electores){
+
+    public static void ordenarElectores(Elector[] electores) {
+
         List<Elector> listaElectores = new ArrayList<>();
-        for (int i = 0; i < electores.length; i++) {
-            listaElectores.add(electores[i]);
+        for (int i = 0; i < 350; i++) {
+            if (electores[i] != null) {
+                listaElectores.add(electores[i]);
+            }
         }
         Collections.sort(listaElectores);
-        return listaElectores;
+        for (int z = 0; z < listaElectores.size(); z++) {
+            electores[z] = listaElectores.get(z);
+        }
+
     }
 
 }

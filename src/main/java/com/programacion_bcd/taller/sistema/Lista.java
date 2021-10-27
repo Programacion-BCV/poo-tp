@@ -1,6 +1,6 @@
 /**
  * Clase Lista
- *
+ * <p>
  * En esta clase se crean las Listas de los distintos partidos políticos con sus respectivos candidatos
  */
 package com.programacion_bcd.taller.sistema;
@@ -15,34 +15,38 @@ public class Lista {
     private PartidoPolitico partido;
     private List<Elector> diputados;
     private List<Elector> senadores;
-    private List<Voto> voto;
+    private List<Voto> votoDiputados;
+    private List<Voto> votoSenadores;
 
     /**
      * Constructor para inicializar cada uno de los objetos de tipo Lista
-     * @param provincia Provincia de la Lista
-     * @param nombreLista Nombre de la Lista
-     * @param numero Número de la Lista
-     * @param partido Partido a la que pertenece la Lista
-     * @param diputados Candidatos a diputados de la Lista
-     * @param senadores Candidatos a senadores de la lista
-     * @param voto
+     *
+     * @param provincia     Provincia de la Lista
+     * @param nombreLista   Nombre de la Lista
+     * @param numero        Número de la Lista
+     * @param partido       Partido a la que pertenece la Lista
+     * @param diputados     Candidatos a diputados de la Lista
+     * @param senadores     Candidatos a senadores de la lista
+     * @param votoDiputados
      */
     public Lista(String provincia, String nombreLista, String numero,
                  PartidoPolitico partido,
                  List<Elector> diputados,
                  List<Elector> senadores,
-                 List<Voto> voto) {
+                 List<Voto> votoDiputados, List<Voto> votoSenadores) {
         this.provincia = provincia;
         this.nombreLista = nombreLista;
         this.numero = numero;
         this.partido = partido;
         this.diputados = diputados;
         this.senadores = senadores;
-        this.voto = voto;
+        this.votoDiputados = votoDiputados;
+        this.votoSenadores = votoSenadores;
     }
 
     /**
      * Devuelve la provincia a la que pertenece la Lista
+     *
      * @return Provincia de la Lista
      */
     public String getProvincia() {
@@ -51,6 +55,7 @@ public class Lista {
 
     /**
      * Setea la provincia a la que pertenece la Lista
+     *
      * @param provincia Provincia de la Lista
      */
     public void setProvincia(String provincia) {
@@ -59,6 +64,7 @@ public class Lista {
 
     /**
      * Devuelve el nombre de la Lista
+     *
      * @return Nombre de la Lista
      */
     public String getNombreLista() {
@@ -67,6 +73,7 @@ public class Lista {
 
     /**
      * Setea el nombre de la Lista
+     *
      * @param nombreLista Nombre de la Lista
      */
     public void setNombreLista(String nombreLista) {
@@ -75,6 +82,7 @@ public class Lista {
 
     /**
      * Devuelve el número de la Lista
+     *
      * @return Número de la Lista
      */
     public String getNumero() {
@@ -83,6 +91,7 @@ public class Lista {
 
     /**
      * Setea el número de la Lista
+     *
      * @param numero Número de la Lista
      */
     public void setNumero(String numero) {
@@ -91,6 +100,7 @@ public class Lista {
 
     /**
      * Devuelve el Partido Político al que pertenece la Lista
+     *
      * @return Partido Político de la Lista
      */
     public PartidoPolitico getPartido() {
@@ -99,6 +109,7 @@ public class Lista {
 
     /**
      * Setea el Partido Político de la Lista
+     *
      * @param partido Partido Político de la Lista
      */
     public void setPartido(PartidoPolitico partido) {
@@ -107,6 +118,7 @@ public class Lista {
 
     /**
      * Devuelve una lista de candidatos a diputados de la Lista
+     *
      * @return Lista de candidatos a diputados
      */
     public List<Elector> getDiputados() {
@@ -115,6 +127,7 @@ public class Lista {
 
     /**
      * Setea los candidatos a diputados de la Lista
+     *
      * @param diputados Lista de candidatos a diputados
      */
     public void setDiputados(
@@ -124,6 +137,7 @@ public class Lista {
 
     /**
      * Devuelve una lista de candidatos a senadores de la Lista
+     *
      * @return Lista de candidatos a senadores
      */
     public List<Elector> getSenadores() {
@@ -132,6 +146,7 @@ public class Lista {
 
     /**
      * Setea los candidatos a senadores de la Lista
+     *
      * @param senadores Lista de candidatos a senadores
      */
     public void setSenadores(
@@ -139,12 +154,21 @@ public class Lista {
         this.senadores = senadores;
     }
 
-    public List<Voto> getVoto() {
-        return voto;
+    public List<Voto> getVotoDiputados() {
+        return votoDiputados;
     }
 
-    public void setVoto(List<Voto> voto) {
-        this.voto = voto;
+    public void setVotoDiputados(List<Voto> votoDiputados) {
+        this.votoDiputados = votoDiputados;
+    }
+
+    public List<Voto> getVotoSenadores() {
+        return votoSenadores;
+    }
+
+    public void setVotoSenadores(
+            List<Voto> votoSenadores) {
+        this.votoSenadores = votoSenadores;
     }
 
     @Override
@@ -162,6 +186,7 @@ public class Lista {
 
     /**
      * Concatena en una cadena de caracteres los atributos de Lista
+     *
      * @return
      */
     @Override
@@ -172,7 +197,8 @@ public class Lista {
                ", numero='" + numero + '\'' +
                ", partido=" + partido +
 
-               ", voto=" + voto +
+               ", votoDiputados=" + votoDiputados +
+               ", votoSenadores=" + votoSenadores +
                '}';
     }
 }

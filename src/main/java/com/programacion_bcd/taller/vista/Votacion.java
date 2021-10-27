@@ -25,7 +25,8 @@ public class Votacion extends javax.swing.JFrame {
     public Votacion() {
         initComponents();
         this.setLocationRelativeTo(null);
-
+        jTabbedPaneMenuVotacion.setEnabledAt(3, false);
+        jButtonCancelar.setVisible(false);
         Main mainApp = new Main();
         listasVotante = traerListasVotante(Main.elector);
 
@@ -84,27 +85,49 @@ public class Votacion extends javax.swing.JFrame {
         jTabbedPaneMenuVotacion = new javax.swing.JTabbedPane();
         jPanelDiputados = new javax.swing.JPanel();
         jLayeredPaneDiputados = new javax.swing.JLayeredPane();
-        jRadioButtonDD = new javax.swing.JRadioButton();
-        jRadioButtonDI = new javax.swing.JRadioButton();
+        jLayeredPane3 = new javax.swing.JLayeredPane();
+        jLabelPartidoDD = new javax.swing.JLabel();
         jScrollPaneDD = new javax.swing.JScrollPane();
         jListDD = new javax.swing.JList<>();
+        jRadioButtonDD = new javax.swing.JRadioButton();
+        jLayeredPane4 = new javax.swing.JLayeredPane();
+        jRadioButtonDI = new javax.swing.JRadioButton();
+        jLabelPartidoDI = new javax.swing.JLabel();
         jScrollPaneDI = new javax.swing.JScrollPane();
         jListDI = new javax.swing.JList<>();
-        jLabelPartidoDD = new javax.swing.JLabel();
-        jLabelPartidoDI = new javax.swing.JLabel();
         jPanelSenadores = new javax.swing.JPanel();
         jLayeredPaneSenadores = new javax.swing.JLayeredPane();
-        jRadioButtonSD = new javax.swing.JRadioButton();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
         jRadioButtonSI = new javax.swing.JRadioButton();
-        jScrollPaneSD = new javax.swing.JScrollPane();
-        jListSD = new javax.swing.JList<>();
+        jLabelPartidoSI = new javax.swing.JLabel();
         jScrollPaneSI = new javax.swing.JScrollPane();
         jListSI = new javax.swing.JList<>();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
+        jRadioButtonSD = new javax.swing.JRadioButton();
         jLabelPartidoSD = new javax.swing.JLabel();
-        jLabelPartidoSI = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jScrollPaneSD = new javax.swing.JScrollPane();
+        jListSD = new javax.swing.JList<>();
+        jPanelSeleccionados = new javax.swing.JPanel();
+        jLayeredPaneSenadores1 = new javax.swing.JLayeredPane();
+        jLabelEleccionDiputados = new javax.swing.JLabel();
+        jScrollPaneDiputados = new javax.swing.JScrollPane();
+        jListDiputados = new javax.swing.JList<>();
+        jLabelEleccionSenadores = new javax.swing.JLabel();
+        jScrollPaneSenadores = new javax.swing.JScrollPane();
+        jListSenadores = new javax.swing.JList<>();
+        jLabelPartidoD = new javax.swing.JLabel();
+        jLabelPartidoS = new javax.swing.JLabel();
+        jLabelListaD = new javax.swing.JLabel();
+        jLabelListaS = new javax.swing.JLabel();
+        jPanelConfirmacion = new javax.swing.JPanel();
+        jLayeredPane6 = new javax.swing.JLayeredPane();
+        jButtonVotar = new javax.swing.JButton();
+        jButtonCancelar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabelVotacionProvincia = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        jPanelBotones = new javax.swing.JPanel();
+        jLayeredPane5 = new javax.swing.JLayeredPane();
         jButtonSig = new javax.swing.JButton();
         jButtonAnt = new javax.swing.JButton();
 
@@ -112,20 +135,19 @@ public class Votacion extends javax.swing.JFrame {
 
         jTabbedPaneMenuVotacion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTabbedPaneMenuVotacion.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-
-        jRadioButtonDD.setText("jRadioButtonDD");
-        jRadioButtonDD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonDDActionPerformed(evt);
+        jTabbedPaneMenuVotacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPaneMenuVotacionMouseClicked(evt);
             }
         });
 
-        jRadioButtonDI.setText("jRadioButtonDI");
-        jRadioButtonDI.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonDIActionPerformed(evt);
+        jPanelDiputados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelDiputadosMouseClicked(evt);
             }
         });
+
+        jLabelPartidoDD.setText("Partido");
 
         jListDD.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -134,6 +156,50 @@ public class Votacion extends javax.swing.JFrame {
         });
         jScrollPaneDD.setViewportView(jListDD);
 
+        jRadioButtonDD.setText("jRadioButtonDD");
+        jRadioButtonDD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonDDActionPerformed(evt);
+            }
+        });
+
+        jLayeredPane3.setLayer(jLabelPartidoDD, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(jScrollPaneDD, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane3.setLayer(jRadioButtonDD, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane3Layout = new javax.swing.GroupLayout(jLayeredPane3);
+        jLayeredPane3.setLayout(jLayeredPane3Layout);
+        jLayeredPane3Layout.setHorizontalGroup(
+            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButtonDD)
+                    .addComponent(jLabelPartidoDD)
+                    .addComponent(jScrollPaneDD, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jLayeredPane3Layout.setVerticalGroup(
+            jLayeredPane3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelPartidoDD)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneDD, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButtonDD)
+                .addContainerGap())
+        );
+
+        jRadioButtonDI.setText("jRadioButtonDI");
+        jRadioButtonDI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonDIActionPerformed(evt);
+            }
+        });
+
+        jLabelPartidoDI.setText("Partido");
+
         jListDI.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
@@ -141,74 +207,79 @@ public class Votacion extends javax.swing.JFrame {
         });
         jScrollPaneDI.setViewportView(jListDI);
 
-        jLabelPartidoDD.setText("Partido");
+        jLayeredPane4.setLayer(jRadioButtonDI, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane4.setLayer(jLabelPartidoDI, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane4.setLayer(jScrollPaneDI, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        jLabelPartidoDI.setText("Partido");
+        javax.swing.GroupLayout jLayeredPane4Layout = new javax.swing.GroupLayout(jLayeredPane4);
+        jLayeredPane4.setLayout(jLayeredPane4Layout);
+        jLayeredPane4Layout.setHorizontalGroup(
+            jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButtonDI)
+                    .addComponent(jLabelPartidoDI)
+                    .addComponent(jScrollPaneDI, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jLayeredPane4Layout.setVerticalGroup(
+            jLayeredPane4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelPartidoDI)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneDI, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButtonDI)
+                .addContainerGap())
+        );
 
-        jLayeredPaneDiputados.setLayer(jRadioButtonDD, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneDiputados.setLayer(jRadioButtonDI, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneDiputados.setLayer(jScrollPaneDD, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneDiputados.setLayer(jScrollPaneDI, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneDiputados.setLayer(jLabelPartidoDD, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneDiputados.setLayer(jLabelPartidoDI, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneDiputados.setLayer(jLayeredPane3, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneDiputados.setLayer(jLayeredPane4, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPaneDiputadosLayout = new javax.swing.GroupLayout(jLayeredPaneDiputados);
         jLayeredPaneDiputados.setLayout(jLayeredPaneDiputadosLayout);
         jLayeredPaneDiputadosLayout.setHorizontalGroup(
             jLayeredPaneDiputadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPaneDiputadosLayout.createSequentialGroup()
-                .addGap(73, 73, 73)
-                .addGroup(jLayeredPaneDiputadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButtonDD)
-                    .addComponent(jLabelPartidoDD)
-                    .addComponent(jScrollPaneDD, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
-                .addGroup(jLayeredPaneDiputadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButtonDI)
-                    .addComponent(jLabelPartidoDI)
-                    .addComponent(jScrollPaneDI, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(73, Short.MAX_VALUE)
+                .addComponent(jLayeredPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
+                .addComponent(jLayeredPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
         jLayeredPaneDiputadosLayout.setVerticalGroup(
             jLayeredPaneDiputadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPaneDiputadosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jLayeredPaneDiputadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelPartidoDD)
-                    .addComponent(jLabelPartidoDI))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPaneDiputadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPaneDD, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
-                    .addComponent(jScrollPaneDI))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPaneDiputadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButtonDD)
-                    .addComponent(jRadioButtonDI)))
+                    .addComponent(jLayeredPane3)
+                    .addComponent(jLayeredPane4)))
         );
 
         javax.swing.GroupLayout jPanelDiputadosLayout = new javax.swing.GroupLayout(jPanelDiputados);
         jPanelDiputados.setLayout(jPanelDiputadosLayout);
         jPanelDiputadosLayout.setHorizontalGroup(
             jPanelDiputadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelDiputadosLayout.createSequentialGroup()
-                .addGap(61, 61, 61)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDiputadosLayout.createSequentialGroup()
+                .addContainerGap(116, Short.MAX_VALUE)
                 .addComponent(jLayeredPaneDiputados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addGap(209, 209, 209))
         );
         jPanelDiputadosLayout.setVerticalGroup(
             jPanelDiputadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelDiputadosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLayeredPaneDiputados)
-                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelDiputadosLayout.createSequentialGroup()
+                .addContainerGap(26, Short.MAX_VALUE)
+                .addComponent(jLayeredPaneDiputados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
         );
 
-        jTabbedPaneMenuVotacion.addTab("Diputados", jPanelDiputados);
+        jTabbedPaneMenuVotacion.addTab("Elección de Diputados", jPanelDiputados);
 
-        jRadioButtonSD.setText("jRadioButtonDD");
-        jRadioButtonSD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButtonSDActionPerformed(evt);
+        jPanelSenadores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelSenadoresMouseClicked(evt);
             }
         });
 
@@ -219,12 +290,7 @@ public class Votacion extends javax.swing.JFrame {
             }
         });
 
-        jListSD.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPaneSD.setViewportView(jListSD);
+        jLabelPartidoSI.setText("Partido");
 
         jListSI.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -233,49 +299,99 @@ public class Votacion extends javax.swing.JFrame {
         });
         jScrollPaneSI.setViewportView(jListSI);
 
+        jLayeredPane1.setLayer(jRadioButtonSI, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLabelPartidoSI, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jScrollPaneSI, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jRadioButtonSI)
+                    .addComponent(jLabelPartidoSI)
+                    .addComponent(jScrollPaneSI, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelPartidoSI)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneSI, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButtonSI)
+                .addContainerGap())
+        );
+
+        jRadioButtonSD.setText("jRadioButtonDD");
+        jRadioButtonSD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButtonSDActionPerformed(evt);
+            }
+        });
+
         jLabelPartidoSD.setText("Partido");
 
-        jLabelPartidoSI.setText("Partido");
+        jListSD.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPaneSD.setViewportView(jListSD);
 
-        jLayeredPaneSenadores.setLayer(jRadioButtonSD, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneSenadores.setLayer(jRadioButtonSI, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneSenadores.setLayer(jScrollPaneSD, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneSenadores.setLayer(jScrollPaneSI, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneSenadores.setLayer(jLabelPartidoSD, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneSenadores.setLayer(jLabelPartidoSI, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jRadioButtonSD, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jLabelPartidoSD, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jScrollPaneSD, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
+        jLayeredPane2.setLayout(jLayeredPane2Layout);
+        jLayeredPane2Layout.setHorizontalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelPartidoSD)
+                    .addComponent(jScrollPaneSD, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButtonSD))
+                .addContainerGap())
+        );
+        jLayeredPane2Layout.setVerticalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelPartidoSD)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPaneSD, javax.swing.GroupLayout.DEFAULT_SIZE, 268, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButtonSD)
+                .addContainerGap())
+        );
+
+        jLayeredPaneSenadores.setLayer(jLayeredPane1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores.setLayer(jLayeredPane2, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPaneSenadoresLayout = new javax.swing.GroupLayout(jLayeredPaneSenadores);
         jLayeredPaneSenadores.setLayout(jLayeredPaneSenadoresLayout);
         jLayeredPaneSenadoresLayout.setHorizontalGroup(
             jLayeredPaneSenadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPaneSenadoresLayout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
-                .addGroup(jLayeredPaneSenadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelPartidoSD)
-                    .addComponent(jScrollPaneSD, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jRadioButtonSD))
-                .addGap(38, 38, 38)
-                .addGroup(jLayeredPaneSenadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jRadioButtonSI)
-                    .addComponent(jLabelPartidoSI)
-                    .addComponent(jScrollPaneSI, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(73, Short.MAX_VALUE)
+                .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
         jLayeredPaneSenadoresLayout.setVerticalGroup(
             jLayeredPaneSenadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPaneSenadoresLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jLayeredPaneSenadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelPartidoSD)
-                    .addComponent(jLabelPartidoSI))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jLayeredPaneSenadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPaneSD, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
-                    .addComponent(jScrollPaneSI))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jLayeredPaneSenadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButtonSD)
-                    .addComponent(jRadioButtonSI)))
+                    .addComponent(jLayeredPane1)
+                    .addComponent(jLayeredPane2)))
         );
 
         javax.swing.GroupLayout jPanelSenadoresLayout = new javax.swing.GroupLayout(jPanelSenadores);
@@ -283,32 +399,214 @@ public class Votacion extends javax.swing.JFrame {
         jPanelSenadoresLayout.setHorizontalGroup(
             jPanelSenadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSenadoresLayout.createSequentialGroup()
-                .addGap(85, 85, 85)
+                .addGap(84, 84, 84)
                 .addComponent(jLayeredPaneSenadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(266, Short.MAX_VALUE))
         );
         jPanelSenadoresLayout.setVerticalGroup(
             jPanelSenadoresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelSenadoresLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jLayeredPaneSenadores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPaneMenuVotacion.addTab("Elección de Senadores", jPanelSenadores);
+
+        jPanelSeleccionados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelSeleccionadosMouseClicked(evt);
+            }
+        });
+
+        jLabelEleccionDiputados.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabelEleccionDiputados.setText("Elección Diputados: ");
+
+        jListDiputados.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPaneDiputados.setViewportView(jListDiputados);
+
+        jLabelEleccionSenadores.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabelEleccionSenadores.setText("Elección Senadores: ");
+
+        jListSenadores.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPaneSenadores.setViewportView(jListSenadores);
+
+        jLabelPartidoD.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabelPartidoD.setText("jLabel3");
+
+        jLabelPartidoS.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
+        jLabelPartidoS.setText("jLabel4");
+
+        jLabelListaD.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabelListaD.setText("jLabel3");
+
+        jLabelListaS.setFont(new java.awt.Font("Roboto", 0, 16)); // NOI18N
+        jLabelListaS.setText("jLabel4");
+
+        jLayeredPaneSenadores1.setLayer(jLabelEleccionDiputados, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores1.setLayer(jScrollPaneDiputados, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores1.setLayer(jLabelEleccionSenadores, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores1.setLayer(jScrollPaneSenadores, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores1.setLayer(jLabelPartidoD, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores1.setLayer(jLabelPartidoS, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores1.setLayer(jLabelListaD, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores1.setLayer(jLabelListaS, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPaneSenadores1Layout = new javax.swing.GroupLayout(jLayeredPaneSenadores1);
+        jLayeredPaneSenadores1.setLayout(jLayeredPaneSenadores1Layout);
+        jLayeredPaneSenadores1Layout.setHorizontalGroup(
+            jLayeredPaneSenadores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPaneSenadores1Layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addGroup(jLayeredPaneSenadores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPaneDiputados)
+                    .addComponent(jLabelPartidoD)
+                    .addComponent(jLabelListaD)
+                    .addComponent(jLabelEleccionDiputados, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                .addGap(65, 65, 65)
+                .addGroup(jLayeredPaneSenadores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelPartidoS)
+                    .addComponent(jLabelListaS)
+                    .addComponent(jScrollPaneSenadores)
+                    .addComponent(jLabelEleccionSenadores, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                .addContainerGap(181, Short.MAX_VALUE))
+        );
+        jLayeredPaneSenadores1Layout.setVerticalGroup(
+            jLayeredPaneSenadores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPaneSenadores1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jLayeredPaneSenadores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelEleccionDiputados)
+                    .addComponent(jLabelEleccionSenadores))
+                .addGap(18, 18, 18)
+                .addGroup(jLayeredPaneSenadores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelPartidoD)
+                    .addComponent(jLabelPartidoS))
+                .addGap(18, 18, 18)
+                .addGroup(jLayeredPaneSenadores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelListaS)
+                    .addComponent(jLabelListaD))
+                .addGap(18, 18, 18)
+                .addGroup(jLayeredPaneSenadores1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jScrollPaneDiputados, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPaneSenadores, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanelSeleccionadosLayout = new javax.swing.GroupLayout(jPanelSeleccionados);
+        jPanelSeleccionados.setLayout(jPanelSeleccionadosLayout);
+        jPanelSeleccionadosLayout.setHorizontalGroup(
+            jPanelSeleccionadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelSeleccionadosLayout.createSequentialGroup()
+                .addGap(86, 86, 86)
+                .addComponent(jLayeredPaneSenadores1)
+                .addGap(59, 59, 59))
+        );
+        jPanelSeleccionadosLayout.setVerticalGroup(
+            jPanelSeleccionadosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelSeleccionadosLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLayeredPaneSenadores)
+                .addComponent(jLayeredPaneSenadores1)
                 .addContainerGap())
         );
 
-        jTabbedPaneMenuVotacion.addTab("Senadores", jPanelSenadores);
+        jTabbedPaneMenuVotacion.addTab("Candidatos Seleccionados", jPanelSeleccionados);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 914, Short.MAX_VALUE)
+        jPanelConfirmacion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelConfirmacionMouseClicked(evt);
+            }
+        });
+
+        jButtonVotar.setBackground(new java.awt.Color(40, 167, 69));
+        jButtonVotar.setFont(new java.awt.Font("Roboto", 0, 72)); // NOI18N
+        jButtonVotar.setText("Votar");
+        jButtonVotar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonVotarActionPerformed(evt);
+            }
+        });
+
+        jButtonCancelar.setBackground(new java.awt.Color(220, 53, 69));
+        jButtonCancelar.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jButtonCancelar.setText("Reset");
+        jButtonCancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCancelarActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setLabelFor(jButtonCancelar);
+        jLabel1.setText("Desea elegir nuevamente los candidatos?");
+
+        jLabel2.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jLabel2.setLabelFor(jButtonVotar);
+        jLabel2.setText("Confirmar voto");
+
+        jLayeredPane6.setLayer(jButtonVotar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane6.setLayer(jButtonCancelar, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane6.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane6.setLayer(jLabel2, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane6Layout = new javax.swing.GroupLayout(jLayeredPane6);
+        jLayeredPane6.setLayout(jLayeredPane6Layout);
+        jLayeredPane6Layout.setHorizontalGroup(
+            jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jLayeredPane6Layout.createSequentialGroup()
+                        .addGap(99, 99, 99)
+                        .addComponent(jButtonCancelar))
+                    .addComponent(jLabel1)
+                    .addGroup(jLayeredPane6Layout.createSequentialGroup()
+                        .addGap(53, 53, 53)
+                        .addComponent(jButtonVotar))
+                    .addGroup(jLayeredPane6Layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jLabel2)))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 413, Short.MAX_VALUE)
+        jLayeredPane6Layout.setVerticalGroup(
+            jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonVotar)
+                .addGap(55, 55, 55)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButtonCancelar)
+                .addContainerGap())
         );
 
-        jTabbedPaneMenuVotacion.addTab("Confirmacion", jPanel1);
+        javax.swing.GroupLayout jPanelConfirmacionLayout = new javax.swing.GroupLayout(jPanelConfirmacion);
+        jPanelConfirmacion.setLayout(jPanelConfirmacionLayout);
+        jPanelConfirmacionLayout.setHorizontalGroup(
+            jPanelConfirmacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelConfirmacionLayout.createSequentialGroup()
+                .addGap(373, 373, 373)
+                .addComponent(jLayeredPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(408, Short.MAX_VALUE))
+        );
+        jPanelConfirmacionLayout.setVerticalGroup(
+            jPanelConfirmacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelConfirmacionLayout.createSequentialGroup()
+                .addContainerGap(116, Short.MAX_VALUE)
+                .addComponent(jLayeredPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jTabbedPaneMenuVotacion.addTab("Confirmación Voto", jPanelConfirmacion);
 
         jLabelVotacionProvincia.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
         jLabelVotacionProvincia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -332,38 +630,56 @@ public class Votacion extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(72, 72, 72)
+        jLayeredPane5.setLayer(jButtonSig, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane5.setLayer(jButtonAnt, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane5Layout = new javax.swing.GroupLayout(jLayeredPane5);
+        jLayeredPane5.setLayout(jLayeredPane5Layout);
+        jLayeredPane5Layout.setHorizontalGroup(
+            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jButtonAnt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButtonSig)
-                .addGap(96, 96, 96))
+                .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jLayeredPane5Layout.setVerticalGroup(
+            jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSig)
                     .addComponent(jButtonAnt))
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanelBotonesLayout = new javax.swing.GroupLayout(jPanelBotones);
+        jPanelBotones.setLayout(jPanelBotonesLayout);
+        jPanelBotonesLayout.setHorizontalGroup(
+            jPanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelBotonesLayout.createSequentialGroup()
+                .addGap(79, 79, 79)
+                .addComponent(jLayeredPane5)
+                .addGap(89, 89, 89))
+        );
+        jPanelBotonesLayout.setVerticalGroup(
+            jPanelBotonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBotonesLayout.createSequentialGroup()
+                .addContainerGap(45, Short.MAX_VALUE)
+                .addComponent(jLayeredPane5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(42, 42, 42))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPaneMenuVotacion, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+            .addComponent(jTabbedPaneMenuVotacion)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabelVotacionProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 908, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelBotones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelVotacionProvincia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -374,7 +690,7 @@ public class Votacion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPaneMenuVotacion, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanelBotones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -388,6 +704,10 @@ public class Votacion extends javax.swing.JFrame {
             jRadioButtonDI.setSelected(false);
         }
 
+        jListDiputados.setModel(jListDD.getModel());
+        jLabelPartidoD.setText("Partido: " + jLabelPartidoDD.getText());
+        jLabelListaD.setText("Lista: " + jRadioButtonDD.getText());
+
     }//GEN-LAST:event_jRadioButtonDDActionPerformed
 
     private void jRadioButtonDIActionPerformed(
@@ -396,43 +716,118 @@ public class Votacion extends javax.swing.JFrame {
         if (jRadioButtonDI.isSelected()) {
             jRadioButtonDD.setSelected(false);
         }
+        jListDiputados.setModel(jListDI.getModel());
+        jLabelPartidoD.setText("Partido: " + jLabelPartidoDI.getText());
+        jLabelListaD.setText("Lista: " + jRadioButtonDI.getText());
     }//GEN-LAST:event_jRadioButtonDIActionPerformed
 
-    private void jRadioButtonSDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonSDActionPerformed
+    private void jRadioButtonSDActionPerformed(
+            java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonSDActionPerformed
         // TODO add your handling code here:
+        if (jRadioButtonSD.isSelected()) {
+            jRadioButtonSI.setSelected(false);
+        }
+
+        jListSenadores.setModel(jListSD.getModel());
+        jLabelPartidoS.setText("Partido: " + jLabelPartidoSD.getText());
+        jLabelListaS.setText("Lista: " + jRadioButtonSD.getText());
+
     }//GEN-LAST:event_jRadioButtonSDActionPerformed
 
-    private void jRadioButtonSIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonSIActionPerformed
+    private void jRadioButtonSIActionPerformed(
+            java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonSIActionPerformed
         // TODO add your handling code here:
+        if (jRadioButtonSI.isSelected()) {
+
+            jRadioButtonSD.setSelected(false);
+        }
+        jListSenadores.setModel(jListSI.getModel());
+        jLabelPartidoS.setText("Partido: " + jLabelPartidoSI.getText());
+        jLabelListaS.setText("Lista: " + jRadioButtonSI.getText());
+        ;
     }//GEN-LAST:event_jRadioButtonSIActionPerformed
 
-    private void jButtonSigActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSigActionPerformed
+    private void jButtonSigActionPerformed(
+            java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSigActionPerformed
         // TODO add your handling code here:
 
-        if (jTabbedPaneMenuVotacion.getSelectedIndex() < 2) {
+        if (jTabbedPaneMenuVotacion.getSelectedIndex() < 3) {
             int i = jTabbedPaneMenuVotacion.getSelectedIndex();
             jTabbedPaneMenuVotacion.setSelectedIndex(++i);
             this.jButtonSig.setVisible(true);
         }
-        if(jTabbedPaneMenuVotacion.getSelectedIndex()==2){
-            this.jButtonSig.setVisible(false);            
+        if (jTabbedPaneMenuVotacion.getSelectedIndex() == 3) {
+            this.jButtonSig.setVisible(false);
+            this.jButtonCancelar.setVisible(true);            
+            this.jButtonVotar.setVisible(true);
+            this.jButtonAnt.setVisible(false);
+            this.jTabbedPaneMenuVotacion.setEnabledAt(0, false);           
+            this.jTabbedPaneMenuVotacion.setEnabledAt(1, false);
+            this.jTabbedPaneMenuVotacion.setEnabledAt(2, false);
+            this.jTabbedPaneMenuVotacion.setEnabledAt(3, true);
 
+
+        } else if (jTabbedPaneMenuVotacion.getSelectedIndex() == 1) {
+            this.jButtonAnt.setVisible(true);
         }
 
     }//GEN-LAST:event_jButtonSigActionPerformed
 
-    private void jButtonAntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAntActionPerformed
+    private void jButtonAntActionPerformed(
+            java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAntActionPerformed
         // TODO add your handling code here:
-        
-         if (jTabbedPaneMenuVotacion.getSelectedIndex() > 0) {
+
+        if (jTabbedPaneMenuVotacion.getSelectedIndex() > 0) {
             int i = jTabbedPaneMenuVotacion.getSelectedIndex();
             jTabbedPaneMenuVotacion.setSelectedIndex(--i);
             this.jButtonAnt.setVisible(true);
         }
-        if(jTabbedPaneMenuVotacion.getSelectedIndex()==0){
+        if (jTabbedPaneMenuVotacion.getSelectedIndex() == 0) {
             this.jButtonAnt.setVisible(false);
+        } else if (jTabbedPaneMenuVotacion.getSelectedIndex() == 2) {
+            this.jButtonSig.setVisible(true);
+
         }
+        this.jButtonCancelar.setVisible(false);            
+            this.jButtonVotar.setVisible(false);
     }//GEN-LAST:event_jButtonAntActionPerformed
+
+    private void jButtonVotarActionPerformed(
+            java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVotarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonVotarActionPerformed
+
+    private void jPanelConfirmacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelConfirmacionMouseClicked
+        // TODO add your handling code here:
+
+
+
+    }//GEN-LAST:event_jPanelConfirmacionMouseClicked
+
+    private void jTabbedPaneMenuVotacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPaneMenuVotacionMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jTabbedPaneMenuVotacionMouseClicked
+
+    private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCancelarActionPerformed
+
+    private void jPanelDiputadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelDiputadosMouseClicked
+        // TODO add your handling code here:
+
+        ;
+    }//GEN-LAST:event_jPanelDiputadosMouseClicked
+
+    private void jPanelSenadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSenadoresMouseClicked
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jPanelSenadoresMouseClicked
+
+    private void jPanelSeleccionadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSeleccionadosMouseClicked
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jPanelSeleccionadosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -475,23 +870,41 @@ public class Votacion extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAnt;
-    private javax.swing.JButton jButtonEnviar;
-    private javax.swing.JButton jButtonEnviar1;
+    private javax.swing.JButton jButtonCancelar;
     private javax.swing.JButton jButtonSig;
+    private javax.swing.JButton jButtonVotar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabelEleccionDiputados;
+    private javax.swing.JLabel jLabelEleccionSenadores;
+    private javax.swing.JLabel jLabelListaD;
+    private javax.swing.JLabel jLabelListaS;
+    private javax.swing.JLabel jLabelPartidoD;
     private javax.swing.JLabel jLabelPartidoDD;
     private javax.swing.JLabel jLabelPartidoDI;
+    private javax.swing.JLabel jLabelPartidoS;
     private javax.swing.JLabel jLabelPartidoSD;
     private javax.swing.JLabel jLabelPartidoSI;
     private javax.swing.JLabel jLabelVotacionProvincia;
+    private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JLayeredPane jLayeredPane2;
+    private javax.swing.JLayeredPane jLayeredPane3;
+    private javax.swing.JLayeredPane jLayeredPane4;
+    private javax.swing.JLayeredPane jLayeredPane5;
+    private javax.swing.JLayeredPane jLayeredPane6;
     private javax.swing.JLayeredPane jLayeredPaneDiputados;
     private javax.swing.JLayeredPane jLayeredPaneSenadores;
+    private javax.swing.JLayeredPane jLayeredPaneSenadores1;
     private javax.swing.JList<String> jListDD;
     private javax.swing.JList<String> jListDI;
+    private javax.swing.JList<String> jListDiputados;
     private javax.swing.JList<String> jListSD;
     private javax.swing.JList<String> jListSI;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
+    private javax.swing.JList<String> jListSenadores;
+    private javax.swing.JPanel jPanelBotones;
+    private javax.swing.JPanel jPanelConfirmacion;
     private javax.swing.JPanel jPanelDiputados;
+    private javax.swing.JPanel jPanelSeleccionados;
     private javax.swing.JPanel jPanelSenadores;
     private javax.swing.JRadioButton jRadioButtonDD;
     private javax.swing.JRadioButton jRadioButtonDI;
@@ -499,8 +912,10 @@ public class Votacion extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButtonSI;
     private javax.swing.JScrollPane jScrollPaneDD;
     private javax.swing.JScrollPane jScrollPaneDI;
+    private javax.swing.JScrollPane jScrollPaneDiputados;
     private javax.swing.JScrollPane jScrollPaneSD;
     private javax.swing.JScrollPane jScrollPaneSI;
+    private javax.swing.JScrollPane jScrollPaneSenadores;
     private javax.swing.JTabbedPane jTabbedPaneMenuVotacion;
     // End of variables declaration//GEN-END:variables
 

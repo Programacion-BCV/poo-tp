@@ -81,6 +81,36 @@ public class Distrito implements Estadistica {
         return "Distrito{" +
                "nombre='" + nombre + '\'' +
                ", listaSecciones=" + listaSecciones +
-               '}'+"\n";
+               '}' + "\n";
+    }
+
+    @Override
+    public void cantVotantes() {
+
+    }
+
+    @Override
+    public void cantVotosBlancos() {
+
+    }
+
+    @Override
+    public void votoPorPartido() {
+
+    }
+
+    @Override
+    public void porcDistrito() {
+
+    }
+
+    @Override
+    public void porcGralVotoLista() {
+
+    }
+
+    @Override
+    public void otrasEstadisticas() {
+
     }
 }

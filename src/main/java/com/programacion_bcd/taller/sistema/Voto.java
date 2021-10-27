@@ -1,5 +1,5 @@
 /**
- *Esta clase se encarga de obtener el voto de cada elector
+ * Esta clase se encarga de obtener el voto de cada elector
  */
 
 package com.programacion_bcd.taller.sistema;
@@ -10,22 +10,30 @@ import java.util.Objects;
 public class Voto {
     private Elector elector;
     private MesaElectoral mesa;
-    private Lista[] votos;
+    private Lista votoDiputados;
+    private Lista votoSenadores;
 
     /**
      * crea un voto pasandole los parametros del elector y asignando sus atributos
-     * @param elector datos del elector
-     * @param mesa en la que vota
-     * @param votos voto de candidatos senador y disputado justo con su lista.
+     *
+     * @param elector       datos del elector
+     * @param mesa          en la que vota
+     * @param votoDiputados voto de candidatos senador y disputado justo con su lista.
      */
-    public Voto(Elector elector, MesaElectoral mesa, Lista[] votos) {
+
+    public Voto(Elector elector,
+                MesaElectoral mesa,
+                Lista votoDiputados,
+                Lista votoSenadores) {
         this.elector = elector;
         this.mesa = mesa;
-        this.votos = votos;
+        this.votoDiputados = votoDiputados;
+        this.votoSenadores = votoSenadores;
     }
 
     /**
      * Retorna los datos del elector
+     *
      * @return elector
      */
     public Elector getElector() {
@@ -34,6 +42,7 @@ public class Voto {
 
     /**
      * Asigna los datos de elector
+     *
      * @param elector
      */
     public void setElector(Elector elector) {
@@ -42,6 +51,7 @@ public class Voto {
 
     /**
      * Retorna parametros de MesaElectoral
+     *
      * @return mesa
      */
     public MesaElectoral getMesa() {
@@ -49,47 +59,52 @@ public class Voto {
     }
 
     /**
-     *Asigna los parametros de MesaElectoral
+     * Asigna los parametros de MesaElectoral
+     *
      * @param mesa
      */
     public void setMesa(MesaElectoral mesa) {
         this.mesa = mesa;
     }
 
-    /**
-     * Retorna los votos de candidatos
-     * @return votos
-     */
-    public Lista[] getVotos() {
-        return votos;
+    public Lista getVotoDiputados() {
+        return votoDiputados;
+    }
+
+    public void setVotoDiputados(Lista votoDiputados) {
+        this.votoDiputados = votoDiputados;
+    }
+
+    public Lista getVotoSenadores() {
+        return votoSenadores;
+    }
+
+    public void setVotoSenadores(Lista votoSenadores) {
+        this.votoSenadores = votoSenadores;
     }
 
     /**
-     * Asigna voto a los candidatos de lista
-     * @param votos
+     * Retorna los votos de candidatos
+     *
+     * @return votos
      */
-    public void setVotos(Lista[] votos) {
-        this.votos = votos;
-    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Voto voto = (Voto) o;
-        return elector.equals(voto.elector) && mesa.equals(voto.mesa) &&
-               Arrays.equals(votos, voto.votos);
+        return elector.equals(voto.elector);
     }
 
     @Override
     public int hashCode() {
-        int result = Objects.hash(elector, mesa);
-        result = 31 * result + Arrays.hashCode(votos);
-        return result;
+        return Objects.hash(elector);
     }
 
     /**
      * Concatena en una cadena de caracteres los atributos de Voto
+     *
      * @return String Voto
      */
     @Override
@@ -97,7 +112,8 @@ public class Voto {
         return "Voto{" +
                "elector=" + elector +
                ", mesa=" + mesa +
-               ", votos=" + Arrays.toString(votos) +
+               ", votoDiputados=" + votoDiputados +
+               ", votoSenadores=" + votoSenadores +
                '}';
     }
 }

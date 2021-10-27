@@ -21,7 +21,7 @@ public class Elector implements Comparable<Elector> {
     private Voto voto;
 
     /**
-     * Construtor donde se crea cada uno de los electores
+     * Construtor que permite la creación de cada uno de los electores
      *
      * @param nombre        Nombre de Elector
      * @param apellido      Apellido del ELector
@@ -182,6 +182,7 @@ public class Elector implements Comparable<Elector> {
 
     /**
      * Devuelve Lista a la que pertenece si es candidato
+     *
      * @return Devuelve Lista a la que pertenece
      */
     public Lista getLista() {
@@ -190,6 +191,7 @@ public class Elector implements Comparable<Elector> {
 
     /**
      * Setea lista en caso de ser candidato
+     *
      * @param lista
      */
     public void setLista(Lista lista) {
@@ -265,7 +267,6 @@ public class Elector implements Comparable<Elector> {
                ", voto=" + voto +
                '}';
     }
-
 
     @Override
     public int compareTo(Elector o) {
