@@ -96,7 +96,8 @@ public class CargaDatos {
                                                                      6)),
                                                      Integer.parseInt(
                                                              matcherNombres.group(
-                                                                     7))),null,null, null,
+                                                                     7))), null,
+                                             null, null,
                                              null);
                 }
                 if (matcherNombres.matches() && matcherDomicilio.matches()) {
@@ -119,6 +120,36 @@ public class CargaDatos {
                                : "Ha pasado algo");
         }
         return electores;
+    }
+
+    public static RequerimientosProvincia[] requerimientosProvincias() {
+        RequerimientosProvincia[] requerimientosProvincias = new RequerimientosProvincia[24];
+        try {
+            File req = new File(
+                    "src/main/java/com/programacion_bcd/taller/carga_datos/requerimientos.txt");
+            FileReader readerReq = new FileReader(req);
+            BufferedReader bufferedReaderReq = new BufferedReader(readerReq);
+            String linea = "";
+            int i = 0;
+            Pattern r = Pattern.compile("^(-(.+)-(.+)-(.+))$");
+            Matcher m;
+            while ((linea = bufferedReaderReq.readLine()) != null) {
+                m = r.matcher(linea);
+                if (m.matches()) {
+                    requerimientosProvincias[i++] = new RequerimientosProvincia(
+                            m.group(2),
+                            Integer.parseInt(
+                                    m.group(4)),
+                            Integer.parseInt(
+                                    m.group(3)));
+
+                }
+            }
+        } catch (IOException exception) {
+            exception.printStackTrace();
+        }
+
+        return requerimientosProvincias;
     }
 
     public static List<Lista> cargaListas(List<Elector> electores,
@@ -159,15 +190,16 @@ public class CargaDatos {
 
             nombreLista += " " + listas.size();
             numeroLista = numeroAsignarLista++ +
-                          (electores.get(i).getFechaNac().getDayOfMonth() % 2==0 ? "A"
-                                                                : "B");
+                          (electores.get(i).getFechaNac().getDayOfMonth() % 2 ==
+                           0 ? "A"
+                             : "B");
 
             partidoPolitico =
                     (electores.get(i).getFechaNac().getDayOfMonth() % 2 ==
                      0) ? derecha
                         : izquierda;
 
-           candidato=electores.get(i);
+            candidato = electores.get(i);
 
             boolean esta = false;
 
@@ -195,6 +227,7 @@ public class CargaDatos {
                 listas.add(listaAux);
                 partidoPolitico.getLista().add(listaAux);
             } else {
+
                 RequerimientosProvincia req = null;
                 for (int z = 0; z < requerimientosProvincias.length; z++) {
                     if (requerimientosProvincias[z].getNombre().equals(
@@ -203,7 +236,6 @@ public class CargaDatos {
                         break;
                     }
                 }
-
                 if (req != null) {
                     if (listas.get(indice).getSenadores().size() <
                         req.getCantidadSenadores()) {
@@ -217,6 +249,8 @@ public class CargaDatos {
                         listas.get(indice).getDiputados().add(candidato);
                         candidato.setLista(listas.get(indice));
 
+                    } else {
+                        candidato.setCandidato(TipoCandidato.NO_CANDIDATO);
                     }
                 }
             }
@@ -339,36 +373,5 @@ public class CargaDatos {
             }
         }
         return distritosRetorno;
-    }
-
-    public static RequerimientosProvincia[] requerimientosProvincias() {
-        RequerimientosProvincia[] requerimientosProvincias = new RequerimientosProvincia[24];
-
-        try {
-            File req = new File(
-                    "src/main/java/com/programacion_bcd/taller/carga_datos/requerimientos.txt");
-            FileReader readerReq = new FileReader(req);
-            BufferedReader bufferedReaderReq = new BufferedReader(readerReq);
-            String linea = "";
-            int i = 0;
-            Pattern r = Pattern.compile("^(-(.+)-(.+)-(.+))$");
-            Matcher m;
-            while ((linea = bufferedReaderReq.readLine()) != null) {
-                m = r.matcher(linea);
-                if (m.matches()) {
-                    requerimientosProvincias[i++] = new RequerimientosProvincia(
-                            m.group(2),
-                            Integer.parseInt(
-                                    m.group(4)),
-                            Integer.parseInt(
-                                    m.group(3)));
-
-                }
-            }
-        } catch (IOException exception) {
-            exception.printStackTrace();
-        }
-
-        return requerimientosProvincias;
     }
 }

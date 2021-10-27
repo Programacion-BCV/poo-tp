@@ -7,8 +7,12 @@ package com.programacion_bcd.taller.vista;
 
 import com.programacion_bcd.taller.carga_datos.CargaDatos;
 import com.programacion_bcd.taller.sistema.CamaraElectoral;
+import com.programacion_bcd.taller.sistema.Elector;
+import com.programacion_bcd.taller.sistema.TipoCandidato;
 
 import javax.swing.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author confaa
@@ -1718,11 +1722,8 @@ public class Main extends javax.swing.JFrame {
         camaraElectoralArgentina.setListas(
                 CargaDatos.cargaListas(camaraElectoralArgentina.getElectores(),
                                        camaraElectoralArgentina.getListaRequerimientos()));
-        //camaraElectoralArgentina.setListaDistritos(CargaDatos.cargaDistrito(
-        //         camaraElectoralArgentina.getElectores()));
-
-        System.out.println(camaraElectoralArgentina.getElectores().get(25));
-
+        camaraElectoralArgentina.setListaDistritos(CargaDatos.cargaDistrito(
+                camaraElectoralArgentina.getElectores()));
 
 
         /* Set the Nimbus look and feel */
@@ -1763,11 +1764,11 @@ public class Main extends javax.swing.JFrame {
         // </editor-fold>
 
         /* Create and display the form */
-        //java.awt.EventQueue.invokeLater(new Runnable() {
-        //     public void run() {
-        // new Main().setVisible(true);
-        //}
-        // });
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new Main().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
