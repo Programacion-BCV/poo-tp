@@ -18,7 +18,7 @@ import java.util.List;
  * @author confaa
  */
 public class Main extends javax.swing.JFrame {
-    private static CamaraElectoral camaraElectoralArgentina;
+    public static CamaraElectoral camaraElectoralArgentina;
     public static Elector elector;
 
     /**
