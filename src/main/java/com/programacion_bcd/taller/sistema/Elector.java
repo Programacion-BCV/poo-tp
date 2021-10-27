@@ -8,7 +8,7 @@ package com.programacion_bcd.taller.sistema;
 import java.time.LocalDate;
 import java.util.Objects;
 
-public class Elector {
+public class Elector implements Comparable<Elector> {
     private String nombre;
     private String apellido;
     private Integer dni;
@@ -264,5 +264,17 @@ public class Elector {
                ", mesa=" + mesa +
                ", voto=" + voto +
                '}';
+    }
+
+
+    @Override
+    public int compareTo(Elector o) {
+
+        int resultado = this.apellido.compareTo(o.getApellido());
+
+        if (resultado == 0) {
+            resultado = this.nombre.compareTo(o.getNombre());
+        }
+        return resultado;
     }
 }

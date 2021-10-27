@@ -8,6 +8,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -374,4 +375,14 @@ public class CargaDatos {
         }
         return distritosRetorno;
     }
+    public static List<Elector> ordenarElectores(Elector[] electores){
+        List<Elector> listaElectores = new ArrayList<>();
+        for (int i = 0; i < electores.length; i++) {
+            listaElectores.add(electores[i]);
+        }
+        Collections.sort(listaElectores);
+        return listaElectores;
+    }
+
 }
+
