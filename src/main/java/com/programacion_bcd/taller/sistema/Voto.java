@@ -110,10 +110,10 @@ public class Voto {
     @Override
     public String toString() {
         return "Voto{" +
-               "elector=" + elector +
+               "elector=" + elector.getNombre() +
                ", mesa=" + mesa +
-               ", votoDiputados=" + votoDiputados +
-               ", votoSenadores=" + votoSenadores +
+               ", votoDiputados=" + votoDiputados.getNumero() +
+               ", votoSenadores=" + votoSenadores.getNumero() +
                '}';
     }
 }

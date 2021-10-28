@@ -47,7 +47,8 @@ public class JPanelDialogCorrecto extends javax.swing.JPanel {
         jLabelNombre = new javax.swing.JLabel();
 
         jLabelPregunta.setFont(new java.awt.Font("Roboto", 0, 18)); // NOI18N
-        jLabelPregunta.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelPregunta.setHorizontalAlignment(
+                javax.swing.SwingConstants.CENTER);
         jLabelPregunta.setText("Estos datos son correctos?");
 
         jButtonRechazar.setText("Rechazar");
@@ -73,10 +74,12 @@ public class JPanelDialogCorrecto extends javax.swing.JPanel {
         jLabelMesa.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabelDomicilio.setFont(new java.awt.Font("Roboto", 0, 15)); // NOI18N
-        jLabelDomicilio.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelDomicilio.setHorizontalAlignment(
+                javax.swing.SwingConstants.CENTER);
         jLabelDomicilio.setText("jLabelDomicilio");
         jLabelDomicilio.setToolTipText("");
-        jLabelDomicilio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabelDomicilio.setHorizontalTextPosition(
+                javax.swing.SwingConstants.CENTER);
 
         jLabelDni.setFont(new java.awt.Font("Roboto", 0, 15)); // NOI18N
         jLabelDni.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -88,69 +91,127 @@ public class JPanelDialogCorrecto extends javax.swing.JPanel {
         jLabelNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNombre.setText("jLabelNombre");
         jLabelNombre.setToolTipText("");
-        jLabelNombre.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jLabelNombre.setHorizontalTextPosition(
+                javax.swing.SwingConstants.CENTER);
 
-        jLayeredPane1.setLayer(jLabelMesa, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabelDomicilio, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabelDni, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jLabelNombre, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLabelMesa,
+                               javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLabelDomicilio,
+                               javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLabelDni,
+                               javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jLabelNombre,
+                               javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(
+                jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
         jLayeredPane1Layout.setHorizontalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelMesa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                        .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelDomicilio, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabelDni, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addComponent(jLabelNombre, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                jLayeredPane1Layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                                          .addContainerGap()
+                                          .addGroup(
+                                                  jLayeredPane1Layout.createParallelGroup(
+                                                                  javax.swing.GroupLayout.Alignment.LEADING)
+                                                          .addComponent(
+                                                                  jLabelMesa,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)
+                                                          .addGroup(
+                                                                  javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                  jLayeredPane1Layout.createSequentialGroup()
+                                                                          .addGroup(
+                                                                                  jLayeredPane1Layout.createParallelGroup(
+                                                                                                  javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                          .addComponent(
+                                                                                                  jLabelDomicilio,
+                                                                                                  javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                  Short.MAX_VALUE)
+                                                                                          .addComponent(
+                                                                                                  jLabelDni,
+                                                                                                  javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                                  Short.MAX_VALUE))
+                                                                          .addContainerGap())
+                                                          .addComponent(
+                                                                  jLabelNombre,
+                                                                  javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                  Short.MAX_VALUE)))
         );
         jLayeredPane1Layout.setVerticalGroup(
-            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelNombre)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelDni)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelDomicilio)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelMesa)
-                .addContainerGap())
+                jLayeredPane1Layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                                          .addContainerGap()
+                                          .addComponent(jLabelNombre)
+                                          .addPreferredGap(
+                                                  javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(jLabelDni)
+                                          .addPreferredGap(
+                                                  javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(jLabelDomicilio)
+                                          .addPreferredGap(
+                                                  javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(jLabelMesa)
+                                          .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelPregunta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLayeredPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButtonRechazar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 249, Short.MAX_VALUE)
-                        .addComponent(jButtonAceptar)))
-                .addGap(44, 44, 44))
+                layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                          .addGap(34, 34, 34)
+                                          .addGroup(layout.createParallelGroup(
+                                                          javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(
+                                                                    jLabelPregunta,
+                                                                    javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                    javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                    Short.MAX_VALUE)
+                                                            .addComponent(
+                                                                    jLayeredPane1,
+                                                                    javax.swing.GroupLayout.Alignment.TRAILING)
+                                                            .addGroup(
+                                                                    javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                    layout.createSequentialGroup()
+                                                                            .addComponent(
+                                                                                    jButtonRechazar)
+                                                                            .addPreferredGap(
+                                                                                    javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                                    249,
+                                                                                    Short.MAX_VALUE)
+                                                                            .addComponent(
+                                                                                    jButtonAceptar)))
+                                          .addGap(44, 44, 44))
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jLayeredPane1)
-                .addGap(46, 46, 46)
-                .addComponent(jLabelPregunta)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonRechazar)
-                    .addComponent(jButtonAceptar))
-                .addGap(29, 29, 29))
+                layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                  layout.createSequentialGroup()
+                                          .addGap(45, 45, 45)
+                                          .addComponent(jLayeredPane1)
+                                          .addGap(46, 46, 46)
+                                          .addComponent(jLabelPregunta)
+                                          .addPreferredGap(
+                                                  javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                  63, Short.MAX_VALUE)
+                                          .addGroup(layout.createParallelGroup(
+                                                          javax.swing.GroupLayout.Alignment.BASELINE)
+                                                            .addComponent(
+                                                                    jButtonRechazar)
+                                                            .addComponent(
+                                                                    jButtonAceptar))
+                                          .addGap(29, 29, 29))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -159,14 +220,18 @@ public class JPanelDialogCorrecto extends javax.swing.JPanel {
         // TODO add your handling code here:
 
         Votacion votacion = new Votacion();
-        votacion.setVisible(true);       
+        votacion.setVisible(true);
         Window w = SwingUtilities.getWindowAncestor(JPanelDialogCorrecto.this);
         w.setVisible(false);
-        
+
     }//GEN-LAST:event_jButtonAceptarActionPerformed
 
-    private void jButtonRechazarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRechazarActionPerformed
+    private void jButtonRechazarActionPerformed(
+            java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRechazarActionPerformed
         // TODO add your handling code here:
+
+        Main main = new Main();
+        main.setVisible(true);
         Window w = SwingUtilities.getWindowAncestor(JPanelDialogCorrecto.this);
         w.setVisible(false);
     }//GEN-LAST:event_jButtonRechazarActionPerformed
