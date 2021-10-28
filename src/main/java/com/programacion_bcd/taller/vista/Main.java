@@ -1389,7 +1389,8 @@ public class Main extends javax.swing.JFrame {
                 0).getListaSecciones().get(0).getCircuitos().get(
                 0).getListaMesas().get(0).getElectores()[1]);
 
-
+        System.out.println(
+                camaraElectoralArgentina.getListas().get(45).getNumero());
         /* Set the Nimbus look and feel */
         // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
         // (optional) ">

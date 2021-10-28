@@ -195,10 +195,7 @@ public class Lista {
                "provincia='" + provincia + '\'' +
                ", nombreLista='" + nombreLista + '\'' +
                ", numero='" + numero + '\'' +
-               ", partido=" + partido +
 
-               ", votoDiputados=" + votoDiputados +
-               ", votoSenadores=" + votoSenadores +
                '}';
     }
 }
