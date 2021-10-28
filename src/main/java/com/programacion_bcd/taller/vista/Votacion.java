@@ -7,6 +7,7 @@ package com.programacion_bcd.taller.vista;
 
 import com.programacion_bcd.taller.sistema.Elector;
 import com.programacion_bcd.taller.sistema.Lista;
+import com.programacion_bcd.taller.sistema.Voto;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -27,16 +28,25 @@ public class Votacion extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         jTabbedPaneMenuVotacion.setEnabledAt(3, false);
         jButtonCancelar.setVisible(false);
+        jButtonAnt.setVisible(false);
         Main mainApp = new Main();
         listasVotante = traerListasVotante(Main.elector);
 
         jLabelVotacionProvincia.setText(
                 jLabelVotacionProvincia.getText() + " "
                 + Main.elector.getDomicilio().getProvincia());
-        jLabelPartidoDD.setText("Derecha");
-        jLabelPartidoSD.setText("Derecha");
-        jLabelPartidoDI.setText("Izquierda");
-        jLabelPartidoSI.setText("Izquierda");
+        jLabelPartidoDD.setText("Partido de Derecha");
+        jLabelPartidoSD.setText("Partido de Derecha");
+        jLabelPartidoDI.setText("Partido de Izquierda");
+        jLabelPartidoSI.setText("Partido de Izquierda");
+
+        jListDiputados.setModel(new DefaultListModel<>());
+        jLabelPartidoD.setText("Partido: ");
+        jLabelListaD.setText("Lista: ");
+
+        jListSenadores.setModel(new DefaultListModel<>());
+        jLabelPartidoS.setText("Partido: ");
+        jLabelListaS.setText("Lista: ");
 
         for (int i = 0; i < 2; i++) {
             Lista auxLista = listasVotante.get(i);
@@ -59,14 +69,14 @@ public class Votacion extends javax.swing.JFrame {
             }
 
             if (auxLista.getPartido().getNombre().equals("Derecha")) {
-                jRadioButtonDD.setText(auxLista.getNombreLista());
-                jRadioButtonSD.setText(auxLista.getNombreLista());
+                jRadioButtonDD.setText("Lista " + auxLista.getNombreLista());
+                jRadioButtonSD.setText("Lista " + auxLista.getNombreLista());
                 jListDD.setModel(defaultListModel1);
                 jListSD.setModel(defaultListModel2);
 
             } else {
-                jRadioButtonDI.setText(auxLista.getNombreLista());
-                jRadioButtonSI.setText(auxLista.getNombreLista());
+                jRadioButtonDI.setText("Lista " + auxLista.getNombreLista());
+                jRadioButtonSI.setText("Lista " + auxLista.getNombreLista());
                 jListDI.setModel(defaultListModel1);
                 jListSI.setModel(defaultListModel2);
             }
@@ -147,7 +157,7 @@ public class Votacion extends javax.swing.JFrame {
             }
         });
 
-        jLabelPartidoDD.setText("Partido");
+        jLabelPartidoDD.setText("Partido 1");
 
         jListDD.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -198,7 +208,7 @@ public class Votacion extends javax.swing.JFrame {
             }
         });
 
-        jLabelPartidoDI.setText("Partido");
+        jLabelPartidoDI.setText("Partido 2");
 
         jListDI.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -561,19 +571,18 @@ public class Votacion extends javax.swing.JFrame {
         jLayeredPane6Layout.setHorizontalGroup(
             jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
+                        .addGap(105, 105, 105)
                         .addComponent(jButtonCancelar))
-                    .addComponent(jLabel1)
                     .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
+                        .addGap(59, 59, 59)
                         .addComponent(jButtonVotar))
                     .addGroup(jLayeredPane6Layout.createSequentialGroup()
-                        .addGap(71, 71, 71)
+                        .addGap(77, 77, 77)
                         .addComponent(jLabel2)))
-                .addContainerGap())
+                .addGap(27, 27, 27))
+            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING)
         );
         jLayeredPane6Layout.setVerticalGroup(
             jLayeredPane6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -702,11 +711,15 @@ public class Votacion extends javax.swing.JFrame {
 
         if (jRadioButtonDD.isSelected()) {
             jRadioButtonDI.setSelected(false);
+            jListDiputados.setModel(jListDD.getModel());
+            jLabelPartidoD.setText("Partido: " + jLabelPartidoDD.getText());
+            jLabelListaD.setText("Lista: " + jRadioButtonDD.getText());
+        } else {
+            jListDiputados.setModel(new DefaultListModel<>());
+            jLabelPartidoD.setText("Partido: ");
+            jLabelListaD.setText("Lista: ");
         }
 
-        jListDiputados.setModel(jListDD.getModel());
-        jLabelPartidoD.setText("Partido: " + jLabelPartidoDD.getText());
-        jLabelListaD.setText("Lista: " + jRadioButtonDD.getText());
 
     }//GEN-LAST:event_jRadioButtonDDActionPerformed
 
@@ -715,10 +728,15 @@ public class Votacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jRadioButtonDI.isSelected()) {
             jRadioButtonDD.setSelected(false);
+            jListDiputados.setModel(jListDI.getModel());
+            jLabelPartidoD.setText("Partido: " + jLabelPartidoDI.getText());
+            jLabelListaD.setText("Lista: " + jRadioButtonDI.getText());
+        } else {
+            jListDiputados.setModel(new DefaultListModel<>());
+            jLabelPartidoD.setText("Partido: ");
+            jLabelListaD.setText("Lista: ");
         }
-        jListDiputados.setModel(jListDI.getModel());
-        jLabelPartidoD.setText("Partido: " + jLabelPartidoDI.getText());
-        jLabelListaD.setText("Lista: " + jRadioButtonDI.getText());
+
     }//GEN-LAST:event_jRadioButtonDIActionPerformed
 
     private void jRadioButtonSDActionPerformed(
@@ -726,11 +744,15 @@ public class Votacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (jRadioButtonSD.isSelected()) {
             jRadioButtonSI.setSelected(false);
+            jListSenadores.setModel(jListSD.getModel());
+            jLabelPartidoS.setText("Partido: " + jLabelPartidoSD.getText());
+            jLabelListaS.setText("Lista: " + jRadioButtonSD.getText());
+        } else {
+            jListDiputados.setModel(new DefaultListModel<>());
+            jLabelPartidoS.setText("Partido: ");
+            jLabelListaS.setText("Lista: ");
         }
 
-        jListSenadores.setModel(jListSD.getModel());
-        jLabelPartidoS.setText("Partido: " + jLabelPartidoSD.getText());
-        jLabelListaS.setText("Lista: " + jRadioButtonSD.getText());
 
     }//GEN-LAST:event_jRadioButtonSDActionPerformed
 
@@ -738,13 +760,17 @@ public class Votacion extends javax.swing.JFrame {
             java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButtonSIActionPerformed
         // TODO add your handling code here:
         if (jRadioButtonSI.isSelected()) {
-
             jRadioButtonSD.setSelected(false);
+            jListSenadores.setModel(jListSI.getModel());
+            jLabelPartidoS.setText("Partido: " + jLabelPartidoSI.getText());
+            jLabelListaS.setText("Lista: " + jRadioButtonSI.getText());
+        } else {
+            jListSenadores.setModel(new DefaultListModel<>());
+            jLabelPartidoS.setText("Partido: ");
+            jLabelListaS.setText("Lista: ");
         }
-        jListSenadores.setModel(jListSI.getModel());
-        jLabelPartidoS.setText("Partido: " + jLabelPartidoSI.getText());
-        jLabelListaS.setText("Lista: " + jRadioButtonSI.getText());
-        ;
+
+
     }//GEN-LAST:event_jRadioButtonSIActionPerformed
 
     private void jButtonSigActionPerformed(
@@ -758,14 +784,13 @@ public class Votacion extends javax.swing.JFrame {
         }
         if (jTabbedPaneMenuVotacion.getSelectedIndex() == 3) {
             this.jButtonSig.setVisible(false);
-            this.jButtonCancelar.setVisible(true);            
+            this.jButtonCancelar.setVisible(true);
             this.jButtonVotar.setVisible(true);
             this.jButtonAnt.setVisible(false);
-            this.jTabbedPaneMenuVotacion.setEnabledAt(0, false);           
+            this.jTabbedPaneMenuVotacion.setEnabledAt(0, false);
             this.jTabbedPaneMenuVotacion.setEnabledAt(1, false);
             this.jTabbedPaneMenuVotacion.setEnabledAt(2, false);
             this.jTabbedPaneMenuVotacion.setEnabledAt(3, true);
-
 
         } else if (jTabbedPaneMenuVotacion.getSelectedIndex() == 1) {
             this.jButtonAnt.setVisible(true);
@@ -788,18 +813,18 @@ public class Votacion extends javax.swing.JFrame {
             this.jButtonSig.setVisible(true);
 
         }
-        this.jButtonCancelar.setVisible(false);            
-            this.jButtonVotar.setVisible(false);
+        this.jButtonCancelar.setVisible(false);
+        this.jButtonVotar.setVisible(false);
     }//GEN-LAST:event_jButtonAntActionPerformed
 
     private void jButtonVotarActionPerformed(
             java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVotarActionPerformed
         // TODO add your handling code here:
+
     }//GEN-LAST:event_jButtonVotarActionPerformed
 
     private void jPanelConfirmacionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelConfirmacionMouseClicked
         // TODO add your handling code here:
-
 
 
     }//GEN-LAST:event_jPanelConfirmacionMouseClicked
@@ -811,6 +836,23 @@ public class Votacion extends javax.swing.JFrame {
 
     private void jButtonCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCancelarActionPerformed
         // TODO add your handling code here:
+        jListDiputados.setModel(new DefaultListModel<>());
+        jLabelPartidoS.setText("Partido: ");
+        jLabelListaS.setText("Lista: ");
+        jListDiputados.setModel(new DefaultListModel<>());
+        jLabelPartidoS.setText("Partido: ");
+        jLabelListaS.setText("Lista: ");
+        jRadioButtonDD.setSelected(false);
+        jRadioButtonSD.setSelected(false);
+        jRadioButtonDI.setSelected(false);
+        jRadioButtonSI.setSelected(false);
+        this.jTabbedPaneMenuVotacion.setEnabledAt(0, true);
+            this.jTabbedPaneMenuVotacion.setEnabledAt(1, true);
+            this.jTabbedPaneMenuVotacion.setEnabledAt(2, true);
+            this.jTabbedPaneMenuVotacion.setEnabledAt(3, false);
+            this.jTabbedPaneMenuVotacion.setSelectedIndex(0);
+            this.jButtonSig.setVisible(true);
+
     }//GEN-LAST:event_jButtonCancelarActionPerformed
 
     private void jPanelDiputadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelDiputadosMouseClicked
@@ -821,12 +863,12 @@ public class Votacion extends javax.swing.JFrame {
 
     private void jPanelSenadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSenadoresMouseClicked
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jPanelSenadoresMouseClicked
 
     private void jPanelSeleccionadosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSeleccionadosMouseClicked
         // TODO add your handling code here:
-       
+
     }//GEN-LAST:event_jPanelSeleccionadosMouseClicked
 
     /**
