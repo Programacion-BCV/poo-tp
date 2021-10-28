@@ -78,7 +78,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="116" max="32767" attributes="0"/>
+                      <EmptySpace pref="192" max="32767" attributes="0"/>
                       <Component id="jLayeredPaneDiputados" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
                   </Group>
@@ -101,9 +101,9 @@
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace pref="73" max="32767" attributes="0"/>
+                          <EmptySpace pref="16" max="32767" attributes="0"/>
                           <Component id="jLayeredPane3" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="32767" attributes="0"/>
                           <Component id="jLayeredPane4" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                       </Group>
@@ -284,16 +284,16 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLayeredPaneSenadores" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="266" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLayeredPaneSenadores" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -490,174 +490,221 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
-                      <Component id="jLayeredPaneSenadores1" max="32767" attributes="0"/>
-                      <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLayeredPaneSeleccionados" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLayeredPaneSenadores1" max="32767" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="jLayeredPaneSeleccionados" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="javax.swing.JLayeredPane" name="jLayeredPaneSenadores1">
+            <Container class="javax.swing.JLayeredPane" name="jLayeredPaneSeleccionados">
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jScrollPaneDiputados" max="32767" attributes="0"/>
-                              <Component id="jLabelPartidoD" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelListaD" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelEleccionDiputados" alignment="0" pref="300" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jLayeredPane7" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabelPartidoS" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelListaS" min="-2" max="-2" attributes="0"/>
-                              <Component id="jScrollPaneSenadores" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabelEleccionSenadores" alignment="0" pref="300" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="181" max="32767" attributes="0"/>
+                          <Component id="jLayeredPane8" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace pref="290" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelEleccionDiputados" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelEleccionSenadores" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelPartidoD" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelPartidoS" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelListaS" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelListaD" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace pref="19" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="jScrollPaneDiputados" min="-2" pref="231" max="-2" attributes="0"/>
-                              <Component id="jScrollPaneSenadores" min="-2" pref="231" max="-2" attributes="0"/>
+                              <Component id="jLayeredPane8" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLayeredPane7" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabelEleccionDiputados">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Roboto" size="24" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Elecci&#xf3;n Diputados: "/>
-                  </Properties>
-                </Component>
-                <Container class="javax.swing.JScrollPane" name="jScrollPaneDiputados">
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
+                <Container class="javax.swing.JLayeredPane" name="jLayeredPane7">
 
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jScrollPaneDiputados" max="32767" attributes="0"/>
+                                  <Component id="jLabelPartidoD" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelListaD" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelEleccionDiputados" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabelEleccionDiputados" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabelPartidoD" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabelListaD" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPaneDiputados" min="-2" pref="231" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jListDiputados">
+                    <Component class="javax.swing.JLabel" name="jLabelEleccionDiputados">
                       <Properties>
-                        <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                          <StringArray count="5">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
-                            <StringItem index="4" value="Item 5"/>
-                          </StringArray>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Roboto" size="24" style="0"/>
                         </Property>
+                        <Property name="text" type="java.lang.String" value="Elecci&#xf3;n Diputados: "/>
                       </Properties>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPaneDiputados">
                       <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                       </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JList" name="jListDiputados">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                              <StringArray count="5">
+                                <StringItem index="0" value="Item 1"/>
+                                <StringItem index="1" value="Item 2"/>
+                                <StringItem index="2" value="Item 3"/>
+                                <StringItem index="3" value="Item 4"/>
+                                <StringItem index="4" value="Item 5"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="jLabelPartidoD">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Roboto" size="18" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="jLabel3"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabelListaD">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Roboto" size="16" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="jLabel3"/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JLabel" name="jLabelEleccionSenadores">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Roboto" size="24" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Elecci&#xf3;n Senadores: "/>
-                  </Properties>
-                </Component>
-                <Container class="javax.swing.JScrollPane" name="jScrollPaneSenadores">
-                  <AuxValues>
-                    <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-                  </AuxValues>
+                <Container class="javax.swing.JLayeredPane" name="jLayeredPane8">
 
-                  <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabelPartidoS" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelListaS" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jScrollPaneSenadores" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabelEleccionSenadores" alignment="0" min="-2" pref="300" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jLabelEleccionSenadores" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabelPartidoS" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jLabelListaS" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jScrollPaneSenadores" min="-2" pref="231" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
                   <SubComponents>
-                    <Component class="javax.swing.JList" name="jListSenadores">
+                    <Component class="javax.swing.JLabel" name="jLabelListaS">
                       <Properties>
-                        <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
-                          <StringArray count="5">
-                            <StringItem index="0" value="Item 1"/>
-                            <StringItem index="1" value="Item 2"/>
-                            <StringItem index="2" value="Item 3"/>
-                            <StringItem index="3" value="Item 4"/>
-                            <StringItem index="4" value="Item 5"/>
-                          </StringArray>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Roboto" size="16" style="0"/>
                         </Property>
+                        <Property name="text" type="java.lang.String" value="jLabel4"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="jLabelPartidoS">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Roboto" size="18" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="jLabel4"/>
+                      </Properties>
+                    </Component>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPaneSenadores">
                       <AuxValues>
-                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
                       </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JList" name="jListSenadores">
+                          <Properties>
+                            <Property name="model" type="javax.swing.ListModel" editor="org.netbeans.modules.form.editors2.ListModelEditor">
+                              <StringArray count="5">
+                                <StringItem index="0" value="Item 1"/>
+                                <StringItem index="1" value="Item 2"/>
+                                <StringItem index="2" value="Item 3"/>
+                                <StringItem index="3" value="Item 4"/>
+                                <StringItem index="4" value="Item 5"/>
+                              </StringArray>
+                            </Property>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                          </AuxValues>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Component class="javax.swing.JLabel" name="jLabelEleccionSenadores">
+                      <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Roboto" size="24" style="0"/>
+                        </Property>
+                        <Property name="text" type="java.lang.String" value="Elecci&#xf3;n Senadores: "/>
+                      </Properties>
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JLabel" name="jLabelPartidoD">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Roboto" size="18" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel3"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabelPartidoS">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Roboto" size="18" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel4"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabelListaD">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Roboto" size="16" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel3"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JLabel" name="jLabelListaS">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Roboto" size="16" style="0"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="jLabel4"/>
-                  </Properties>
-                </Component>
               </SubComponents>
             </Container>
           </SubComponents>
@@ -678,18 +725,18 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="373" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLayeredPane6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="408" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="116" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Component id="jLayeredPane6" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -700,24 +747,23 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
-                                  <Component id="jButtonCancelar" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                  <Component id="jButtonVotar" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                                  <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel2" alignment="1" min="-2" pref="278" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jLabel1" alignment="1" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                          <Component id="jButtonCancelar" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="jButtonVotar" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
@@ -725,9 +771,9 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <EmptySpace pref="18" max="32767" attributes="0"/>
                           <Component id="jButtonVotar" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="32767" attributes="0"/>
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jButtonCancelar" min="-2" max="-2" attributes="0"/>
@@ -746,6 +792,7 @@
                       <Font name="Roboto" size="72" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Votar"/>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonVotarActionPerformed"/>
@@ -760,6 +807,7 @@
                       <Font name="Roboto" size="24" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Reset"/>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCancelarActionPerformed"/>
@@ -771,6 +819,7 @@
                       <ComponentRef name="jButtonCancelar"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Desea elegir nuevamente los candidatos?"/>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
@@ -778,10 +827,12 @@
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Roboto" size="24" style="0"/>
                     </Property>
+                    <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="labelFor" type="java.awt.Component" editor="org.netbeans.modules.form.ComponentChooserEditor">
                       <ComponentRef name="jButtonVotar"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Confirmar voto"/>
+                    <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
                 </Component>
               </SubComponents>
