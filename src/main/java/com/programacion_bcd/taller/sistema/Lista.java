@@ -45,90 +45,90 @@ public class Lista {
     }
 
     /**
-     * Devuelve la provincia a la que pertenece la Lista
+     * Devuelve la provincia a la que pertenece la Lista.
      *
-     * @return Provincia de la Lista
+     * @return Provincia de la Lista.
      */
     public String getProvincia() {
         return provincia;
     }
 
     /**
-     * Setea la provincia a la que pertenece la Lista
+     * Setea la provincia a la que pertenece la Lista.
      *
-     * @param provincia Provincia de la Lista
+     * @param provincia Provincia de la Lista.
      */
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
 
     /**
-     * Devuelve el nombre de la Lista
+     * Devuelve el nombre de la Lista.
      *
-     * @return Nombre de la Lista
+     * @return Nombre de la Lista.
      */
     public String getNombreLista() {
         return nombreLista;
     }
 
     /**
-     * Setea el nombre de la Lista
+     * Setea el nombre de la Lista.
      *
-     * @param nombreLista Nombre de la Lista
+     * @param nombreLista Nombre de la Lista.
      */
     public void setNombreLista(String nombreLista) {
         this.nombreLista = nombreLista;
     }
 
     /**
-     * Devuelve el número de la Lista
+     * Devuelve el número de la Lista.
      *
-     * @return Número de la Lista
+     * @return Número de la Lista.
      */
     public String getNumero() {
         return numero;
     }
 
     /**
-     * Setea el número de la Lista
+     * Setea el número de la Lista.
      *
-     * @param numero Número de la Lista
+     * @param numero Número de la Lista.
      */
     public void setNumero(String numero) {
         this.numero = numero;
     }
 
     /**
-     * Devuelve el Partido Político al que pertenece la Lista
+     * Devuelve el Partido Político al que pertenece la Lista.
      *
-     * @return Partido Político de la Lista
+     * @return Partido Político de la Lista.
      */
     public PartidoPolitico getPartido() {
         return partido;
     }
 
     /**
-     * Setea el Partido Político de la Lista
+     * Setea el Partido Político de la Lista.
      *
-     * @param partido Partido Político de la Lista
+     * @param partido Partido Político de la Lista.
      */
     public void setPartido(PartidoPolitico partido) {
         this.partido = partido;
     }
 
     /**
-     * Devuelve una lista de candidatos a diputados de la Lista
+     * Devuelve una lista de candidatos a diputados de la Lista.
      *
-     * @return Lista de candidatos a diputados
+     * @return Lista de candidatos a diputados.
      */
     public List<Elector> getDiputados() {
         return diputados;
     }
 
     /**
-     * Setea los candidatos a diputados de la Lista
+     * Setea los candidatos a diputados de la Lista.
      *
-     * @param diputados Lista de candidatos a diputados
+     * @param diputados Lista de candidatos a diputados.
      */
     public void setDiputados(
             List<Elector> diputados) {
@@ -136,41 +136,67 @@ public class Lista {
     }
 
     /**
-     * Devuelve una lista de candidatos a senadores de la Lista
+     * Devuelve una lista de candidatos a senadores de la Lista.
      *
-     * @return Lista de candidatos a senadores
+     * @return Lista de candidatos a senadores.
      */
     public List<Elector> getSenadores() {
         return senadores;
     }
 
     /**
-     * Setea los candidatos a senadores de la Lista
+     * Setea los candidatos a senadores de la Lista.
      *
-     * @param senadores Lista de candidatos a senadores
+     * @param senadores Lista de candidatos a senadores.
      */
     public void setSenadores(
             List<Elector> senadores) {
         this.senadores = senadores;
     }
 
+    /**
+     * Devuelve los votos a diputados de la Lista.
+     *
+     * @return Lista de votos a diputados.
+     */
     public List<Voto> getVotoDiputados() {
         return votoDiputados;
     }
 
+    /**
+     * Setea los votos a diputados de la Lista.
+     *
+     * @param votoDiputados Lista de votos a diputados.
+     */
     public void setVotoDiputados(List<Voto> votoDiputados) {
         this.votoDiputados = votoDiputados;
     }
 
+    /**
+     * Devuelve los votos a senadores de la Lista.
+     *
+     * @return Lista de votos a senadores.
+     */
     public List<Voto> getVotoSenadores() {
         return votoSenadores;
     }
 
+    /**
+     * Setea los votos a senadores de la lista.
+     *
+     * @param votoSenadores Lista de votos a senadores.
+     */
     public void setVotoSenadores(
             List<Voto> votoSenadores) {
         this.votoSenadores = votoSenadores;
     }
 
+    /**
+     * Método equals con el campo clave: número de lista.
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

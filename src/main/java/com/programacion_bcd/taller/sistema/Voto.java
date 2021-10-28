@@ -14,11 +14,12 @@ public class Voto {
     private Lista votoSenadores;
 
     /**
-     * crea un voto pasandole los parametros del elector y asignando sus atributos
+     * Constructor de la clase que permite la creación de los votos.
      *
-     * @param elector       datos del elector
-     * @param mesa          en la que vota
-     * @param votoDiputados voto de candidatos senador y disputado justo con su lista.
+     * @param elector       Elector.
+     * @param mesa          Mesa electoral donde emite el voto.
+     * @param votoDiputados Votos a diputados.
+     * @param votoSenadores Votos a senadores.
      */
 
     public Voto(Elector elector,
@@ -32,16 +33,16 @@ public class Voto {
     }
 
     /**
-     * Retorna los datos del elector
+     * Devuelve el Elector del voto.
      *
-     * @return elector
+     * @return Elector.
      */
     public Elector getElector() {
         return elector;
     }
 
     /**
-     * Asigna los datos de elector
+     * Setea el Elector al voto.
      *
      * @param elector
      */

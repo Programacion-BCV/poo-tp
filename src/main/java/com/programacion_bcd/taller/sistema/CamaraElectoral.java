@@ -20,12 +20,12 @@ public class CamaraElectoral {
     }
 
     /**
-     * crea una camara electoral pasandole por parametro los atributos.
+     * Constructor de la clase que permite la inicialización de un Objeto de tipo Camara Electoral.
      *
-     * @param electores           atributos de Elector
-     * @param listas              atributos de Lista
-     * @param listaDistritos      atributos de Distrito
-     * @param listaRequerimientos atributos de Requerimientos Provincia
+     * @param electores           Lista de Electores.
+     * @param listas              Lista de Listas.
+     * @param listaDistritos      Lista de Distritos.
+     * @param listaRequerimientos Arreglo de Requerimientos de la Provincia.
      */
     public CamaraElectoral(
             List<Elector> electores,
@@ -39,18 +39,18 @@ public class CamaraElectoral {
     }
 
     /**
-     * retorna lista de Elector
+     * Devuelve la lista de Electores.
      *
-     * @return elector
+     * @return Lista de Electores.
      */
     public List<Elector> getElectores() {
         return electores;
     }
 
     /**
-     * Asigna lista de Elector
+     * Setea la lista de Electores.
      *
-     * @param electores
+     * @param electores Lista de Electores.
      */
     public void setElectores(
             List<Elector> electores) {
@@ -58,18 +58,18 @@ public class CamaraElectoral {
     }
 
     /**
-     * retorna lista de Lista
+     * Devuelve las listas de Listas.
      *
-     * @return Lista
+     * @return Lista de listas.
      */
     public List<Lista> getListas() {
         return listas;
     }
 
     /**
-     * Asigna lista de Lista
+     * Setea las listas de Listas.
      *
-     * @param listas
+     * @param listas Lista de listas.
      */
     public void setListas(
             List<Lista> listas) {
@@ -77,18 +77,18 @@ public class CamaraElectoral {
     }
 
     /**
-     * retorna lista de Distritos
+     * Devuelve la lista de Distritos.
      *
-     * @return ListaDistritos
+     * @return Listas de Distritos.
      */
     public List<Distrito> getListaDistritos() {
         return listaDistritos;
     }
 
     /**
-     * Asigna lista de Distrito
+     * Setea la listas de Distritos.
      *
-     * @param listaDistritos
+     * @param listaDistritos Lista de Distritos.
      */
     public void setListaDistritos(
             List<Distrito> listaDistritos) {
@@ -96,24 +96,30 @@ public class CamaraElectoral {
     }
 
     /**
-     * retorna lista de RequerimientosProvincia
+     * Devuelve el arreglo de Requerimientos de la Provincia.
      *
-     * @return listaRequerimientos
+     * @return Arreglo de requerimientos de la provincia.
      */
     public RequerimientosProvincia[] getListaRequerimientos() {
         return listaRequerimientos;
     }
 
     /**
-     * Asigna lista de RequerimientosProvincia
+     * Setea el arreglo de Requerimientos de la Provincia.
      *
-     * @param listaRequerimientos
+     * @param listaRequerimientos Arreglo de requerimientos de la provincia.
      */
     public void setListaRequerimientos(
             RequerimientosProvincia[] listaRequerimientos) {
         this.listaRequerimientos = listaRequerimientos;
     }
 
+    /**
+     * Método equals con los campos clave: electores, listas, lista de distritos, arreglo de requerimientos.
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -134,7 +140,7 @@ public class CamaraElectoral {
     }
 
     /**
-     * Concatena en una cadena de caracteres los atributos de Cámara Electoral
+     * Concatena en una cadena de caracteres los atributos de Cámara Electoral.
      *
      * @return
      */

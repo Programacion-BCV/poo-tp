@@ -13,8 +13,10 @@ public class Distrito implements Estadistica {
     private List<Seccion> listaSecciones;
 
     /**
-     * @param nombre         nombre del distrito
-     * @param listaSecciones secciones del distrito
+     * Constructor de la clase que permite la inicialización de un Objeto de tipo Distrito.
+     *
+     * @param nombre         Nombre del distrito
+     * @param listaSecciones Secciones del distrito
      */
     public Distrito(String nombre,
                     List<Seccion> listaSecciones) {
@@ -23,42 +25,48 @@ public class Distrito implements Estadistica {
     }
 
     /**
-     * retorna nombre del Distrito
+     * Devuelve el nombre del Distrito.
      *
-     * @return String Nombre
+     * @return Nombre del distrito
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * Asigna nombre de Distrito
+     * Setea el nombre del Distrito.
      *
-     * @param nombre String
+     * @param nombre Nombre del Distrito.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * retorna lista de Seccion
+     * Devuelve la lista de secciones.
      *
-     * @return List listaSecciones
+     * @return Lista de secciones.
      */
     public List<Seccion> getListaSecciones() {
         return listaSecciones;
     }
 
     /**
-     * Asigna Lista de Seccion
+     * Setea la lista de secciones.
      *
-     * @param listaSecciones
+     * @param listaSecciones Lista de secciones.
      */
     public void setListaSecciones(
             List<Seccion> listaSecciones) {
         this.listaSecciones = listaSecciones;
     }
 
+    /**
+     * Método equals con el valor clave nombre de distrito.
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -73,9 +81,9 @@ public class Distrito implements Estadistica {
     }
 
     /**
-     * Concatena en una cadena de caracteres los atributos de Distrito
+     * Concatena en una cadena de caracteres los atributos de Distrito.
      *
-     * @return String Distrito
+     * @return
      */
     @Override
     public String toString() {
@@ -87,6 +95,8 @@ public class Distrito implements Estadistica {
 
     /**
      * Conteo de votantes por distrito.
+     *
+     * @return Cantidad de votantes.
      */
     @Override
     public Integer cantVotantes() {
@@ -95,7 +105,9 @@ public class Distrito implements Estadistica {
     }
 
     /**
-     * Conteo de los votos en blanco por distrito.
+     * Calcula la cantidad de votos en blanco del Distrito.
+     *
+     * @return Cantidad de votos en blanco.
      */
     @Override
     public Integer cantVotosBlancos() {
@@ -112,7 +124,9 @@ public class Distrito implements Estadistica {
     }
 
     /**
-     * Conteo de votos por partido en cada distrito.
+     * Calcula la cantidad de votos por partido del Distrito.
+     *
+     * @return Cantidad de votos por partido del Distrito.
      */
     @Override
     public Integer[] votoPorPartido() {
@@ -150,7 +164,9 @@ public class Distrito implements Estadistica {
     }
 
     /**
-     * Calculara el porcentaje de votacion por distrito respecto al padron del mismo.
+     * Calcula el porcentaje de votación por Distrito respecto al padrón del mismo.
+     *
+     * @return Porcentaje de votación por Distrito.
      */
     @Override
     public Double porcDistrito() {
@@ -159,8 +175,9 @@ public class Distrito implements Estadistica {
     }
 
     /**
-     * Calculara el porcentaje general de votacion por cada lista,
-     * incluyendo votos en blanco por cada distrito.
+     * Calcula el porcentaje general de votación por cada lista, incluyendo votos en blanco por cada distrito.
+     *
+     * @return Porcentaje general de votación por cada lista (incluye votos en blanco).
      */
     @Override
     public Double[] porcGralVotoLista() {

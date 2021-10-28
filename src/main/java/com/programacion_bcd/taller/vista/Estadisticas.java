@@ -5,6 +5,7 @@
  */
 package com.programacion_bcd.taller.vista;
 
+import com.programacion_bcd.taller.sistema.Distrito;
 import com.programacion_bcd.taller.sistema.Elector;
 import com.programacion_bcd.taller.sistema.Lista;
 import com.programacion_bcd.taller.sistema.Voto;
@@ -18,15 +19,97 @@ import java.util.List;
  */
 public class Estadisticas extends javax.swing.JFrame {
 
+    public static Distrito distritoEstadistica;
 
     /**
-     * Creates new form Estadisticas
+     * Creates new form Votacion
      */
     public Estadisticas() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        
+
+        List<Lista> listasDistrito = this.traeListasDistrito(
+                distritoEstadistica.getNombre());
+        Integer[] cantidadesPorPartido = distritoEstadistica.votoPorPartido();
+
+        jButtonAnt.setVisible(false);
+
+        jLabelVotacionProvincia.setText(
+                jLabelVotacionProvincia.getText() + " "
+                + distritoEstadistica.getNombre());
+
+        for (int i = 0; i < listasDistrito.size(); i++) {
+
+            if (listasDistrito.get(i).getPartido().getNombre().equals(
+                    "Derecha")) {
+                jLabelBarDD.setText(
+                        "Lista " + listasDistrito.get(i).getNombreLista() +
+                        " - " +
+                        listasDistrito.get(i).getNumero());
+                jLabelBarSD.setText(
+                        "Lista " + listasDistrito.get(i).getNombreLista() +
+                        " - " +
+                        listasDistrito.get(i).getNumero());
+            } else {
+                jLabelBarDI.setText(
+                        "Lista " + listasDistrito.get(i).getNombreLista() +
+                        " - " +
+                        listasDistrito.get(i).getNumero());
+                jLabelBarSI.setText(
+                        "Lista " + listasDistrito.get(i).getNombreLista() +
+                        " - " +
+                        listasDistrito.get(i).getNumero());
+            }
+
+        }
+        Double porcentaje = ((double) (cantidadesPorPartido[0]) /
+                             (cantidadesPorPartido[0] +
+                              cantidadesPorPartido[1])) * 100;
+        if (cantidadesPorPartido[0] == 0) {
+            jLabelPorcentajeDD.setText("0%");
+            jProgressBarDD.setValue(0);
+        } else {
+            jLabelPorcentajeDD.setText(porcentaje + "%");
+            int porcentajeBar = (int) Math.round(porcentaje);
+            jProgressBarDD.setValue(porcentajeBar);
+
+        }
+
+        porcentaje = ((double) (cantidadesPorPartido[1]) /
+                      (cantidadesPorPartido[0] +
+                       cantidadesPorPartido[1])) * 100;
+
+        if (cantidadesPorPartido[1] == 0) {
+            jLabelPorcentajeDI.setText("0%");
+            jProgressBarDI.setValue(0);
+        } else {
+            int porcentajeBar = (int) Math.round(porcentaje);
+            jLabelPorcentajeDI.setText(porcentajeBar + "%");
+        }
+
+        porcentaje = ((double) (cantidadesPorPartido[2]) /
+                      (cantidadesPorPartido[2] +
+                       cantidadesPorPartido[3])) * 100;
+        if (cantidadesPorPartido[2] == 0) {
+            jLabelPorcentajeSD.setText("0%");
+            jProgressBarSD.setValue(0);
+        } else {
+            jLabelPorcentajeSD.setText(porcentaje + "%");
+            int porcentajeBar = (int) Math.round(porcentaje);
+            jProgressBarSD.setValue(porcentajeBar);
+        }
+        porcentaje = ((double) (cantidadesPorPartido[3]) /
+                      (cantidadesPorPartido[2] +
+                       cantidadesPorPartido[3])) * 100;
+        if (cantidadesPorPartido[3] == 0) {
+            jLabelPorcentajeSI.setText("0%");
+            jProgressBarSI.setValue(0);
+        } else {
+            jLabelPorcentajeSI.setText(porcentaje + "%");
+            int porcentajeBar = (int) Math.round(porcentaje);
+            jProgressBarSI.setValue(porcentajeBar);
+        }
+
     }
 
     /**
@@ -38,48 +121,650 @@ public class Estadisticas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTabbedPaneMenuVotacion = new javax.swing.JTabbedPane();
+        jPanelDiputados = new javax.swing.JPanel();
+        jLayeredPaneDiputados = new javax.swing.JLayeredPane();
+        jProgressBarDD = new javax.swing.JProgressBar();
+        jProgressBarDI = new javax.swing.JProgressBar();
+        jLabelBarDD = new javax.swing.JLabel();
+        jLabelPorcentajeDD = new javax.swing.JLabel();
+        jLabelPorcentajeDI = new javax.swing.JLabel();
+        jLabelBarDI = new javax.swing.JLabel();
+        jPanelSenadores = new javax.swing.JPanel();
+        jLayeredPaneSenadores = new javax.swing.JLayeredPane();
+        jProgressBarSD = new javax.swing.JProgressBar();
+        jProgressBarSI = new javax.swing.JProgressBar();
+        jLabelBarSD = new javax.swing.JLabel();
+        jLabelPorcentajeSD = new javax.swing.JLabel();
+        jLabelPorcentajeSI = new javax.swing.JLabel();
+        jLabelBarSI = new javax.swing.JLabel();
+        jPanelDistrito = new javax.swing.JPanel();
+        jLayeredPaneSeleccionados = new javax.swing.JLayeredPane();
         jLabelVotacionProvincia = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelBotones = new javax.swing.JPanel();
+        jLayeredPane5 = new javax.swing.JLayeredPane();
+        jButtonSig = new javax.swing.JButton();
+        jButtonAnt = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelVotacionProvincia.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
-        jLabelVotacionProvincia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelVotacionProvincia.setText(" Elecciones PASO 2020 - Distrito");
+        jTabbedPaneMenuVotacion.setCursor(
+                new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPaneMenuVotacion.setFont(
+                new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jTabbedPaneMenuVotacion.addMouseListener(
+                new java.awt.event.MouseAdapter() {
+                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                        jTabbedPaneMenuVotacionMouseClicked(evt);
+                    }
+                });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        jPanelDiputados.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelDiputadosMouseClicked(evt);
+            }
+        });
+
+        jProgressBarDD.setValue(50);
+
+        jProgressBarDI.setValue(50);
+
+        jLabelBarDD.setText("DatosPartidoLista");
+
+        jLabelPorcentajeDD.setText("Porcentaje");
+
+        jLabelPorcentajeDI.setText("Porcentaje");
+
+        jLabelBarDI.setText("DatosPartidoLista");
+
+        jLayeredPaneDiputados.setLayer(jProgressBarDD,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneDiputados.setLayer(jProgressBarDI,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneDiputados.setLayer(jLabelBarDD,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneDiputados.setLayer(jLabelPorcentajeDD,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneDiputados.setLayer(jLabelPorcentajeDI,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneDiputados.setLayer(jLabelBarDI,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPaneDiputadosLayout = new javax.swing.GroupLayout(
+                jLayeredPaneDiputados);
+        jLayeredPaneDiputados.setLayout(jLayeredPaneDiputadosLayout);
+        jLayeredPaneDiputadosLayout.setHorizontalGroup(
+                jLayeredPaneDiputadosLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                  jLayeredPaneDiputadosLayout.createSequentialGroup()
+                                          .addContainerGap()
+                                          .addGroup(
+                                                  jLayeredPaneDiputadosLayout.createParallelGroup(
+                                                                  javax.swing.GroupLayout.Alignment.LEADING)
+                                                          .addComponent(
+                                                                  jLabelBarDD)
+                                                          .addComponent(
+                                                                  jLabelBarDI))
+                                          .addGap(32, 32, 32)
+                                          .addGroup(
+                                                  jLayeredPaneDiputadosLayout.createParallelGroup(
+                                                                  javax.swing.GroupLayout.Alignment.LEADING)
+                                                          .addGroup(
+                                                                  jLayeredPaneDiputadosLayout.createSequentialGroup()
+                                                                          .addComponent(
+                                                                                  jProgressBarDI,
+                                                                                  javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                  352,
+                                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                          .addPreferredGap(
+                                                                                  javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                          .addComponent(
+                                                                                  jLabelPorcentajeDI))
+                                                          .addGroup(
+                                                                  jLayeredPaneDiputadosLayout.createSequentialGroup()
+                                                                          .addComponent(
+                                                                                  jProgressBarDD,
+                                                                                  javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                  352,
+                                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                          .addGap(18,
+                                                                                  18,
+                                                                                  18)
+                                                                          .addComponent(
+                                                                                  jLabelPorcentajeDD)))
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 599, Short.MAX_VALUE)
+        jLayeredPaneDiputadosLayout.setVerticalGroup(
+                jLayeredPaneDiputadosLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(
+                                jLayeredPaneDiputadosLayout.createSequentialGroup()
+                                        .addGroup(
+                                                jLayeredPaneDiputadosLayout.createParallelGroup(
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(
+                                                                jLayeredPaneDiputadosLayout.createSequentialGroup()
+                                                                        .addContainerGap(
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                        .addComponent(
+                                                                                jProgressBarDD,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                53,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(
+                                                                jLayeredPaneDiputadosLayout.createSequentialGroup()
+                                                                        .addGap(92,
+                                                                                92,
+                                                                                92)
+                                                                        .addComponent(
+                                                                                jLabelPorcentajeDD))
+                                                        .addGroup(
+                                                                jLayeredPaneDiputadosLayout.createSequentialGroup()
+                                                                        .addGap(93,
+                                                                                93,
+                                                                                93)
+                                                                        .addComponent(
+                                                                                jLabelBarDD)))
+                                        .addPreferredGap(
+                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                130, Short.MAX_VALUE)
+                                        .addGroup(
+                                                jLayeredPaneDiputadosLayout.createParallelGroup(
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(
+                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                jLayeredPaneDiputadosLayout.createSequentialGroup()
+                                                                        .addComponent(
+                                                                                jProgressBarDI,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                53,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addContainerGap(
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE))
+                                                        .addGroup(
+                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                jLayeredPaneDiputadosLayout.createSequentialGroup()
+                                                                        .addGroup(
+                                                                                jLayeredPaneDiputadosLayout.createParallelGroup(
+                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(
+                                                                                                jLabelPorcentajeDI,
+                                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                        .addComponent(
+                                                                                                jLabelBarDI,
+                                                                                                javax.swing.GroupLayout.Alignment.TRAILING))
+                                                                        .addGap(67,
+                                                                                67,
+                                                                                67))))
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        javax.swing.GroupLayout jPanelDiputadosLayout = new javax.swing.GroupLayout(
+                jPanelDiputados);
+        jPanelDiputados.setLayout(jPanelDiputadosLayout);
+        jPanelDiputadosLayout.setHorizontalGroup(
+                jPanelDiputadosLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                  jPanelDiputadosLayout.createSequentialGroup()
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE)
+                                          .addComponent(jLayeredPaneDiputados,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE))
+        );
+        jPanelDiputadosLayout.setVerticalGroup(
+                jPanelDiputadosLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                  jPanelDiputadosLayout.createSequentialGroup()
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE)
+                                          .addComponent(jLayeredPaneDiputados,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE))
+        );
+
+        jTabbedPaneMenuVotacion.addTab("Elección de Diputados",
+                                       jPanelDiputados);
+
+        jPanelSenadores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanelSenadoresMouseClicked(evt);
+            }
+        });
+
+        jProgressBarSD.setValue(50);
+
+        jProgressBarSI.setValue(50);
+
+        jLabelBarSD.setText("DatosPartidoLista");
+
+        jLabelPorcentajeSD.setText("Porcentaje");
+
+        jLabelPorcentajeSI.setText("Porcentaje");
+
+        jLabelBarSI.setText("DatosPartidoLista");
+
+        jLayeredPaneSenadores.setLayer(jProgressBarSD,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores.setLayer(jProgressBarSI,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores.setLayer(jLabelBarSD,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores.setLayer(jLabelPorcentajeSD,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores.setLayer(jLabelPorcentajeSI,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneSenadores.setLayer(jLabelBarSI,
+                                       javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPaneSenadoresLayout = new javax.swing.GroupLayout(
+                jLayeredPaneSenadores);
+        jLayeredPaneSenadores.setLayout(jLayeredPaneSenadoresLayout);
+        jLayeredPaneSenadoresLayout.setHorizontalGroup(
+                jLayeredPaneSenadoresLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                  jLayeredPaneSenadoresLayout.createSequentialGroup()
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE)
+                                          .addGroup(
+                                                  jLayeredPaneSenadoresLayout.createParallelGroup(
+                                                                  javax.swing.GroupLayout.Alignment.LEADING)
+                                                          .addComponent(
+                                                                  jLabelBarSD)
+                                                          .addComponent(
+                                                                  jLabelBarSI))
+                                          .addGap(32, 32, 32)
+                                          .addGroup(
+                                                  jLayeredPaneSenadoresLayout.createParallelGroup(
+                                                                  javax.swing.GroupLayout.Alignment.LEADING)
+                                                          .addGroup(
+                                                                  jLayeredPaneSenadoresLayout.createSequentialGroup()
+                                                                          .addComponent(
+                                                                                  jProgressBarSI,
+                                                                                  javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                  352,
+                                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                          .addPreferredGap(
+                                                                                  javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                          .addComponent(
+                                                                                  jLabelPorcentajeSI))
+                                                          .addGroup(
+                                                                  jLayeredPaneSenadoresLayout.createSequentialGroup()
+                                                                          .addComponent(
+                                                                                  jProgressBarSD,
+                                                                                  javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                  352,
+                                                                                  javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                          .addGap(18,
+                                                                                  18,
+                                                                                  18)
+                                                                          .addComponent(
+                                                                                  jLabelPorcentajeSD)))
+                                          .addContainerGap())
+        );
+        jLayeredPaneSenadoresLayout.setVerticalGroup(
+                jLayeredPaneSenadoresLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(
+                                jLayeredPaneSenadoresLayout.createSequentialGroup()
+                                        .addGroup(
+                                                jLayeredPaneSenadoresLayout.createParallelGroup(
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(
+                                                                jLayeredPaneSenadoresLayout.createSequentialGroup()
+                                                                        .addContainerGap(
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE)
+                                                                        .addComponent(
+                                                                                jProgressBarSD,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                53,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(
+                                                                jLayeredPaneSenadoresLayout.createSequentialGroup()
+                                                                        .addGap(92,
+                                                                                92,
+                                                                                92)
+                                                                        .addComponent(
+                                                                                jLabelPorcentajeSD))
+                                                        .addGroup(
+                                                                jLayeredPaneSenadoresLayout.createSequentialGroup()
+                                                                        .addGap(93,
+                                                                                93,
+                                                                                93)
+                                                                        .addComponent(
+                                                                                jLabelBarSD)))
+                                        .addPreferredGap(
+                                                javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                130, Short.MAX_VALUE)
+                                        .addGroup(
+                                                jLayeredPaneSenadoresLayout.createParallelGroup(
+                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(
+                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                jLayeredPaneSenadoresLayout.createSequentialGroup()
+                                                                        .addComponent(
+                                                                                jProgressBarSI,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                                53,
+                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addContainerGap(
+                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                                Short.MAX_VALUE))
+                                                        .addGroup(
+                                                                javax.swing.GroupLayout.Alignment.TRAILING,
+                                                                jLayeredPaneSenadoresLayout.createSequentialGroup()
+                                                                        .addGroup(
+                                                                                jLayeredPaneSenadoresLayout.createParallelGroup(
+                                                                                                javax.swing.GroupLayout.Alignment.LEADING)
+                                                                                        .addComponent(
+                                                                                                jLabelPorcentajeSI,
+                                                                                                javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                                        .addComponent(
+                                                                                                jLabelBarSI,
+                                                                                                javax.swing.GroupLayout.Alignment.TRAILING))
+                                                                        .addGap(67,
+                                                                                67,
+                                                                                67))))
+        );
+
+        javax.swing.GroupLayout jPanelSenadoresLayout = new javax.swing.GroupLayout(
+                jPanelSenadores);
+        jPanelSenadores.setLayout(jPanelSenadoresLayout);
+        jPanelSenadoresLayout.setHorizontalGroup(
+                jPanelSenadoresLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelSenadoresLayout.createSequentialGroup()
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE)
+                                          .addComponent(jLayeredPaneSenadores,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE))
+        );
+        jPanelSenadoresLayout.setVerticalGroup(
+                jPanelSenadoresLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelSenadoresLayout.createSequentialGroup()
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE)
+                                          .addComponent(jLayeredPaneSenadores,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE))
+        );
+
+        jTabbedPaneMenuVotacion.addTab("Elección de Senadores",
+                                       jPanelSenadores);
+
+        javax.swing.GroupLayout jLayeredPaneSeleccionadosLayout = new javax.swing.GroupLayout(
+                jLayeredPaneSeleccionados);
+        jLayeredPaneSeleccionados.setLayout(jLayeredPaneSeleccionadosLayout);
+        jLayeredPaneSeleccionadosLayout.setHorizontalGroup(
+                jLayeredPaneSeleccionadosLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 1185, Short.MAX_VALUE)
+        );
+        jLayeredPaneSeleccionadosLayout.setVerticalGroup(
+                jLayeredPaneSeleccionadosLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(0, 401, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanelDistritoLayout = new javax.swing.GroupLayout(
+                jPanelDistrito);
+        jPanelDistrito.setLayout(jPanelDistritoLayout);
+        jPanelDistritoLayout.setHorizontalGroup(
+                jPanelDistritoLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelDistritoLayout.createSequentialGroup()
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE)
+                                          .addComponent(
+                                                  jLayeredPaneSeleccionados)
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE))
+        );
+        jPanelDistritoLayout.setVerticalGroup(
+                jPanelDistritoLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                  jPanelDistritoLayout.createSequentialGroup()
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE)
+                                          .addComponent(
+                                                  jLayeredPaneSeleccionados)
+                                          .addContainerGap(
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE))
+        );
+
+        jTabbedPaneMenuVotacion.addTab("Estadisticas generales Distrito",
+                                       jPanelDistrito);
+
+        jLabelVotacionProvincia.setFont(
+                new java.awt.Font("Roboto", 0, 36)); // NOI18N
+        jLabelVotacionProvincia.setHorizontalAlignment(
+                javax.swing.SwingConstants.CENTER);
+        jLabelVotacionProvincia.setText(" Elecciones PASO 2021 - Distrito");
+
+        jButtonSig.setBackground(new java.awt.Color(13, 110, 253));
+        jButtonSig.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jButtonSig.setText("Siguiente");
+        jButtonSig.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSigActionPerformed(evt);
+            }
+        });
+
+        jButtonAnt.setBackground(new java.awt.Color(13, 110, 253));
+        jButtonAnt.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jButtonAnt.setText("Atras");
+        jButtonAnt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAntActionPerformed(evt);
+            }
+        });
+
+        jLayeredPane5.setLayer(jButtonSig,
+                               javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane5.setLayer(jButtonAnt,
+                               javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane5Layout = new javax.swing.GroupLayout(
+                jLayeredPane5);
+        jLayeredPane5.setLayout(jLayeredPane5Layout);
+        jLayeredPane5Layout.setHorizontalGroup(
+                jLayeredPane5Layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                                          .addContainerGap()
+                                          .addComponent(jButtonAnt)
+                                          .addPreferredGap(
+                                                  javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                  Short.MAX_VALUE)
+                                          .addComponent(jButtonSig)
+                                          .addContainerGap())
+        );
+        jLayeredPane5Layout.setVerticalGroup(
+                jLayeredPane5Layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jLayeredPane5Layout.createSequentialGroup()
+                                          .addContainerGap()
+                                          .addGroup(
+                                                  jLayeredPane5Layout.createParallelGroup(
+                                                                  javax.swing.GroupLayout.Alignment.BASELINE)
+                                                          .addComponent(
+                                                                  jButtonSig)
+                                                          .addComponent(
+                                                                  jButtonAnt))
+                                          .addContainerGap())
+        );
+
+        javax.swing.GroupLayout jPanelBotonesLayout = new javax.swing.GroupLayout(
+                jPanelBotones);
+        jPanelBotones.setLayout(jPanelBotonesLayout);
+        jPanelBotonesLayout.setHorizontalGroup(
+                jPanelBotonesLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanelBotonesLayout.createSequentialGroup()
+                                          .addGap(79, 79, 79)
+                                          .addComponent(jLayeredPane5)
+                                          .addGap(89, 89, 89))
+        );
+        jPanelBotonesLayout.setVerticalGroup(
+                jPanelBotonesLayout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                  jPanelBotonesLayout.createSequentialGroup()
+                                          .addContainerGap(45, Short.MAX_VALUE)
+                                          .addComponent(jLayeredPane5,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addGap(42, 42, 42))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
+                getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabelVotacionProvincia, javax.swing.GroupLayout.DEFAULT_SIZE, 1065, Short.MAX_VALUE)
-                .addContainerGap())
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jTabbedPaneMenuVotacion)
+                        .addGroup(layout.createSequentialGroup()
+                                          .addGroup(layout.createParallelGroup(
+                                                          javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(
+                                                                    jPanelBotones,
+                                                                    javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                    javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                    Short.MAX_VALUE)
+                                                            .addComponent(
+                                                                    jLabelVotacionProvincia,
+                                                                    javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                    javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                    Short.MAX_VALUE))
+                                          .addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelVotacionProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                layout.createParallelGroup(
+                                javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                  layout.createSequentialGroup()
+                                          .addContainerGap()
+                                          .addComponent(jLabelVotacionProvincia,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        71,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(
+                                                  javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(jTabbedPaneMenuVotacion,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        455,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                          .addPreferredGap(
+                                                  javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                          .addComponent(jPanelBotones,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
+    private void jButtonSigActionPerformed(
+            java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSigActionPerformed
+        // TODO add your handling code here:
+
+        if (jTabbedPaneMenuVotacion.getSelectedIndex() < 2) {
+            int i = jTabbedPaneMenuVotacion.getSelectedIndex();
+            jTabbedPaneMenuVotacion.setSelectedIndex(++i);
+            this.jButtonSig.setVisible(true);
+            this.jButtonAnt.setVisible(true);
+
+        }
+        if (jTabbedPaneMenuVotacion.getSelectedIndex() == 2) {
+            this.jButtonSig.setVisible(false);
+            this.jButtonAnt.setVisible(true);
+        }
+
+    }//GEN-LAST:event_jButtonSigActionPerformed
+
+    private void jButtonAntActionPerformed(
+            java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAntActionPerformed
+        // TODO add your handling code here:
+
+        if (jTabbedPaneMenuVotacion.getSelectedIndex() > 0) {
+            int i = jTabbedPaneMenuVotacion.getSelectedIndex();
+            jTabbedPaneMenuVotacion.setSelectedIndex(--i);
+            this.jButtonAnt.setVisible(true);
+        }
+        if (jTabbedPaneMenuVotacion.getSelectedIndex() == 0) {
+            this.jButtonAnt.setVisible(false);
+        } else if (jTabbedPaneMenuVotacion.getSelectedIndex() == 1) {
+            this.jButtonSig.setVisible(true);
+
+        }
+
+    }//GEN-LAST:event_jButtonAntActionPerformed
+
+    private void jTabbedPaneMenuVotacionMouseClicked(
+            java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTabbedPaneMenuVotacionMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jTabbedPaneMenuVotacionMouseClicked
+
+    private void jPanelDiputadosMouseClicked(
+            java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelDiputadosMouseClicked
+        // TODO add your handling code here:
+
+        ;
+    }//GEN-LAST:event_jPanelDiputadosMouseClicked
+
+    private void jPanelSenadoresMouseClicked(
+            java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSenadoresMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jPanelSenadoresMouseClicked
+
+    private void jPanelSeleccionadosMouseClicked(
+            java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanelSeleccionadosMouseClicked
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_jPanelSeleccionadosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -97,16 +782,20 @@ public class Estadisticas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(
+            java.util.logging.Logger.getLogger(
+                    Estadisticas.class.getName()).log(
                     java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(
+            java.util.logging.Logger.getLogger(
+                    Estadisticas.class.getName()).log(
                     java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(
+            java.util.logging.Logger.getLogger(
+                    Estadisticas.class.getName()).log(
                     java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Estadisticas.class.getName()).log(
+            java.util.logging.Logger.getLogger(
+                    Estadisticas.class.getName()).log(
                     java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
@@ -121,8 +810,53 @@ public class Estadisticas extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAnt;
+    private javax.swing.JButton jButtonSig;
+    private javax.swing.JLabel jLabelBarDD;
+    private javax.swing.JLabel jLabelBarDI;
+    private javax.swing.JLabel jLabelBarSD;
+    private javax.swing.JLabel jLabelBarSI;
+    private javax.swing.JLabel jLabelPorcentajeDD;
+    private javax.swing.JLabel jLabelPorcentajeDI;
+    private javax.swing.JLabel jLabelPorcentajeSD;
+    private javax.swing.JLabel jLabelPorcentajeSI;
     private javax.swing.JLabel jLabelVotacionProvincia;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLayeredPane jLayeredPane5;
+    private javax.swing.JLayeredPane jLayeredPaneDiputados;
+    private javax.swing.JLayeredPane jLayeredPaneSeleccionados;
+    private javax.swing.JLayeredPane jLayeredPaneSenadores;
+    private javax.swing.JPanel jPanelBotones;
+    private javax.swing.JPanel jPanelDiputados;
+    private javax.swing.JPanel jPanelDistrito;
+    private javax.swing.JPanel jPanelSenadores;
+    private javax.swing.JProgressBar jProgressBarDD;
+    private javax.swing.JProgressBar jProgressBarDI;
+    private javax.swing.JProgressBar jProgressBarSD;
+    private javax.swing.JProgressBar jProgressBarSI;
+    private javax.swing.JTabbedPane jTabbedPaneMenuVotacion;
     // End of variables declaration//GEN-END:variables
+
+    /**
+     * Devuelve las listas de un Distrito pasado por parámetro.
+     *
+     * @param distrito Distrito que se desea traer sus listas.
+     * @return Lista de listas.
+     */
+    public List<Lista> traeListasDistrito(String distrito) {
+        List<Lista> listasRetorno = new ArrayList<>();
+
+        for (int i = 0;
+             i < Main.camaraElectoralArgentina.getListas().size(); i++) {
+
+            if (Main.camaraElectoralArgentina.getListas().get(
+                    i).getProvincia().equals(distrito)) {
+                listasRetorno.add(
+                        Main.camaraElectoralArgentina.getListas().get(i));
+            }
+
+        }
+
+        return listasRetorno;
+    }
 
 }

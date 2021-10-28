@@ -13,11 +13,12 @@ public class Domicilio {
     private String provincia;
 
     /**
-     * Constructor del Domicilio del Elector
-     * @param direccion Dirección de la calle donde vive el Elector
-     * @param localidad Localidad en la que vive el Elector
-     * @param departamento Departamento de la Localidad donde vive el Elector
-     * @param provincia Provincia donde vive el Elector
+     * Constructor del Domicilio del Elector.
+     *
+     * @param direccion    Dirección de la calle donde vive el Elector.
+     * @param localidad    Localidad en la que vive el Elector.
+     * @param departamento Departamento de la Localidad donde vive el Elector.
+     * @param provincia    Provincia donde vive el Elector.
      */
     public Domicilio(String direccion, String localidad,
                      String departamento, String provincia) {
@@ -28,69 +29,83 @@ public class Domicilio {
     }
 
     /**
-     * Devuelve la dirección de la calle donde reside el Elector
-     * @return Dirección de la calle en la que reside
+     * Devuelve la dirección de la calle donde reside el Elector.
+     *
+     * @return Dirección de la calle.
      */
     public String getDireccion() {
         return direccion;
     }
 
     /**
-     * Setea la dirección de la calle donde reside el Elector
-     * @param direccion Dirección de la calle en la que reside
+     * Setea la dirección de la calle donde reside el Elector.
+     *
+     * @param direccion Dirección de la calle.
      */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
 
     /**
-     * Devuelve la localidad donde vive el Elector
-     * @return Localidad donde vive
+     * Devuelve la localidad donde vive el Elector.
+     *
+     * @return Localidad.
      */
     public String getLocalidad() {
         return localidad;
     }
 
     /**
-     * Setea la localidad en la que vive el Elector
-     * @param localidad Localidad donde vive
+     * Setea la localidad en la que vive el Elector.
+     *
+     * @param localidad Localidad.
      */
     public void setLocalidad(String localidad) {
         this.localidad = localidad;
     }
 
     /**
-     * Setea el departamento de la localidad
-     * @return Departamento de la localidad
+     * Setea el departamento de la localidad.
+     *
+     * @return Departamento de la localidad.
      */
     public String getDepartamento() {
         return departamento;
     }
 
     /**
-     * Setea el departamento de la localidad
-     * @param departamento Departamento de la localidad
+     * Setea el departamento de la localidad.
+     *
+     * @param departamento Departamento de la localidad.
      */
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
 
     /**
-     * Devuelve la provincia donde vive el Elector
-     * @return Provincia donde vive
+     * Devuelve la provincia donde vive el Elector.
+     *
+     * @return Provincia donde vive.
      */
     public String getProvincia() {
         return provincia;
     }
 
     /**
-     * Setea la provincia donde vive el Elector
-     * @param provincia Provincia donde vive
+     * Setea la provincia donde vive el Elector.
+     *
+     * @param provincia Provincia donde vive.
      */
     public void setProvincia(String provincia) {
         this.provincia = provincia;
     }
 
+    /**
+     * Método equals con los campos claves: dirección, localidad, departamento, provincia.
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -109,6 +124,7 @@ public class Domicilio {
 
     /**
      * Concatena en una cadena de caracteres los atributos de Domicilio
+     *
      * @return
      */
     @Override

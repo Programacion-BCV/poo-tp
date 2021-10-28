@@ -1,6 +1,6 @@
 /**
  * Clase Partido Político
- *
+ * <p>
  * Permite la creación de los Partidos Políticos
  */
 package com.programacion_bcd.taller.sistema;
@@ -14,10 +14,11 @@ public class PartidoPolitico {
     private List<PartidoPolitico> partido;
 
     /**
-     * Constructor de objetos de tipo Lista
-     * @param nombre Nombre de la Lista
-     * @param lista
-     * @param partido Partido a la que pertecene la Lista
+     * Constructor que permite inicializar los objetos de tipo Lista.
+     *
+     * @param nombre  Nombre de la Lista
+     * @param lista   Lista de listas que conforman los partidos políticos.
+     * @param partido Partido a la que pertecene la Lista.
      */
     public PartidoPolitico(String nombre, List<Lista> lista,
                            List<PartidoPolitico> partido) {
@@ -27,37 +28,61 @@ public class PartidoPolitico {
     }
 
     /**
-     * Devuelve el nombre de la Lista
-     * @return Nombre de la lista
+     * Devuelve el nombre de la Lista.
+     *
+     * @return Nombre de la lista.
      */
     public String getNombre() {return nombre;}
 
     /**
-     * Setea el nombre de la Lista
-     * @param nombre Nombre de la Lista
+     * Setea el nombre de la Lista.
+     *
+     * @param nombre Nombre de la Lista.
      */
     public void setNombre(String nombre) {this.nombre = nombre;}
 
+    /**
+     * Devuelve la lista de listas de ese Partido Político.
+     *
+     * @return Lista de listas del Partido Político.
+     */
     public List<Lista> getLista() {
         return lista;
     }
 
+    /**
+     * Setea la lista de listas de ese Partido Político.
+     *
+     * @param lista Lista de listas del Partido Político.
+     */
     public void setLista(List<Lista> lista) {
         this.lista = lista;
     }
 
     /**
+     * Devuelve una lista de los Partidos Políticos.
      *
-     * @return
+     * @return Lista de Partidos Políticos.
      */
     public List<PartidoPolitico> getPartido() {
         return partido;
     }
 
+    /**
+     * Setea las listas de Partidos Políticos.
+     *
+     * @param partido Lista de Partidos Políticos.
+     */
     public void setPartido(List<PartidoPolitico> partido) {
         this.partido = partido;
     }
 
+    /**
+     * Método equals con los campos claves: nombre del Partido, Lista del partido, Partido.
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o)
@@ -76,7 +101,8 @@ public class PartidoPolitico {
     }
 
     /**
-     * Concatena en una cadena de caracteres los atributos de Partido Politico
+     * Concatena en una cadena de caracteres los atributos de Partido Politico.
+     *
      * @return
      */
     @Override

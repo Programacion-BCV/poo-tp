@@ -256,7 +256,7 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jButtonSantaFe" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jButtonTucumAn" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jButtonTucuman" alignment="0" max="32767" attributes="0"/>
                               <Component id="jButtonTierraDelFuego" alignment="0" max="32767" attributes="0"/>
                               <Component id="jButtonSantiagoDelEstero" alignment="0" max="32767" attributes="0"/>
                               <Component id="jButtonSantaCruz" alignment="0" max="32767" attributes="0"/>
@@ -298,7 +298,7 @@
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                           <Component id="jButtonTierraDelFuego" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButtonTucumAn" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonTucuman" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -317,36 +317,57 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Misiones"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMisionesActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonNeuqu&#xe9;n">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Neuqu&#xe9;n"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonNeuqu&#xe9;nActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonRioNegro">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="R&#xed;o Negro"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonRioNegroActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonSalta">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Salta"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSaltaActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonSanJuan">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="San Juan"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSanJuanActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonSanLuis">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="San Luis"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSanLuisActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonSantaCruz">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Santa Cruz"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSantaCruzActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonSantiagoDelEstero">
                   <Properties>
@@ -360,16 +381,25 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Santa Fe"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonSantaFeActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonTierraDelFuego">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Tierra del Fuego"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonTierraDelFuegoActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="jButtonTucumAn">
+                <Component class="javax.swing.JButton" name="jButtonTucuman">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Tucum&#xe1;n"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonTucumanActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -441,41 +471,65 @@
                     <Property name="text" type="java.lang.String" value="Capital Federal"/>
                     <Property name="horizontalTextPosition" type="int" value="0"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCapitalFederalActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonBuenosAires">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Buenos Aires"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonBuenosAiresActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonCatamarca">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Catamarca"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCatamarcaActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonChaco">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Chaco"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonChacoActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonChubut">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Chubut"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonChubutActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonCordoba">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="C&#xf3;rdoba"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCordobaActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonCorrientes">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Corrientes"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCorrientesActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonEntreRios">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Entre R&#xed;os"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonEntreRiosActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonFormosa">
                   <Properties>
@@ -489,16 +543,25 @@
                   <Properties>
                     <Property name="text" type="java.lang.String" value="Jujuy"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonJujuyActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonLaPampa">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="La Pampa"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonLaPampaActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButtonLaRioja">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="La Rioja"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonLaRiojaActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -512,7 +575,7 @@
           <Font name="Roboto" size="36" style="0"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value=" Elecciones PASO 2020"/>
+        <Property name="text" type="java.lang.String" value=" Elecciones PASO 2021"/>
       </Properties>
     </Component>
   </SubComponents>

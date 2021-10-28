@@ -7,6 +7,7 @@ package com.programacion_bcd.taller.vista;
 
 import com.programacion_bcd.taller.carga_datos.CargaDatos;
 import com.programacion_bcd.taller.sistema.CamaraElectoral;
+import com.programacion_bcd.taller.sistema.Distrito;
 import com.programacion_bcd.taller.sistema.Elector;
 import com.programacion_bcd.taller.sistema.TipoCandidato;
 
@@ -30,7 +31,7 @@ public class Main extends javax.swing.JFrame {
     public Main() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
+
     }
 
     /**
@@ -65,7 +66,7 @@ public class Main extends javax.swing.JFrame {
         jButtonSantiagoDelEstero = new javax.swing.JButton();
         jButtonSantaFe = new javax.swing.JButton();
         jButtonTierraDelFuego = new javax.swing.JButton();
-        jButtonTucumAn = new javax.swing.JButton();
+        jButtonTucuman = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jButtonCapitalFederal = new javax.swing.JButton();
         jButtonBuenosAires = new javax.swing.JButton();
@@ -81,38 +82,31 @@ public class Main extends javax.swing.JFrame {
         jButtonLaRioja = new javax.swing.JButton();
         jLabelVotacionProvincia = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout jDialogLayout = new javax.swing.GroupLayout(
-                jDialog.getContentPane());
+        javax.swing.GroupLayout jDialogLayout = new javax.swing.GroupLayout(jDialog.getContentPane());
         jDialog.getContentPane().setLayout(jDialogLayout);
         jDialogLayout.setHorizontalGroup(
-                jDialogLayout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 400, Short.MAX_VALUE)
+            jDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         jDialogLayout.setVerticalGroup(
-                jDialogLayout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 300, Short.MAX_VALUE)
+            jDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Elecciones PASO 2021");
 
-        jTabbedPaneMenuPrincipal.setCursor(
-                new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jTabbedPaneMenuPrincipal.setFont(
-                new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jTabbedPaneMenuPrincipal.addMouseListener(
-                new java.awt.event.MouseAdapter() {
-                    public void mouseClicked(java.awt.event.MouseEvent evt) {
-                        jTabbedPaneMenuPrincipalMouseClicked(evt);
-                    }
-                });
+        jTabbedPaneMenuPrincipal.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPaneMenuPrincipal.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jTabbedPaneMenuPrincipal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTabbedPaneMenuPrincipalMouseClicked(evt);
+            }
+        });
 
         jTextFieldDNI.setColumns(20);
         jTextFieldDNI.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jTextFieldDNI.setCursor(
-                new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldDNI.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         jTextFieldDNI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldDNIActionPerformed(evt);
@@ -126,17 +120,13 @@ public class Main extends javax.swing.JFrame {
         jLabelCodigo.setText("Código de Verificación");
 
         jPasswordFieldCodigo.setColumns(20);
-        jPasswordFieldCodigo.setFont(
-                new java.awt.Font("Roboto", 0, 24)); // NOI18N
-        jPasswordFieldCodigo.setCursor(
-                new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jPasswordFieldCodigo.addActionListener(
-                new java.awt.event.ActionListener() {
-                    public void actionPerformed(
-                            java.awt.event.ActionEvent evt) {
-                        jPasswordFieldCodigoActionPerformed(evt);
-                    }
-                });
+        jPasswordFieldCodigo.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jPasswordFieldCodigo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jPasswordFieldCodigo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordFieldCodigoActionPerformed(evt);
+            }
+        });
 
         jButtonEnviar.setBackground(new java.awt.Color(13, 110, 253));
         jButtonEnviar.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
@@ -147,129 +137,64 @@ public class Main extends javax.swing.JFrame {
             }
         });
 
-        jLayeredPaneFormulario.setLayer(jTextFieldDNI,
-                                        javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneFormulario.setLayer(jLabelDNI,
-                                        javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneFormulario.setLayer(jLabelCodigo,
-                                        javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneFormulario.setLayer(jPasswordFieldCodigo,
-                                        javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPaneFormulario.setLayer(jButtonEnviar,
-                                        javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneFormulario.setLayer(jTextFieldDNI, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneFormulario.setLayer(jLabelDNI, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneFormulario.setLayer(jLabelCodigo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneFormulario.setLayer(jPasswordFieldCodigo, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPaneFormulario.setLayer(jButtonEnviar, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jLayeredPaneFormularioLayout = new javax.swing.GroupLayout(
-                jLayeredPaneFormulario);
+        javax.swing.GroupLayout jLayeredPaneFormularioLayout = new javax.swing.GroupLayout(jLayeredPaneFormulario);
         jLayeredPaneFormulario.setLayout(jLayeredPaneFormularioLayout);
         jLayeredPaneFormularioLayout.setHorizontalGroup(
-                jLayeredPaneFormularioLayout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(
-                                jLayeredPaneFormularioLayout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addGroup(
-                                                jLayeredPaneFormularioLayout.createParallelGroup(
-                                                                javax.swing.GroupLayout.Alignment.TRAILING)
-                                                        .addGroup(
-                                                                jLayeredPaneFormularioLayout.createSequentialGroup()
-                                                                        .addComponent(
-                                                                                jLabelCodigo)
-                                                                        .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                Short.MAX_VALUE)
-                                                                        .addComponent(
-                                                                                jPasswordFieldCodigo,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(
-                                                                jLayeredPaneFormularioLayout.createSequentialGroup()
-                                                                        .addComponent(
-                                                                                jLabelDNI)
-                                                                        .addPreferredGap(
-                                                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                        .addComponent(
-                                                                                jTextFieldDNI,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addContainerGap(38, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                  jLayeredPaneFormularioLayout.createSequentialGroup()
-                                          .addContainerGap(
-                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                  Short.MAX_VALUE)
-                                          .addComponent(jButtonEnviar)
-                                          .addContainerGap(
-                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                  Short.MAX_VALUE))
+            jLayeredPaneFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPaneFormularioLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jLayeredPaneFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jLayeredPaneFormularioLayout.createSequentialGroup()
+                        .addComponent(jLabelCodigo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jPasswordFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jLayeredPaneFormularioLayout.createSequentialGroup()
+                        .addComponent(jLabelDNI)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPaneFormularioLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonEnviar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jLayeredPaneFormularioLayout.setVerticalGroup(
-                jLayeredPaneFormularioLayout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(
-                                jLayeredPaneFormularioLayout.createSequentialGroup()
-                                        .addGap(19, 19, 19)
-                                        .addGroup(
-                                                jLayeredPaneFormularioLayout.createParallelGroup(
-                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(
-                                                                jTextFieldDNI,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(
-                                                                jLabelDNI))
-                                        .addPreferredGap(
-                                                javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(
-                                                jLayeredPaneFormularioLayout.createParallelGroup(
-                                                                javax.swing.GroupLayout.Alignment.BASELINE)
-                                                        .addComponent(
-                                                                jLabelCodigo)
-                                                        .addComponent(
-                                                                jPasswordFieldCodigo,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGap(51, 51, 51)
-                                        .addComponent(jButtonEnviar)
-                                        .addGap(39, 39, 39))
+            jLayeredPaneFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPaneFormularioLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(jLayeredPaneFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldDNI, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelDNI))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jLayeredPaneFormularioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelCodigo)
+                    .addComponent(jPasswordFieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addComponent(jButtonEnviar)
+                .addGap(39, 39, 39))
         );
 
-        javax.swing.GroupLayout jPanelVotacionLayout = new javax.swing.GroupLayout(
-                jPanelVotacion);
+        javax.swing.GroupLayout jPanelVotacionLayout = new javax.swing.GroupLayout(jPanelVotacion);
         jPanelVotacion.setLayout(jPanelVotacionLayout);
         jPanelVotacionLayout.setHorizontalGroup(
-                jPanelVotacionLayout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanelVotacionLayout.createSequentialGroup()
-                                          .addContainerGap(
-                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                  Short.MAX_VALUE)
-                                          .addComponent(jLayeredPaneFormulario,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                          .addContainerGap(
-                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                  Short.MAX_VALUE))
+            jPanelVotacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelVotacionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLayeredPaneFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelVotacionLayout.setVerticalGroup(
-                jPanelVotacionLayout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanelVotacionLayout.createSequentialGroup()
-                                          .addContainerGap(
-                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                  Short.MAX_VALUE)
-                                          .addComponent(jLayeredPaneFormulario,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                          .addContainerGap(
-                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                  Short.MAX_VALUE))
+            jPanelVotacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelVotacionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLayeredPaneFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jTabbedPaneMenuPrincipal.addTab("Votación", jPanelVotacion);
@@ -282,184 +207,204 @@ public class Main extends javax.swing.JFrame {
         });
 
         jButtonMisiones.setText("Misiones");
+        jButtonMisiones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMisionesActionPerformed(evt);
+            }
+        });
 
         jButtonNeuquén.setText("Neuquén");
+        jButtonNeuquén.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNeuquénActionPerformed(evt);
+            }
+        });
 
         jButtonRioNegro.setText("Río Negro");
+        jButtonRioNegro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRioNegroActionPerformed(evt);
+            }
+        });
 
         jButtonSalta.setText("Salta");
+        jButtonSalta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSaltaActionPerformed(evt);
+            }
+        });
 
         jButtonSanJuan.setText("San Juan");
+        jButtonSanJuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSanJuanActionPerformed(evt);
+            }
+        });
 
         jButtonSanLuis.setText("San Luis");
+        jButtonSanLuis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSanLuisActionPerformed(evt);
+            }
+        });
 
         jButtonSantaCruz.setText("Santa Cruz");
+        jButtonSantaCruz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSantaCruzActionPerformed(evt);
+            }
+        });
 
         jButtonSantiagoDelEstero.setText("Santiago del Estero");
-        jButtonSantiagoDelEstero.addActionListener(
-                new java.awt.event.ActionListener() {
-                    public void actionPerformed(
-                            java.awt.event.ActionEvent evt) {
-                        jButtonSantiagoDelEsteroActionPerformed(evt);
-                    }
-                });
+        jButtonSantiagoDelEstero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSantiagoDelEsteroActionPerformed(evt);
+            }
+        });
 
         jButtonSantaFe.setText("Santa Fe");
+        jButtonSantaFe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSantaFeActionPerformed(evt);
+            }
+        });
 
         jButtonTierraDelFuego.setText("Tierra del Fuego");
+        jButtonTierraDelFuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTierraDelFuegoActionPerformed(evt);
+            }
+        });
 
-        jButtonTucumAn.setText("Tucumán");
+        jButtonTucuman.setText("Tucumán");
+        jButtonTucuman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTucumanActionPerformed(evt);
+            }
+        });
 
-        jLayeredPane2.setLayer(jButtonMendoza,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonMisiones,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonNeuquén,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonRioNegro,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSalta,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSanJuan,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSanLuis,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSantaCruz,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSantiagoDelEstero,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSantaFe,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonTierraDelFuego,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonTucumAn,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonMendoza, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonMisiones, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonNeuquén, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonRioNegro, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSalta, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSanJuan, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSanLuis, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSantaCruz, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSantiagoDelEstero, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSantaFe, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonTierraDelFuego, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonTucuman, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(
-                jLayeredPane2);
+        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
         jLayeredPane2.setLayout(jLayeredPane2Layout);
         jLayeredPane2Layout.setHorizontalGroup(
-                jLayeredPane2Layout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                          .addContainerGap()
-                                          .addGroup(
-                                                  jLayeredPane2Layout.createParallelGroup(
-                                                                  javax.swing.GroupLayout.Alignment.LEADING,
-                                                                  false)
-                                                          .addComponent(
-                                                                  jButtonSantaFe,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonTucumAn,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonTierraDelFuego,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonSantiagoDelEstero,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonSantaCruz,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonSanLuis,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonSanJuan,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonSalta,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonRioNegro,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonNeuquén,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonMisiones,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonMendoza,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE))
-                                          .addContainerGap(12, Short.MAX_VALUE))
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonSantaFe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonTucuman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonTierraDelFuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSantiagoDelEstero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSantaCruz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSanLuis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSanJuan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSalta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonRioNegro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonNeuquén, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonMisiones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonMendoza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         jLayeredPane2Layout.setVerticalGroup(
-                jLayeredPane2Layout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                                          .addContainerGap()
-                                          .addComponent(jButtonMendoza)
-                                          .addGap(23, 23, 23)
-                                          .addComponent(jButtonMisiones)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonNeuquén)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonRioNegro)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonSalta)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonSanJuan)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonSanLuis)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonSantaCruz)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonSantaFe)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(
-                                                  jButtonSantiagoDelEstero)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonTierraDelFuego)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonTucumAn)
-                                          .addContainerGap())
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButtonMendoza)
+                .addGap(23, 23, 23)
+                .addComponent(jButtonMisiones)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonNeuquén)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonRioNegro)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSalta)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSanJuan)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSanLuis)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSantaCruz)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSantaFe)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSantiagoDelEstero)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonTierraDelFuego)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonTucuman)
+                .addContainerGap())
         );
 
         jLayeredPane1.setPreferredSize(new java.awt.Dimension(173, 527));
 
         jButtonCapitalFederal.setText("Capital Federal");
-        jButtonCapitalFederal.setHorizontalTextPosition(
-                javax.swing.SwingConstants.CENTER);
+        jButtonCapitalFederal.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonCapitalFederal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCapitalFederalActionPerformed(evt);
+            }
+        });
 
         jButtonBuenosAires.setText("Buenos Aires");
+        jButtonBuenosAires.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBuenosAiresActionPerformed(evt);
+            }
+        });
 
         jButtonCatamarca.setText("Catamarca");
+        jButtonCatamarca.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCatamarcaActionPerformed(evt);
+            }
+        });
 
         jButtonChaco.setText("Chaco");
+        jButtonChaco.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChacoActionPerformed(evt);
+            }
+        });
 
         jButtonChubut.setText("Chubut");
+        jButtonChubut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonChubutActionPerformed(evt);
+            }
+        });
 
         jButtonCordoba.setText("Córdoba");
+        jButtonCordoba.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCordobaActionPerformed(evt);
+            }
+        });
 
         jButtonCorrientes.setText("Corrientes");
+        jButtonCorrientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCorrientesActionPerformed(evt);
+            }
+        });
 
         jButtonEntreRios.setText("Entre Ríos");
+        jButtonEntreRios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEntreRiosActionPerformed(evt);
+            }
+        });
 
         jButtonFormosa.setText("Formosa");
         jButtonFormosa.addActionListener(new java.awt.event.ActionListener() {
@@ -469,212 +414,130 @@ public class Main extends javax.swing.JFrame {
         });
 
         jButtonJujuy.setText("Jujuy");
+        jButtonJujuy.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonJujuyActionPerformed(evt);
+            }
+        });
 
         jButtonLaPampa.setText("La Pampa");
+        jButtonLaPampa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLaPampaActionPerformed(evt);
+            }
+        });
 
         jButtonLaRioja.setText("La Rioja");
+        jButtonLaRioja.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLaRiojaActionPerformed(evt);
+            }
+        });
 
-        jLayeredPane1.setLayer(jButtonCapitalFederal,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonBuenosAires,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonCatamarca,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonChaco,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonChubut,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonCordoba,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonCorrientes,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonEntreRios,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonFormosa,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonJujuy,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonLaPampa,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane1.setLayer(jButtonLaRioja,
-                               javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonCapitalFederal, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonBuenosAires, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonCatamarca, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonChaco, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonChubut, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonCordoba, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonCorrientes, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonEntreRios, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonFormosa, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonJujuy, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonLaPampa, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(jButtonLaRioja, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
-        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(
-                jLayeredPane1);
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
         jLayeredPane1Layout.setHorizontalGroup(
-                jLayeredPane1Layout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                          .addContainerGap()
-                                          .addGroup(
-                                                  jLayeredPane1Layout.createParallelGroup(
-                                                                  javax.swing.GroupLayout.Alignment.LEADING)
-                                                          .addComponent(
-                                                                  jButtonBuenosAires,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonCapitalFederal,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  161,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonCatamarca,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonChaco,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonChubut,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonCordoba,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonCorrientes,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonEntreRios,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonFormosa,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonJujuy,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonLaPampa,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE)
-                                                          .addComponent(
-                                                                  jButtonLaRioja,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                  Short.MAX_VALUE))
-                                          .addContainerGap())
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jButtonBuenosAires, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonCapitalFederal, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE)
+                    .addComponent(jButtonCatamarca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonChaco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonChubut, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonCordoba, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonCorrientes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonEntreRios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonFormosa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonJujuy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonLaPampa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonLaRioja, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jLayeredPane1Layout.setVerticalGroup(
-                jLayeredPane1Layout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jLayeredPane1Layout.createSequentialGroup()
-                                          .addContainerGap()
-                                          .addComponent(jButtonCapitalFederal)
-                                          .addGap(23, 23, 23)
-                                          .addComponent(jButtonBuenosAires)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonCatamarca)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonChaco)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonChubut)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonCordoba)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonCorrientes)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonEntreRios)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonFormosa)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonJujuy)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonLaPampa)
-                                          .addGap(18, 18, 18)
-                                          .addComponent(jButtonLaRioja)
-                                          .addContainerGap())
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButtonCapitalFederal)
+                .addGap(23, 23, 23)
+                .addComponent(jButtonBuenosAires)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonCatamarca)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonChaco)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonChubut)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonCordoba)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonCorrientes)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonEntreRios)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonFormosa)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonJujuy)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonLaPampa)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonLaRioja)
+                .addContainerGap())
         );
 
-        javax.swing.GroupLayout jPanelEstadisticasLayout = new javax.swing.GroupLayout(
-                jPanelEstadisticas);
+        javax.swing.GroupLayout jPanelEstadisticasLayout = new javax.swing.GroupLayout(jPanelEstadisticas);
         jPanelEstadisticas.setLayout(jPanelEstadisticasLayout);
         jPanelEstadisticasLayout.setHorizontalGroup(
-                jPanelEstadisticasLayout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(
-                                jPanelEstadisticasLayout.createSequentialGroup()
-                                        .addGap(133, 133, 133)
-                                        .addComponent(jLayeredPane1,
-                                                      javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                      javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                      javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(437, 437, 437)
-                                        .addComponent(jLayeredPane2)
-                                        .addGap(312, 312, 312))
+            jPanelEstadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEstadisticasLayout.createSequentialGroup()
+                .addGap(133, 133, 133)
+                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(437, 437, 437)
+                .addComponent(jLayeredPane2)
+                .addGap(312, 312, 312))
         );
         jPanelEstadisticasLayout.setVerticalGroup(
-                jPanelEstadisticasLayout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(
-                                jPanelEstadisticasLayout.createSequentialGroup()
-                                        .addGap(33, 33, 33)
-                                        .addGroup(
-                                                jPanelEstadisticasLayout.createParallelGroup(
-                                                                javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(
-                                                                jLayeredPane2,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(
-                                                                jLayeredPane1,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addContainerGap(67, Short.MAX_VALUE))
+            jPanelEstadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEstadisticasLayout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanelEstadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(67, Short.MAX_VALUE))
         );
 
         jTabbedPaneMenuPrincipal.addTab("Estadísticas", jPanelEstadisticas);
 
-        jLabelVotacionProvincia.setFont(
-                new java.awt.Font("Roboto", 0, 36)); // NOI18N
-        jLabelVotacionProvincia.setHorizontalAlignment(
-                javax.swing.SwingConstants.CENTER);
-        jLabelVotacionProvincia.setText(" Elecciones PASO 2020");
+        jLabelVotacionProvincia.setFont(new java.awt.Font("Roboto", 0, 36)); // NOI18N
+        jLabelVotacionProvincia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelVotacionProvincia.setText(" Elecciones PASO 2021");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(
-                getContentPane());
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jTabbedPaneMenuPrincipal)
-                        .addComponent(jLabelVotacionProvincia,
-                                      javax.swing.GroupLayout.DEFAULT_SIZE,
-                                      javax.swing.GroupLayout.DEFAULT_SIZE,
-                                      Short.MAX_VALUE)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jTabbedPaneMenuPrincipal)
+            .addComponent(jLabelVotacionProvincia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(
-                                javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                  layout.createSequentialGroup()
-                                          .addComponent(jLabelVotacionProvincia,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                        71,
-                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                          .addPreferredGap(
-                                                  javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                          .addComponent(
-                                                  jTabbedPaneMenuPrincipal))
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jLabelVotacionProvincia, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTabbedPaneMenuPrincipal))
         );
 
         pack();
@@ -683,6 +546,11 @@ public class Main extends javax.swing.JFrame {
     private void jButtonFormosaActionPerformed(
             java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonFormosaActionPerformed
         // TODO add your handling code here:
+        String distrito = jButtonFormosa.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonFormosaActionPerformed
 
     private void jTabbedPaneMenuPrincipalMouseClicked(
@@ -694,12 +562,213 @@ public class Main extends javax.swing.JFrame {
     private void jButtonSantiagoDelEsteroActionPerformed(
             java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSantiagoDelEsteroActionPerformed
         // TODO add your handling code here:
+        String distrito = jButtonSantiagoDelEstero.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonSantiagoDelEsteroActionPerformed
 
     private void jButtonMendozaActionPerformed(
             java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMendozaActionPerformed
         // TODO add your handling code here:
+        String distrito = jButtonMendoza.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonMendozaActionPerformed
+
+    private void jButtonCapitalFederalActionPerformed(
+            java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCapitalFederalActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonCapitalFederal.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_jButtonCapitalFederalActionPerformed
+
+    private void jButtonBuenosAiresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBuenosAiresActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonBuenosAires.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonBuenosAiresActionPerformed
+
+    private void jButtonCatamarcaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCatamarcaActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonCatamarca.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonCatamarcaActionPerformed
+
+    private void jButtonChacoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChacoActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonChaco.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonChacoActionPerformed
+
+    private void jButtonChubutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChubutActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonChubut.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonChubutActionPerformed
+
+    private void jButtonCordobaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCordobaActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonCordoba.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonCordobaActionPerformed
+
+    private void jButtonCorrientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCorrientesActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonCorrientes.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonCorrientesActionPerformed
+
+    private void jButtonEntreRiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEntreRiosActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonEntreRios.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonEntreRiosActionPerformed
+
+    private void jButtonJujuyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonJujuyActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonJujuy.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonJujuyActionPerformed
+
+    private void jButtonLaPampaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLaPampaActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonLaPampa.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonLaPampaActionPerformed
+
+    private void jButtonLaRiojaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLaRiojaActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonLaRioja.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonLaRiojaActionPerformed
+
+    private void jButtonMisionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMisionesActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonMisiones.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonMisionesActionPerformed
+
+    private void jButtonNeuquénActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNeuquénActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonNeuquén.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonNeuquénActionPerformed
+
+    private void jButtonRioNegroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRioNegroActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonRioNegro.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonRioNegroActionPerformed
+
+    private void jButtonSaltaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSaltaActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonSalta.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonSaltaActionPerformed
+
+    private void jButtonSanJuanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSanJuanActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonSanJuan.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonSanJuanActionPerformed
+
+    private void jButtonSanLuisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSanLuisActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonSanLuis.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonSanLuisActionPerformed
+
+    private void jButtonSantaCruzActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSantaCruzActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonSantaCruz.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonSantaCruzActionPerformed
+
+    private void jButtonSantaFeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSantaFeActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonSantaFe.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonSantaFeActionPerformed
+
+    private void jButtonTierraDelFuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTierraDelFuegoActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonTierraDelFuego.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonTierraDelFuegoActionPerformed
+
+    private void jButtonTucumanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTucumanActionPerformed
+        // TODO add your handling code here:
+        String distrito = jButtonTucuman.getText();
+        traerDistrito(distrito);
+        Estadisticas estadistica = new Estadisticas();
+        estadistica.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonTucumanActionPerformed
 
     private void jTextFieldDNIActionPerformed(
             java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextFieldDNIActionPerformed
@@ -866,7 +935,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSantaFe;
     private javax.swing.JButton jButtonSantiagoDelEstero;
     private javax.swing.JButton jButtonTierraDelFuego;
-    private javax.swing.JButton jButtonTucumAn;
+    private javax.swing.JButton jButtonTucuman;
     private javax.swing.JDialog jDialog;
     private javax.swing.JLabel jLabelCodigo;
     private javax.swing.JLabel jLabelDNI;
@@ -880,4 +949,22 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPaneMenuPrincipal;
     private javax.swing.JTextField jTextFieldDNI;
     // End of variables declaration//GEN-END:variables
+
+    public static void traerDistrito(String distritoParametro) {
+        Distrito distrito = new Distrito(distritoParametro, null);
+
+        for (int i = 0;
+             i <
+             Main.camaraElectoralArgentina.getListaDistritos().size(); i++) {
+
+            if (Main.camaraElectoralArgentina.getListaDistritos().get(i).equals(
+                    distrito)) {
+
+                Estadisticas.distritoEstadistica = Main.camaraElectoralArgentina.getListaDistritos().get(
+                        i);
+                break;
+            }
+
+        }
+    }
 }

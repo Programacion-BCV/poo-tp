@@ -21,7 +21,7 @@ public class Elector implements Comparable<Elector> {
     private Voto voto;
 
     /**
-     * Construtor que permite la creación de cada uno de los electores
+     * Construtor que permite la creación de cada uno de los Electores.
      *
      * @param nombre        Nombre de Elector
      * @param apellido      Apellido del ELector
@@ -55,185 +55,191 @@ public class Elector implements Comparable<Elector> {
     }
 
     /**
-     * Devuelve el nombre del Elector
+     * Devuelve el nombre del Elector.
      *
-     * @return Nombre del elector
+     * @return Nombre del elector.
      */
     public String getNombre() {
         return nombre;
     }
 
     /**
-     * Setea el nombre del Elector
+     * Setea el nombre del Elector.
      *
-     * @param nombre
+     * @param nombre Nombre del Elector.
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
     /**
-     * Devuelve el apellido del Elector
+     * Devuelve el apellido del Elector.
      *
-     * @return Apellido del Elector
+     * @return Apellido del Elector.
      */
     public String getApellido() {
         return apellido;
     }
 
     /**
-     * Setea el apellido del Elector
+     * Setea el apellido del Elector.
      *
-     * @param apellido Apellido del Elector
+     * @param apellido Apellido del Elector.
      */
     public void setApellido(String apellido) {
         this.apellido = apellido;
     }
 
     /**
-     * Devuelve el DNI del Elector
+     * Devuelve el DNI del Elector.
      *
-     * @return DNI del Elector
+     * @return DNI del Elector.
      */
     public Integer getDni() {
         return dni;
     }
 
     /**
-     * Setea el DNI del Elector
+     * Setea el DNI del Elector.
      *
-     * @param dni DNI del Elector
+     * @param dni DNI del Elector.
      */
     public void setDni(Integer dni) {
         this.dni = dni;
     }
 
     /**
-     * Devuelve el domicilio del Elector
+     * Devuelve el domicilio del Elector.
      *
-     * @return Domicilio del Elector
+     * @return Domicilio del Elector.
      */
     public Domicilio getDomicilio() {
         return domicilio;
     }
 
     /**
-     * Setea el Domicilio del Elector
+     * Setea el Domicilio del Elector.
      *
-     * @param domicilio Domicilio del Elector
+     * @param domicilio Domicilio del Elector.
      */
     public void setDomicilio(Domicilio domicilio) {
         this.domicilio = domicilio;
     }
 
     /**
-     * Devuelve el lugar donde vota el Elector
+     * Devuelve el lugar donde vota el Elector.
      *
-     * @return Lugar de votación
+     * @return Lugar de votación.
      */
     public String getLugarVotacion() {
         return lugarVotacion;
     }
 
     /**
-     * Setea el lugar donde vota un Elector
+     * Setea el lugar donde vota un Elector.
      *
-     * @param lugarVotacion Lugar de votación
+     * @param lugarVotacion Lugar de votación.
      */
     public void setLugarVotacion(String lugarVotacion) {
         this.lugarVotacion = lugarVotacion;
     }
 
     /**
-     * Devuelve la fecha de nacimiento del Elector
+     * Devuelve la fecha de nacimiento del Elector.
      *
-     * @return Fecha de nacimiento
+     * @return Fecha de nacimiento.
      */
     public LocalDate getFechaNac() {
         return fechaNac;
     }
 
     /**
-     * Setea la fecha de nacimiento del Elector
+     * Setea la fecha de nacimiento del Elector.
      *
-     * @param fechaNac Fecha de nacimiento
+     * @param fechaNac Fecha de nacimiento.
      */
     public void setFechaNac(LocalDate fechaNac) {
         this.fechaNac = fechaNac;
     }
 
     /**
-     * Devuelve que tipo de candidato es en caso de pertenecer a una lista
+     * Devuelve que tipo de candidato es en caso de pertenecer a una lista.
      *
-     * @return candidato Tipo de candidato que es
+     * @return candidato Tipo de candidato que es.
      */
     public TipoCandidato getCandidato() {
         return candidato;
     }
 
     /**
-     * Setea el tipo de candidato o si no lo es
+     * Setea el tipo de candidato o si no lo es.
      *
-     * @param candidato
+     * @param candidato Tipo candidato o No candidato.
      */
     public void setCandidato(TipoCandidato candidato) {
         this.candidato = candidato;
     }
 
     /**
-     * Devuelve Lista a la que pertenece si es candidato
+     * Devuelve Lista a la que pertenece si es candidato.
      *
-     * @return Devuelve Lista a la que pertenece
+     * @return Devuelve Lista a la que pertenece.
      */
     public Lista getLista() {
         return lista;
     }
 
     /**
-     * Setea lista en caso de ser candidato
+     * Setea lista en caso de ser candidato.
      *
-     * @param lista
+     * @param lista Lista.
      */
     public void setLista(Lista lista) {
         this.lista = lista;
     }
 
     /**
-     * Devuelve la mesa donde vota el Elector
+     * Devuelve la mesa donde vota el Elector.
      *
-     * @return Mesa de votación
+     * @return Mesa de votación.
      */
     public MesaElectoral getMesa() {
         return mesa;
     }
 
     /**
-     * Setea la mesa donde vota el Elector
+     * Setea la mesa donde vota el Elector.
      *
-     * @param mesa Mesa de votación
+     * @param mesa Mesa de votación.
      */
     public void setMesa(MesaElectoral mesa) {
         this.mesa = mesa;
     }
 
     /**
-     * Devuelve el voto del Elector
+     * Devuelve el voto del Elector.
      *
-     * @return Voto del Elector
+     * @return Voto del Elector.
      */
     public Voto getVoto() {
         return voto;
     }
 
     /**
-     * Setea el voto del Elector
+     * Setea el voto del Elector.
      *
-     * @param voto Voto del Elector
+     * @param voto Voto del Elector.
      */
     public void setVoto(Voto voto) {
         this.voto = voto;
     }
 
+    /**
+     * Método equals con el campo clave: DNI.
+     *
+     * @param o
+     * @return
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -268,6 +274,12 @@ public class Elector implements Comparable<Elector> {
                '}';
     }
 
+    /**
+     * Comparador que permite comparar a los electores por nombre y apellido y así poder ordenarlos alfabéticamente.
+     *
+     * @param o
+     * @return
+     */
     @Override
     public int compareTo(Elector o) {
 
