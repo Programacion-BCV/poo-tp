@@ -54,19 +54,6 @@ public class Main extends javax.swing.JFrame {
         jPasswordFieldCodigo = new javax.swing.JPasswordField();
         jButtonEnviar = new javax.swing.JButton();
         jPanelEstadisticas = new javax.swing.JPanel();
-        jLayeredPane2 = new javax.swing.JLayeredPane();
-        jButtonMendoza = new javax.swing.JButton();
-        jButtonMisiones = new javax.swing.JButton();
-        jButtonNeuquén = new javax.swing.JButton();
-        jButtonRioNegro = new javax.swing.JButton();
-        jButtonSalta = new javax.swing.JButton();
-        jButtonSanJuan = new javax.swing.JButton();
-        jButtonSanLuis = new javax.swing.JButton();
-        jButtonSantaCruz = new javax.swing.JButton();
-        jButtonSantiagoDelEstero = new javax.swing.JButton();
-        jButtonSantaFe = new javax.swing.JButton();
-        jButtonTierraDelFuego = new javax.swing.JButton();
-        jButtonTucuman = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jButtonCapitalFederal = new javax.swing.JButton();
         jButtonBuenosAires = new javax.swing.JButton();
@@ -80,6 +67,19 @@ public class Main extends javax.swing.JFrame {
         jButtonJujuy = new javax.swing.JButton();
         jButtonLaPampa = new javax.swing.JButton();
         jButtonLaRioja = new javax.swing.JButton();
+        jLayeredPane2 = new javax.swing.JLayeredPane();
+        jButtonMendoza = new javax.swing.JButton();
+        jButtonMisiones = new javax.swing.JButton();
+        jButtonNeuquén = new javax.swing.JButton();
+        jButtonRioNegro = new javax.swing.JButton();
+        jButtonSalta = new javax.swing.JButton();
+        jButtonSanJuan = new javax.swing.JButton();
+        jButtonSanLuis = new javax.swing.JButton();
+        jButtonSantaCruz = new javax.swing.JButton();
+        jButtonSantiagoDelEstero = new javax.swing.JButton();
+        jButtonSantaFe = new javax.swing.JButton();
+        jButtonTierraDelFuego = new javax.swing.JButton();
+        jButtonTucuman = new javax.swing.JButton();
         jLabelVotacionProvincia = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jDialogLayout = new javax.swing.GroupLayout(jDialog.getContentPane());
@@ -198,154 +198,6 @@ public class Main extends javax.swing.JFrame {
         );
 
         jTabbedPaneMenuPrincipal.addTab("Votación", jPanelVotacion);
-
-        jButtonMendoza.setText("Mendoza");
-        jButtonMendoza.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMendozaActionPerformed(evt);
-            }
-        });
-
-        jButtonMisiones.setText("Misiones");
-        jButtonMisiones.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMisionesActionPerformed(evt);
-            }
-        });
-
-        jButtonNeuquén.setText("Neuquén");
-        jButtonNeuquén.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonNeuquénActionPerformed(evt);
-            }
-        });
-
-        jButtonRioNegro.setText("Río Negro");
-        jButtonRioNegro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonRioNegroActionPerformed(evt);
-            }
-        });
-
-        jButtonSalta.setText("Salta");
-        jButtonSalta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSaltaActionPerformed(evt);
-            }
-        });
-
-        jButtonSanJuan.setText("San Juan");
-        jButtonSanJuan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSanJuanActionPerformed(evt);
-            }
-        });
-
-        jButtonSanLuis.setText("San Luis");
-        jButtonSanLuis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSanLuisActionPerformed(evt);
-            }
-        });
-
-        jButtonSantaCruz.setText("Santa Cruz");
-        jButtonSantaCruz.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSantaCruzActionPerformed(evt);
-            }
-        });
-
-        jButtonSantiagoDelEstero.setText("Santiago del Estero");
-        jButtonSantiagoDelEstero.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSantiagoDelEsteroActionPerformed(evt);
-            }
-        });
-
-        jButtonSantaFe.setText("Santa Fe");
-        jButtonSantaFe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonSantaFeActionPerformed(evt);
-            }
-        });
-
-        jButtonTierraDelFuego.setText("Tierra del Fuego");
-        jButtonTierraDelFuego.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonTierraDelFuegoActionPerformed(evt);
-            }
-        });
-
-        jButtonTucuman.setText("Tucumán");
-        jButtonTucuman.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonTucumanActionPerformed(evt);
-            }
-        });
-
-        jLayeredPane2.setLayer(jButtonMendoza, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonMisiones, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonNeuquén, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonRioNegro, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSalta, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSanJuan, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSanLuis, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSantaCruz, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSantiagoDelEstero, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonSantaFe, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonTierraDelFuego, javax.swing.JLayeredPane.DEFAULT_LAYER);
-        jLayeredPane2.setLayer(jButtonTucuman, javax.swing.JLayeredPane.DEFAULT_LAYER);
-
-        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
-        jLayeredPane2.setLayout(jLayeredPane2Layout);
-        jLayeredPane2Layout.setHorizontalGroup(
-            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonSantaFe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonTucuman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonTierraDelFuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonSantiagoDelEstero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonSantaCruz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonSanLuis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonSanJuan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonSalta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonRioNegro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonNeuquén, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonMisiones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonMendoza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
-        jLayeredPane2Layout.setVerticalGroup(
-            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jLayeredPane2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonMendoza)
-                .addGap(23, 23, 23)
-                .addComponent(jButtonMisiones)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonNeuquén)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonRioNegro)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonSalta)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonSanJuan)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonSanLuis)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonSantaCruz)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonSantaFe)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonSantiagoDelEstero)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonTierraDelFuego)
-                .addGap(18, 18, 18)
-                .addComponent(jButtonTucuman)
-                .addContainerGap())
-        );
 
         jLayeredPane1.setPreferredSize(new java.awt.Dimension(173, 527));
 
@@ -498,6 +350,154 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jButtonMendoza.setText("Mendoza");
+        jButtonMendoza.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMendozaActionPerformed(evt);
+            }
+        });
+
+        jButtonMisiones.setText("Misiones");
+        jButtonMisiones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMisionesActionPerformed(evt);
+            }
+        });
+
+        jButtonNeuquén.setText("Neuquén");
+        jButtonNeuquén.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNeuquénActionPerformed(evt);
+            }
+        });
+
+        jButtonRioNegro.setText("Río Negro");
+        jButtonRioNegro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonRioNegroActionPerformed(evt);
+            }
+        });
+
+        jButtonSalta.setText("Salta");
+        jButtonSalta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSaltaActionPerformed(evt);
+            }
+        });
+
+        jButtonSanJuan.setText("San Juan");
+        jButtonSanJuan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSanJuanActionPerformed(evt);
+            }
+        });
+
+        jButtonSanLuis.setText("San Luis");
+        jButtonSanLuis.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSanLuisActionPerformed(evt);
+            }
+        });
+
+        jButtonSantaCruz.setText("Santa Cruz");
+        jButtonSantaCruz.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSantaCruzActionPerformed(evt);
+            }
+        });
+
+        jButtonSantiagoDelEstero.setText("Santiago del Estero");
+        jButtonSantiagoDelEstero.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSantiagoDelEsteroActionPerformed(evt);
+            }
+        });
+
+        jButtonSantaFe.setText("Santa Fe");
+        jButtonSantaFe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSantaFeActionPerformed(evt);
+            }
+        });
+
+        jButtonTierraDelFuego.setText("Tierra del Fuego");
+        jButtonTierraDelFuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTierraDelFuegoActionPerformed(evt);
+            }
+        });
+
+        jButtonTucuman.setText("Tucumán");
+        jButtonTucuman.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTucumanActionPerformed(evt);
+            }
+        });
+
+        jLayeredPane2.setLayer(jButtonMendoza, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonMisiones, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonNeuquén, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonRioNegro, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSalta, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSanJuan, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSanLuis, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSantaCruz, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSantiagoDelEstero, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonSantaFe, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonTierraDelFuego, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane2.setLayer(jButtonTucuman, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane2Layout = new javax.swing.GroupLayout(jLayeredPane2);
+        jLayeredPane2.setLayout(jLayeredPane2Layout);
+        jLayeredPane2Layout.setHorizontalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonSantaFe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonTucuman, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonTierraDelFuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSantiagoDelEstero, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSantaCruz, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSanLuis, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSanJuan, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonSalta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonRioNegro, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonNeuquén, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonMisiones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonMendoza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+        jLayeredPane2Layout.setVerticalGroup(
+            jLayeredPane2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jLayeredPane2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jButtonMendoza)
+                .addGap(23, 23, 23)
+                .addComponent(jButtonMisiones)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonNeuquén)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonRioNegro)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSalta)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSanJuan)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSanLuis)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSantaCruz)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSantaFe)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonSantiagoDelEstero)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonTierraDelFuego)
+                .addGap(18, 18, 18)
+                .addComponent(jButtonTucuman)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanelEstadisticasLayout = new javax.swing.GroupLayout(jPanelEstadisticas);
         jPanelEstadisticas.setLayout(jPanelEstadisticasLayout);
         jPanelEstadisticasLayout.setHorizontalGroup(
@@ -513,9 +513,9 @@ public class Main extends javax.swing.JFrame {
             jPanelEstadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelEstadisticasLayout.createSequentialGroup()
                 .addGap(33, 33, 33)
-                .addGroup(jPanelEstadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLayeredPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanelEstadisticasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLayeredPane1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLayeredPane2))
                 .addContainerGap(67, Short.MAX_VALUE))
         );
 

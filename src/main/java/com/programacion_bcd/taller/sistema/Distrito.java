@@ -137,26 +137,31 @@ public class Distrito implements Estadistica {
             if (!(votos.get(i).getVotoDiputados().getProvincia().equals("") &&
                   votos.get(i).getVotoSenadores().getProvincia().equals(""))) {
 
-                if (votos.get(
-                        i).getVotoDiputados().getPartido().getNombre().equals(
-                        "Derecha")) {
-                    cantidades[0]++;
-                } else if (votos.get(
-                        i).getVotoDiputados().getPartido().getNombre().equals(
-                        "Izquierda")) {
-                    cantidades[1]++;
+                if (!votos.get(i).getVotoDiputados().getProvincia().equals(
+                        "")) {
+                    if (votos.get(
+                            i).getVotoDiputados().getPartido().getNombre().equals(
+                            "Derecha")) {
+                        cantidades[0]++;
+                    } else if (votos.get(
+                            i).getVotoDiputados().getPartido().getNombre().equals(
+                            "Izquierda")) {
+                        cantidades[1]++;
 
+                    }
                 }
-                if (votos.get(
-                        i).getVotoSenadores().getPartido().getNombre().equals(
-                        "Derecha")) {
-                    cantidades[2]++;
-                } else if (votos.get(
-                        i).getVotoSenadores().getPartido().getNombre().equals(
-                        "Izquierda")) {
-                    cantidades[3]++;
+                if (!votos.get(i).getVotoSenadores().getProvincia().equals(
+                        "")) {
+                    if (votos.get(
+                            i).getVotoSenadores().getPartido().getNombre().equals(
+                            "Derecha")) {
+                        cantidades[2]++;
+                    } else if (votos.get(
+                            i).getVotoSenadores().getPartido().getNombre().equals(
+                            "Izquierda")) {
+                        cantidades[3]++;
+                    }
                 }
-
             }
 
         }
@@ -257,7 +262,7 @@ public class Distrito implements Estadistica {
         return votos;
     }
 
-    private List<Elector> electoresDistrito() {
+    public List<Elector> electoresDistrito() {
         List<Elector> electores = new ArrayList<>();
         for (int i = 0; i < listaSecciones.size(); i++) {
 
