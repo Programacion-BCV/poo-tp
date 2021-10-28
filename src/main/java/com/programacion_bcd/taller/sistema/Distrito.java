@@ -4,6 +4,7 @@
  */
 package com.programacion_bcd.taller.sistema;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -84,33 +85,193 @@ public class Distrito implements Estadistica {
                '}' + "\n";
     }
 
+    /**
+     * Conteo de votantes por distrito.
+     */
     @Override
-    public void cantVotantes() {
+    public Integer cantVotantes() {
 
+        return this.votosDistrito().size();
     }
 
+    /**
+     * Conteo de los votos en blanco por distrito.
+     */
     @Override
-    public void cantVotosBlancos() {
+    public Integer cantVotosBlancos() {
+        Integer cantidadVotosEnBlanco = 0;
+        List<Voto> votos = this.votosDistrito();
+        for (int i = 0; i < votos.size(); i++) {
+            if (votos.get(i).getVotoDiputados().getProvincia().equals("") &&
+                votos.get(i).getVotoSenadores().getProvincia().equals("")) {
+                cantidadVotosEnBlanco++;
+            }
+        }
 
+        return cantidadVotosEnBlanco;
     }
 
+    /**
+     * Conteo de votos por partido en cada distrito.
+     */
     @Override
-    public void votoPorPartido() {
+    public Integer[] votoPorPartido() {
+        Integer[] cantidades = {0, 0, 0, 0};
+        List<Voto> votos = this.votosDistrito();
+        for (int i = 0; i < votos.size(); i++) {
 
+            if (!(votos.get(i).getVotoDiputados().getProvincia().equals("") &&
+                  votos.get(i).getVotoSenadores().getProvincia().equals(""))) {
+
+                if (votos.get(
+                        i).getVotoDiputados().getPartido().getNombre().equals(
+                        "Derecha")) {
+                    cantidades[0]++;
+                } else if (votos.get(
+                        i).getVotoDiputados().getPartido().getNombre().equals(
+                        "Izquierda")) {
+                    cantidades[1]++;
+
+                }
+                if (votos.get(
+                        i).getVotoSenadores().getPartido().getNombre().equals(
+                        "Derecha")) {
+                    cantidades[2]++;
+                } else if (votos.get(
+                        i).getVotoSenadores().getPartido().getNombre().equals(
+                        "Izquierda")) {
+                    cantidades[3]++;
+                }
+
+            }
+
+        }
+        return cantidades;
     }
 
+    /**
+     * Calculara el porcentaje de votacion por distrito respecto al padron del mismo.
+     */
     @Override
-    public void porcDistrito() {
-
+    public Double porcDistrito() {
+        return (((double) this.votosDistrito().size()) /
+                this.electoresDistrito().size()) * 100;
     }
 
+    /**
+     * Calculara el porcentaje general de votacion por cada lista,
+     * incluyendo votos en blanco por cada distrito.
+     */
     @Override
-    public void porcGralVotoLista() {
+    public Double[] porcGralVotoLista() {
+        Integer[] cantidades = this.votoPorPartido();
+        Double[] porcentajes = new Double[6];
 
+        porcentajes[0] = ((double) cantidades[0] /
+                          ((cantidades[0] + cantidades[1] +
+                            this.cantVotosBlancos()))) * 100;
+        porcentajes[1] = ((double) cantidades[1] /
+                          ((cantidades[0] + cantidades[1] +
+                            this.cantVotosBlancos()))) * 100;
+        porcentajes[2] = ((double) cantidades[2] /
+                          ((cantidades[2] + cantidades[3] +
+                            this.cantVotosBlancos()))) * 100;
+        porcentajes[3] = ((double) cantidades[3] /
+                          ((cantidades[2] + cantidades[3] +
+                            this.cantVotosBlancos()))) * 100;
+        porcentajes[4] = ((double) this.cantVotosBlancos() /
+                          ((cantidades[0] + cantidades[1] +
+                            this.cantVotosBlancos()))) * 100;
+
+        porcentajes[5] = ((double) this.cantVotosBlancos() /
+                          ((cantidades[2] + cantidades[3] +
+                            this.cantVotosBlancos()))) * 100;
+
+        return porcentajes;
     }
 
+    /**
+     * Otras estadisticas que surgan relevantes.
+     */
     @Override
     public void otrasEstadisticas() {
 
     }
+
+    private List<Voto> votosDistrito() {
+
+        List<Voto> votos = new ArrayList<>();
+        for (int i = 0; i < listaSecciones.size(); i++) {
+
+            for (int j = 0;
+                 j < listaSecciones.get(i).getCircuitos().size(); j++) {
+
+                for (int k = 0; k < listaSecciones.get(i).getCircuitos().get(
+                        j).getListaMesas().size(); k++) {
+
+                    for (int m = 0;
+                         m < listaSecciones.get(i).getCircuitos().get(
+                                 j).getListaMesas().get(
+                                 k).getElectores().length; m++) {
+
+                        if (listaSecciones.get(i).getCircuitos().get(
+                                j).getListaMesas().get(
+                                k).getElectores()[m] != null) {
+
+                            if (listaSecciones.get(i).getCircuitos().get(
+                                    j).getListaMesas().get(
+                                    k).getElectores()[m].getVoto() != null) {
+
+                                votos.add(listaSecciones.get(
+                                        i).getCircuitos().get(
+                                        j).getListaMesas().get(
+                                        k).getElectores()[m].getVoto());
+                            }
+
+                        }
+
+                    }
+
+                }
+            }
+
+        }
+
+        return votos;
+    }
+
+    private List<Elector> electoresDistrito() {
+        List<Elector> electores = new ArrayList<>();
+        for (int i = 0; i < listaSecciones.size(); i++) {
+
+            for (int j = 0;
+                 j < listaSecciones.get(i).getCircuitos().size(); j++) {
+
+                for (int k = 0; k < listaSecciones.get(i).getCircuitos().get(
+                        j).getListaMesas().size(); k++) {
+
+                    for (int m = 0;
+                         m < listaSecciones.get(i).getCircuitos().get(
+                                 j).getListaMesas().get(
+                                 k).getElectores().length; m++) {
+
+                        if (listaSecciones.get(i).getCircuitos().get(
+                                j).getListaMesas().get(
+                                k).getElectores()[m] != null) {
+
+                            electores.add(
+                                    listaSecciones.get(i).getCircuitos().get(
+                                            j).getListaMesas().get(
+                                            k).getElectores()[m]);
+                        }
+
+                    }
+
+                }
+
+            }
+        }
+        return electores;
+    }
+
 }

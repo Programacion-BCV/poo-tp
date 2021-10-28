@@ -1,27 +1,34 @@
 package com.programacion_bcd.taller.sistema;
 
+import java.util.List;
+
 public interface Estadistica {
-     /**
+    /**
      * Conteo de votantes por distrito.
      */
-    public void cantVotantes();
+    public Integer cantVotantes();
+
     /**
      * Conteo de los votos en blanco por distrito.
      */
-    public void cantVotosBlancos();
+    public Integer cantVotosBlancos();
+
     /**
      * Conteo de votos por partido en cada distrito.
      */
-    public void votoPorPartido();
+    public Integer[] votoPorPartido();
+
     /**
      * Calculara el porcentaje de votacion por distrito respecto al padron del mismo.
      */
-    public void porcDistrito();
+    public Double porcDistrito();
+
     /**
-     * Calculara el porcentaje general de votoacion por cada lista, 
+     * Calculara el porcentaje general de votoacion por cada lista,
      * incluyendo votos en blanco por cada distrito.
      */
-    public void porcGralVotoLista();
+    public Double[] porcGralVotoLista();
+
     /**
      * Otras estadisticas que surgan relevantes.
      */
