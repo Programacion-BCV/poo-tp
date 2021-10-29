@@ -53,6 +53,8 @@ public class Main extends javax.swing.JFrame {
         jLabelCodigo = new javax.swing.JLabel();
         jPasswordFieldCodigo = new javax.swing.JPasswordField();
         jButtonEnviar = new javax.swing.JButton();
+        jButtonTerminarVotacion = new javax.swing.JButton();
+        jPasswordFieldAdmin = new javax.swing.JPasswordField();
         jPanelEstadisticas = new javax.swing.JPanel();
         jLayeredPane1 = new javax.swing.JLayeredPane();
         jButtonCapitalFederal = new javax.swing.JButton();
@@ -180,21 +182,41 @@ public class Main extends javax.swing.JFrame {
                 .addGap(39, 39, 39))
         );
 
+        jButtonTerminarVotacion.setBackground(new java.awt.Color(220, 53, 69));
+        jButtonTerminarVotacion.setText("Terminar Votación");
+        jButtonTerminarVotacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonTerminarVotacionActionPerformed(evt);
+            }
+        });
+
+        jPasswordFieldAdmin.setText("jPasswordField1");
+
         javax.swing.GroupLayout jPanelVotacionLayout = new javax.swing.GroupLayout(jPanelVotacion);
         jPanelVotacion.setLayout(jPanelVotacionLayout);
         jPanelVotacionLayout.setHorizontalGroup(
             jPanelVotacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelVotacionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(243, Short.MAX_VALUE)
                 .addComponent(jLayeredPaneFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(243, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelVotacionLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPasswordFieldAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonTerminarVotacion)
+                .addGap(58, 58, 58))
         );
         jPanelVotacionLayout.setVerticalGroup(
             jPanelVotacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelVotacionLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(100, Short.MAX_VALUE)
                 .addComponent(jLayeredPaneFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 215, Short.MAX_VALUE)
+                .addGroup(jPanelVotacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonTerminarVotacion)
+                    .addComponent(jPasswordFieldAdmin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(48, 48, 48))
         );
 
         jTabbedPaneMenuPrincipal.addTab("Votación", jPanelVotacion);
@@ -770,6 +792,33 @@ public class Main extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonTucumanActionPerformed
 
+    private void jButtonTerminarVotacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonTerminarVotacionActionPerformed
+        // TODO add your handling code here:
+        
+        String contrasenia = String.valueOf(jPasswordFieldAdmin.getPassword());
+
+        if(contrasenia.equals("QWERTY")){
+               this.jTabbedPaneMenuPrincipal.setEnabledAt(0, false);  
+               this.jTabbedPaneMenuPrincipal.setSelectedIndex(1);
+
+        }else{
+            this.setVisible(false);
+            jDialog.setVisible(true);
+                jDialog.setTitle("Error");
+                jDialog.setSize(500, 350);
+                jDialog.setLocationRelativeTo(null);
+                JPanelDialogErrorCodigo jPanelDialogErrorCodigo = new JPanelDialogErrorCodigo();
+                jDialog.setContentPane(jPanelDialogErrorCodigo);
+        }
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_jButtonTerminarVotacionActionPerformed
+
     private void jTextFieldDNIActionPerformed(
             java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jTextFieldDNIActionPerformed
         // TODO add your handling code here:
@@ -783,65 +832,81 @@ public class Main extends javax.swing.JFrame {
     private void jButtonEnviarActionPerformed(
             java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonEnviarActionPerformed
 
-        int dni = Integer.parseInt(jTextFieldDNI.getText());
+         int dni = Integer.parseInt(jTextFieldDNI.getText());
         elector = new Elector("", "", dni, null, "", null, null, null, null,
-                              null);
+                null);
 
         boolean estaPersona = false;
-
+        boolean yaVoto = false;
         String codigo = "";
         String contrasenia = String.valueOf(jPasswordFieldCodigo.getPassword());
 
         for (int i = 0;
-             i < camaraElectoralArgentina.getElectores().size(); i++) {
+                i < camaraElectoralArgentina.getElectores().size(); i++) {
             if (camaraElectoralArgentina.getElectores().get(i).equals(
                     elector)) {
-                elector = camaraElectoralArgentina.getElectores().get(i);
 
-                codigo = camaraElectoralArgentina.getElectores().get(
-                        i).getNombre().substring(0, 2).toUpperCase()
-                         + camaraElectoralArgentina.getElectores().get(
-                        i).getDni()
-                         + camaraElectoralArgentina.getElectores().get(
-                        i).getApellido().substring(0, 2).toUpperCase();
-                System.out.println(contrasenia);
-                System.out.println(codigo);
+                if (camaraElectoralArgentina.getElectores().get(i).getVoto()
+                        != null) {
+                    yaVoto = true;
+                } else {
 
-                estaPersona = true;
+                    elector = camaraElectoralArgentina.getElectores().get(i);
 
+                    codigo = camaraElectoralArgentina.getElectores().get(
+                            i).getNombre().substring(0, 2).toUpperCase()
+                            + camaraElectoralArgentina.getElectores().get(
+                                    i).getDni()
+                            + camaraElectoralArgentina.getElectores().get(
+                                    i).getApellido().substring(0, 2).toUpperCase();
+                    System.out.println(contrasenia);
+                    System.out.println(codigo);
+
+                    estaPersona = true;
+                }
             }
         }
         this.setVisible(false);
-        if (codigo.equals(
-                contrasenia) && estaPersona) {
 
+        if (yaVoto) {
             jDialog.setVisible(true);
             jDialog.setTitle("Confirmar");
             jDialog.setSize(500, 350);
             jDialog.setLocationRelativeTo(null);
-            JPanelDialogCorrecto jPanelDialog = new JPanelDialogCorrecto();
+            JPanelDialogErrorVotoExistente jPanelDialog = new JPanelDialogErrorVotoExistente();
             jDialog.setContentPane(jPanelDialog);
-        } else if (estaPersona) {
-
-            jDialog.setVisible(true);
-            jDialog.setTitle("Error");
-            jDialog.setSize(500, 350);
-            jDialog.setLocationRelativeTo(null);
-            JPanelDialogErrorCodigo jPanelDialogErrorCodigo = new JPanelDialogErrorCodigo();
-            jDialog.setContentPane(jPanelDialogErrorCodigo);
-
         } else {
-            jDialog.setVisible(true);
-            jDialog.setTitle("Error");
-            jDialog.setSize(500, 350);
-            jDialog.setLocationRelativeTo(null);
-            JPanelDialogErrorPersona jPanelDialogErrorPersona = new JPanelDialogErrorPersona();
-            jDialog.setContentPane(jPanelDialogErrorPersona);
 
+            if (codigo.equals(
+                    contrasenia) && estaPersona) {
+
+                jDialog.setVisible(true);
+                jDialog.setTitle("Confirmar");
+                jDialog.setSize(500, 350);
+                jDialog.setLocationRelativeTo(null);
+                JPanelDialogCorrecto jPanelDialog = new JPanelDialogCorrecto();
+                jDialog.setContentPane(jPanelDialog);
+            } else if (estaPersona) {
+
+                jDialog.setVisible(true);
+                jDialog.setTitle("Error");
+                jDialog.setSize(500, 350);
+                jDialog.setLocationRelativeTo(null);
+                JPanelDialogErrorCodigo jPanelDialogErrorCodigo = new JPanelDialogErrorCodigo();
+                jDialog.setContentPane(jPanelDialogErrorCodigo);
+
+            } else {
+                jDialog.setVisible(true);
+                jDialog.setTitle("Error");
+                jDialog.setSize(500, 350);
+                jDialog.setLocationRelativeTo(null);
+                JPanelDialogErrorPersona jPanelDialogErrorPersona = new JPanelDialogErrorPersona();
+                jDialog.setContentPane(jPanelDialogErrorPersona);
+
+            }
+            jTextFieldDNI.setText("");
+            jPasswordFieldCodigo.setText("");
         }
-        jTextFieldDNI.setText("");
-        jPasswordFieldCodigo.setText("");
-
     }// GEN-LAST:event_jButtonEnviarActionPerformed
 
     /**
@@ -934,6 +999,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSantaCruz;
     private javax.swing.JButton jButtonSantaFe;
     private javax.swing.JButton jButtonSantiagoDelEstero;
+    private javax.swing.JButton jButtonTerminarVotacion;
     private javax.swing.JButton jButtonTierraDelFuego;
     private javax.swing.JButton jButtonTucuman;
     private javax.swing.JDialog jDialog;
@@ -945,6 +1011,7 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLayeredPane jLayeredPaneFormulario;
     private javax.swing.JPanel jPanelEstadisticas;
     private javax.swing.JPanel jPanelVotacion;
+    private javax.swing.JPasswordField jPasswordFieldAdmin;
     private javax.swing.JPasswordField jPasswordFieldCodigo;
     private javax.swing.JTabbedPane jTabbedPaneMenuPrincipal;
     private javax.swing.JTextField jTextFieldDNI;

@@ -232,10 +232,12 @@ public class Estadisticas extends javax.swing.JFrame {
         jLayeredPane5 = new javax.swing.JLayeredPane();
         jButtonSig = new javax.swing.JButton();
         jButtonAnt = new javax.swing.JButton();
+        jButtonSalirEstadistica = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jTabbedPaneMenuVotacion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTabbedPaneMenuVotacion.setFocusable(false);
         jTabbedPaneMenuVotacion.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
         jTabbedPaneMenuVotacion.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -708,8 +710,18 @@ public class Estadisticas extends javax.swing.JFrame {
             }
         });
 
+        jButtonSalirEstadistica.setBackground(new java.awt.Color(220, 53, 69));
+        jButtonSalirEstadistica.setFont(new java.awt.Font("Roboto", 0, 24)); // NOI18N
+        jButtonSalirEstadistica.setText("Salir");
+        jButtonSalirEstadistica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSalirEstadisticaActionPerformed(evt);
+            }
+        });
+
         jLayeredPane5.setLayer(jButtonSig, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane5.setLayer(jButtonAnt, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane5.setLayer(jButtonSalirEstadistica, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane5Layout = new javax.swing.GroupLayout(jLayeredPane5);
         jLayeredPane5.setLayout(jLayeredPane5Layout);
@@ -719,6 +731,8 @@ public class Estadisticas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jButtonAnt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonSalirEstadistica)
+                .addGap(345, 345, 345)
                 .addComponent(jButtonSig)
                 .addContainerGap())
         );
@@ -728,8 +742,9 @@ public class Estadisticas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jLayeredPane5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSig)
-                    .addComponent(jButtonAnt))
-                .addContainerGap())
+                    .addComponent(jButtonAnt)
+                    .addComponent(jButtonSalirEstadistica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelBotonesLayout = new javax.swing.GroupLayout(jPanelBotones);
@@ -835,6 +850,13 @@ public class Estadisticas extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jPanelSeleccionadosMouseClicked
 
+    private void jButtonSalirEstadisticaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirEstadisticaActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+        Main main = new Main();
+        main.setVisible(true);
+    }//GEN-LAST:event_jButtonSalirEstadisticaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -881,6 +903,7 @@ public class Estadisticas extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAnt;
+    private javax.swing.JButton jButtonSalirEstadistica;
     private javax.swing.JButton jButtonSig;
     private javax.swing.JLabel jLabelBarDD;
     private javax.swing.JLabel jLabelBarDI;
