@@ -212,6 +212,10 @@ public class Distrito implements Estadistica {
         return porcentajes;
     }
 
+    /**
+     * Devuelve los votos del de todas las mesas, de todo el Distrito.
+     * @return Lista de Votos.
+     */
     private List<Voto> votosDistrito() {
 
         List<Voto> votos = new ArrayList<>();
@@ -254,6 +258,10 @@ public class Distrito implements Estadistica {
         return votos;
     }
 
+    /**
+     * Devuelve todos los electores presentes en cada una de las mesas del Distrito.
+     * @return Lista de Electores.
+     */
     public List<Elector> electoresDistrito() {
         List<Elector> electores = new ArrayList<>();
         for (int i = 0; i < listaSecciones.size(); i++) {

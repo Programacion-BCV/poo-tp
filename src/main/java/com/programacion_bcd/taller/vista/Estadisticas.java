@@ -1,14 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase Estadisticas
+ *
+ * Esta clase brinda las estadísticas de votacióñ por cada distrito.
  */
 package com.programacion_bcd.taller.vista;
 
 import com.programacion_bcd.taller.sistema.Distrito;
 import com.programacion_bcd.taller.sistema.Elector;
 import com.programacion_bcd.taller.sistema.Lista;
-import com.programacion_bcd.taller.sistema.Voto;
+
 
 import javax.swing.*;
 import java.util.ArrayList;

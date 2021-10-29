@@ -1,3 +1,8 @@
+/**
+ * Clase Carga Datos
+ *
+ * Esta clase carga todos los datos en el sistema en base a archivos presentes en el mismo paquete.
+ */
 package com.programacion_bcd.taller.carga_datos;
 
 import com.programacion_bcd.taller.sistema.*;
@@ -14,6 +19,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class CargaDatos {
+    /**
+     * Carga la lista de electores en la Cámara Electoral.
+     * @return
+     */
     public static List<Elector> cargaElectores() {
         List<Elector> electores = new ArrayList<>();
 
@@ -123,6 +132,10 @@ public class CargaDatos {
         return electores;
     }
 
+    /**
+     * Carga los requerimientos en número tanto de diputados como de senadores en la Cámara Electoral.
+     * @return
+     */
     public static RequerimientosProvincia[] requerimientosProvincias() {
         RequerimientosProvincia[] requerimientosProvincias = new RequerimientosProvincia[24];
         try {
@@ -153,6 +166,12 @@ public class CargaDatos {
         return requerimientosProvincias;
     }
 
+    /**
+     * Carga las listas de diputados y senadores a la Cámara Electoral.
+     * @param electores Lista de Electores.
+     * @param requerimientosProvincias Arreglo de requerimientos de las provincias.
+     * @return Lista de Listas.
+     */
     public static List<Lista> cargaListas(List<Elector> electores,
                                           RequerimientosProvincia[] requerimientosProvincias) {
         int total = electores.size();
@@ -261,6 +280,11 @@ public class CargaDatos {
         return listas;
     }
 
+    /**
+     * Carga los distintos distritos a la Cámara Electoral, con sus correspondientes secciones, circuitos y mesas electorales.
+     * @param electors Lista de Electores.
+     * @return Lista de Distritos.
+     */
     public static List<Distrito> cargaDistrito(List<Elector> electors) {
         List<Distrito> distritosRetorno = new ArrayList<>();
 
@@ -378,6 +402,10 @@ public class CargaDatos {
         return distritosRetorno;
     }
 
+    /**
+     * Mediante el método compareTo de Elector ordena las listas de electores de las mesas por Nombre y Apellido.
+     * @param electores Arreglo de Electores.
+     */
     public static void ordenarElectores(Elector[] electores) {
 
         List<Elector> listaElectores = new ArrayList<>();

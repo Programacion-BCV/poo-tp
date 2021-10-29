@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase Main
+ *
+ *Interfaz gráfica inicial, de la cual mendiante un logueo se avanza a la votación o se finaliza la misma.
  */
 package com.programacion_bcd.taller.vista;
 
@@ -1017,6 +1017,10 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JTextField jTextFieldDNI;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Trae el distrito cuando se llama a la estadistica.
+     * @param distritoParametro Distrito pasado por parámetro.
+     */
     public static void traerDistrito(String distritoParametro) {
         Distrito distrito = new Distrito(distritoParametro, null);
 

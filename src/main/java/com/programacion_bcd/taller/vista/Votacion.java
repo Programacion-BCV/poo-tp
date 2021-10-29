@@ -1,7 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase Votación
+ *
+ *Esta clase proporciona una interfaz gráfica para seleccionar las listas de diputados o senadores y generar el voto.
  */
 package com.programacion_bcd.taller.vista;
 
@@ -1413,6 +1413,11 @@ public class Votacion extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPaneMenuVotacion;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Devuelve las listas que tiene que para votar el Elector.
+     * @param elector Elector.
+     * @return Listas disponibles para votar.
+     */
     private static List<Lista> traerListasVotante(Elector elector) {
 
         List<Lista> listasVotante = new ArrayList<>();
@@ -1434,6 +1439,11 @@ public class Votacion extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Devuelve la lista votada de la interfaz gráfica para realizar el voto.
+     * @param numeroLista Número de lista.
+     * @return Lista votada.
+     */
     public static Lista traerListaVotada(String numeroLista) {
         Lista retorno = new Lista("", "", numeroLista, null, null, null, null,
                                   null);
