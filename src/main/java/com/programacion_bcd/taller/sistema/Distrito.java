@@ -212,14 +212,6 @@ public class Distrito implements Estadistica {
         return porcentajes;
     }
 
-    /**
-     * Otras estadisticas que surgan relevantes.
-     */
-    @Override
-    public void otrasEstadisticas() {
-
-    }
-
     private List<Voto> votosDistrito() {
 
         List<Voto> votos = new ArrayList<>();

@@ -29,8 +29,4 @@ public interface Estadistica {
      */
     public Double[] porcGralVotoLista();
 
-    /**
-     * Otras estadisticas que surgan relevantes.
-     */
-    public void otrasEstadisticas();
 }
