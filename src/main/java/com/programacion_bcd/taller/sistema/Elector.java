@@ -1,7 +1,8 @@
 /**
  * Clase Elector
- * Se utiliza para crear los electores
+ * Clase utilizada para la creación de los electores.
  */
+
 
 package com.programacion_bcd.taller.sistema;
 

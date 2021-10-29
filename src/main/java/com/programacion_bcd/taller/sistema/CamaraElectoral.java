@@ -1,8 +1,7 @@
 /**
  * Clase Camara Electoral
- * <p>
- * La clase lleva un registro de todas las listas,padron de personas,
- * interrelaciones y realiza verificaicones.
+ * La clase lleva un registro de todas las listas, padrón electoral,
+ * interrelaciones y también realiza verificaicones.
  */
 package com.programacion_bcd.taller.sistema;
 

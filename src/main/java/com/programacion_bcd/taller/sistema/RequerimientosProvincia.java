@@ -1,3 +1,7 @@
+/**
+ * Clase Requerimientos Provincia
+ * Esta clase se utiliza para obtener la cantidad de diputados y senadores por provincia.
+ */
 package com.programacion_bcd.taller.sistema;
 
 import java.util.Objects;

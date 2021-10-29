@@ -1,7 +1,7 @@
 /**
  * Clase Partido Político
- * <p>
- * Permite la creación de los Partidos Políticos
+ *
+ * Esta clase permite inicializar los partidos politicos que conforman las listas.
  */
 package com.programacion_bcd.taller.sistema;
 

@@ -1,7 +1,7 @@
 /**
  * Clase Lista
- * <p>
- * En esta clase se crean las Listas de los distintos partidos políticos con sus respectivos candidatos
+ *
+ * En esta clase se crean las Listas de los distintos partidos políticos con sus respectivos candidatos.
  */
 package com.programacion_bcd.taller.sistema;
 

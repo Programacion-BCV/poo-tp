@@ -1,6 +1,6 @@
 /**
  * Clase Mesa Electoral
- * Permite la creación de las mesas donde votarán los Electores
+ * Permite la creación de las mesas donde votarán los Electores.
  */
 package com.programacion_bcd.taller.sistema;
 

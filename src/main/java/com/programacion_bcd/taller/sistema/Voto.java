@@ -1,5 +1,6 @@
 /**
- * Esta clase se encarga de obtener el voto de cada elector
+ * Clase Voto
+ * Clase utilizada para generar el voto de cada elector.
  */
 
 package com.programacion_bcd.taller.sistema;

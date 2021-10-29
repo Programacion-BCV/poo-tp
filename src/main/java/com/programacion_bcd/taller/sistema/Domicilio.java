@@ -1,6 +1,6 @@
 /**
  * Clase Domicilio
- * Permite la construcción del domicilio de cada Elector
+ * Esta clase permite la construcción del domicilio de cada Elector.
  */
 package com.programacion_bcd.taller.sistema;
 

@@ -1,3 +1,7 @@
+/**
+ * Clase Sección
+ * Esta clase permite la creación de las distintas Secciones que tienen los Distritos.
+ */
 package com.programacion_bcd.taller.sistema;
 
 import java.util.List;

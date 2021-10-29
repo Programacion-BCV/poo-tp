@@ -1,6 +1,6 @@
 /**
  * Clase Distrito
- * Esta clase define el distrito de cada elector donde debe votar
+ * Esta clase se utiliza para inicializar todos los Distritos de las elecciones.
  */
 package com.programacion_bcd.taller.sistema;
 
@@ -62,7 +62,7 @@ public class Distrito implements Estadistica {
     }
 
     /**
-     * Método equals con el valor clave nombre de distrito.
+     * Método equals con el valor clave: nombre de distrito.
      *
      * @param o
      * @return

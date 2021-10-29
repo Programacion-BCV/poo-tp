@@ -1,5 +1,6 @@
 /**
- *
+ *Clase Circuito
+ * La clase permite la creación de los distitntos Circuitos que conforman las Secciones.
  */
 package com.programacion_bcd.taller.sistema;
 
