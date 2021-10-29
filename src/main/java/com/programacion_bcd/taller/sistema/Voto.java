@@ -1,6 +1,6 @@
 /**
  * Clase Voto
- * Clase utilizada para generar el voto de cada elector.
+ * Esta clase permite la creación de los votos del Elector.
  */
 
 package com.programacion_bcd.taller.sistema;
@@ -52,35 +52,51 @@ public class Voto {
     }
 
     /**
-     * Retorna parametros de MesaElectoral
+     * Devuelve la mesa electoral donde se emitió el voto.
      *
-     * @return mesa
+     * @return Mesa electoral.
      */
     public MesaElectoral getMesa() {
         return mesa;
     }
 
     /**
-     * Asigna los parametros de MesaElectoral
+     * Setea la mesa electoral donde se emitirá el voto.
      *
-     * @param mesa
+     * @param Mesa electoral.
      */
     public void setMesa(MesaElectoral mesa) {
         this.mesa = mesa;
     }
 
+    /**
+     * Devuelve los votos a diputados.
+     * @return Lista de voto a diputados.
+     */
     public Lista getVotoDiputados() {
         return votoDiputados;
     }
 
+    /**
+     * Setea los votos a diputados.
+     * @param votoDiputados Lista de votos a diputados.
+     */
     public void setVotoDiputados(Lista votoDiputados) {
         this.votoDiputados = votoDiputados;
     }
 
+    /**
+     * Devuelve los votos a senadores.
+     * @return Lista de votos a senadores.
+     */
     public Lista getVotoSenadores() {
         return votoSenadores;
     }
 
+    /**
+     * Setea los votos a senadores.
+     * @param votoSenadores Lista de votos a senadores.
+     */
     public void setVotoSenadores(Lista votoSenadores) {
         this.votoSenadores = votoSenadores;
     }
@@ -105,9 +121,9 @@ public class Voto {
     }
 
     /**
-     * Concatena en una cadena de caracteres los atributos de Voto
+     * Concatena en una cadena de caracteres los atributos de Voto/
      *
-     * @return String Voto
+     * @return
      */
     @Override
     public String toString() {

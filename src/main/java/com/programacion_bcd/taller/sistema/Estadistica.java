@@ -1,6 +1,10 @@
+/**
+ * Interfaz Estadística
+ * Es una interfaz para calculo de estadísticas en un distrito.
+ */
 package com.programacion_bcd.taller.sistema;
 
-import java.util.List;
+
 
 public interface Estadistica {
     /**

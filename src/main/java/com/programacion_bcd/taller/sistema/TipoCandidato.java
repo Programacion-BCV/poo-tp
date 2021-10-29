@@ -1,3 +1,7 @@
+/**
+ * Enumeración Tipo Candidato
+ * Es utilizada para definir si un elector es Senador, Diputado o No es un candidato.
+ */
 package com.programacion_bcd.taller.sistema;
 
 public enum TipoCandidato {
